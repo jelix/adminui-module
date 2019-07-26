@@ -25,10 +25,12 @@ jacl2db.installparam[defaultuser]=on
 jacl2db.installparam[defaultgroups]=on
 
 
+adminlte.enabled=on
+
 [coordplugins]
 
 [responses]
-html=testResponse
+html="module:adminlte~adminlteResponse"
 
 
 [error_handling]

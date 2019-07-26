@@ -17,5 +17,12 @@
     "require-dev" : {
         
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra" : {
+        "jelix" : {
+            "modules": [
+              "modules/adminlte"
+            ]
+        }
+    }
 }

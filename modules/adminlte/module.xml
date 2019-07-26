@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://jelix.org/ns/module/1.0">
+    <info id="adminlte@jelix.org" name="adminlte" createdate="2019-07-26">
+        <version date="2019-07-26">0.1pre</version>
+        <label lang="en_US">adminlte</label>
+        <description lang="en_US" />
+        <license>MIT</license>
+        <copyright>2019 Laurent Jouanneau and other contributors</copyright>
+    </info>
+    <dependencies>
+        <jelix minversion="1.6.24" maxversion="1.7.*"/>
+    </dependencies>
+    <autoload>
+        <psr4 namespace="\Jelix\AdminLte\" dir="lib"/>
+    </autoload>
+</module>
