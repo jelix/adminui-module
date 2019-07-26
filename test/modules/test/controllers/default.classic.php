@@ -12,7 +12,8 @@ class defaultCtrl extends jController {
     */
     function index() {
         $rep = $this->getResponse('html');
-        $rep->body->assign('MAIN','<p>Homepage</p>');
+        $tpl = new jTpl();
+        $rep->body->assign('MAIN', $tpl->fetch('adminlte~blank'));
         return $rep;
     }
 }

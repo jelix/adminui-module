@@ -26,6 +26,7 @@ jacl2db.installparam[defaultgroups]=on
 
 
 adminlte.enabled=on
+adminlte.installparam[wwwfiles]=vhost
 
 [coordplugins]
 
@@ -83,6 +84,24 @@ mailerType=file
 email="root@localhost"
 
 [webassets_common]
+
+bootstrap.require=jquery
+bootstrap.css[]=adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css
+bootstrap.js[]=adminlte-assets/bower_components/bootstrap/dist/js/bootstrap.min.js
+
+fontawesome.css[]=adminlte-assets/bower_components/font-awesome/css/font-awesome.min.css
+
+adminlte.require=jquery,bootstrap,fontawesome
+adminlte.css[]=adminlte-assets/bower_components/Ionicons/css/ionicons.min.css
+adminlte.css[]=adminlte-assets/dist/css/AdminLTE.min.css
+adminlte.css[]=adminlte-assets/dist/css/skins/_all-skins.min.css
+adminlte.css[]="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+adminlte.js[]=adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
+adminlte.js[]=adminlte-assets/bower_components/fastclick/lib/fastclick.js
+adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
+;adminlte.include=
+
+
 
 [session]
 storage=
