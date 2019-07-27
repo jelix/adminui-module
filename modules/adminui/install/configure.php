@@ -1,15 +1,13 @@
 <?php
 /**
-* @package   test
-* @subpackage adminlte
-* @author    test
-* @copyright 2019 Laurent Jouanneau and other contributors
-* @link      
-* @license    All rights reserved
-*/
+ * @author    Laurent Jouanneau
+ * @copyright 2019 Laurent Jouanneau and other contributors
+ * @link
+ * @license    MIT
+ */
 
 
-class adminlteModuleConfigurator extends \Jelix\Installer\Module\Configurator {
+class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
     public function getDefaultParameters() {
         return array();
@@ -21,7 +19,7 @@ class adminlteModuleConfigurator extends \Jelix\Installer\Module\Configurator {
         // ask how www files should be copied, as the jelix module does (wwwfiles param)
         // setup config:
         //      [responses]
-        //      html="module:adminlte~adminlteResponse"
+        //      html="module:adminui~adminuiResponse"
         //      [webassets_common]
         //      .. all web assets...
 

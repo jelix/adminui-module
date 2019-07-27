@@ -9,7 +9,7 @@ availableLocales=fr_FR
 ; see http://www.php.net/manual/en/timezones.php for supported values
 timeZone="Europe/Paris"
 
-theme=default
+theme=adminlte
 
 [modules]
 jelix.enabled=on
@@ -25,13 +25,13 @@ jacl2db.installparam[defaultuser]=on
 jacl2db.installparam[defaultgroups]=on
 
 
-adminlte.enabled=on
-adminlte.installparam[wwwfiles]=vhost
+adminui.enabled=on
+adminui.installparam[wwwfiles]=vhost
 
 [coordplugins]
 
 [responses]
-html="module:adminlte~adminlteResponse"
+html="module:adminui~adminuiResponse"
 
 
 [error_handling]
@@ -85,13 +85,13 @@ email="root@localhost"
 
 [webassets_common]
 
-bootstrap.require=jquery
-bootstrap.css[]=adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css
-bootstrap.js[]=adminlte-assets/bower_components/bootstrap/dist/js/bootstrap.min.js
+adminlte-bootstrap.require=jquery
+adminlte-bootstrap.css[]=adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css
+adminlte-bootstrap.js[]=adminlte-assets/bower_components/bootstrap/dist/js/bootstrap.min.js
 
-fontawesome.css[]=adminlte-assets/bower_components/font-awesome/css/font-awesome.min.css
+adminlte-fontawesome.css[]=adminlte-assets/bower_components/font-awesome/css/font-awesome.min.css
 
-adminlte.require=jquery,bootstrap,fontawesome
+adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
 adminlte.css[]=adminlte-assets/bower_components/Ionicons/css/ionicons.min.css
 adminlte.css[]=adminlte-assets/dist/css/AdminLTE.min.css
 adminlte.css[]=adminlte-assets/dist/css/skins/_all-skins.min.css

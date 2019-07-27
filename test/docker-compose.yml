@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     image: nginx:alpine
-    container_name: jelix_adminlte_web
+    container_name: jelix_adminui_web
     volumes:
       - "./docker-conf/nginx-default.conf:/etc/nginx/conf.d/default.conf"
       - "../:/jelixapp/"
@@ -11,6 +11,6 @@ services:
       - "8029:80"
   php:
     build: ./docker-conf/phpfpm
-    container_name: jelix_adminlte_php
+    container_name: jelix_adminui_php
     volumes:
       - "../:/jelixapp/"

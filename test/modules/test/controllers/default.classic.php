@@ -13,7 +13,7 @@ class defaultCtrl extends jController {
     function index() {
         $rep = $this->getResponse('html');
         $tpl = new jTpl();
-        $rep->body->assign('MAIN', $tpl->fetch('adminlte~blank'));
+        $rep->body->assign('MAIN', $tpl->fetch('adminui~blank'));
         return $rep;
     }
 }

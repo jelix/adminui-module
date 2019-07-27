@@ -8,9 +8,9 @@
 
 require_once (JELIX_LIB_PATH.'core/response/jResponseHtml.class.php');
 
-class adminlteResponse extends jResponseHtml {
+class adminuiResponse extends jResponseHtml {
 
-    public $bodyTpl = 'adminlte~main';
+    public $bodyTpl = 'adminui~main';
     public $IECompatibilityMode = 'IE=edge';
     protected $_MetaOldContentType = false;
     public $metaViewport = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
@@ -20,6 +20,6 @@ class adminlteResponse extends jResponseHtml {
         $this->title .= ($this->title !=''?'Admin':'');
 
         $this->body->assignIfNone('MAIN','<p>Empty page</p>');
-        $this->body->assignIfNone('page_title', 'AdminLte Test');
+        $this->body->assignIfNone('page_title', 'Admin');
     }
 }

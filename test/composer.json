@@ -1,7 +1,7 @@
 {
-    "name": "jelix/adminlte-test-app",
+    "name": "jelix/adminui-test-app",
     "type": "project",
-    "description": "app to test adminlte module",
+    "description": "app to test adminui module",
     "keywords": [],
     "license": "MIT",
     "authors": [
@@ -17,12 +17,6 @@
     "require-dev" : {
         
     },
-    "minimum-stability": "stable",
-    "extra" : {
-        "jelix" : {
-            "modules": [
-              "modules/adminlte"
-            ]
-        }
-    }
+    "minimum-stability": "stable"
+
 }

@@ -1,8 +1,8 @@
 {
-    "name": "jelix/adminlte-module",
+    "name": "jelix/adminui-module",
     "type": "jelix-module",
-    "description": "module for a jelix application providing an admin interface made with AdminLte",
-    "keywords": ["admin", "module", "adminlte"],
+    "description": "module for a jelix application providing an admin interface made with the AdminLte theme. Other theme can be made",
+    "keywords": ["admin", "module", "adminui", "adminlte"],
     "license": "MIT",
     "authors": [
         {

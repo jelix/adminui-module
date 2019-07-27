@@ -1,11 +1,9 @@
 <?php
 /**
-* @package   test
-* @subpackage adminlte
-* @author    test
+* @author    Laurent Jouanneau
 * @copyright 2019 Laurent Jouanneau and other contributors
 * @link      
-* @license    All rights reserved
+* @license    MIT
 */
 
 class defaultCtrl extends jController {
