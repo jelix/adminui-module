@@ -19,10 +19,10 @@ class JelixLink extends Link {
 
     protected $label;
 
-    function __construct($selector, $parameters, $label) {
+    function __construct($selector, $parameters, $label, $newWindow = false) {
         $this->selector = $selector;
         $this->parameters = $parameters;
-        parent::__construct('', $label);
+        parent::__construct('', $label, $newWindow);
     }
 
     function getUrl() {

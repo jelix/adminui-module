@@ -16,9 +16,13 @@ class Link {
     protected $url;
 
     protected $label;
-    function __construct($url, $label) {
+
+    protected $newWindow = false;
+
+    function __construct($url, $label, $newWindow = false) {
         $this->url = $url;
         $this->label = $label;
+        $this->newWindow = $newWindow;
     }
 
     function getUrl() {
@@ -26,5 +30,20 @@ class Link {
     }
     function getLabel() {
         return $this->label;
+    }
+
+
+    function toNewWindow() {
+        return $this->newWindow;
+    }
+
+    function __toString()
+    {
+        $l = '<a href="'.$this->getUrl().'"';
+        if ($this->toNewWindow()) {
+            $l .= ' target="_blank"';
+        }
+        $l .= '>'.$this->getLabel().'</a>';
+        return $l;
     }
 }
