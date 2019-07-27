@@ -12,6 +12,6 @@
         <jelix minversion="1.7.0-rc.3" maxversion="1.7.*"/>
     </dependencies>
     <autoload>
-        <psr4 namespace="\Jelix\AdminUi\" dir="lib"/>
+        <psr4 namespace="\Jelix\AdminUI\" dir="lib"/>
     </autoload>
 </module>

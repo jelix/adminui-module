@@ -22,6 +22,10 @@
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    {foreach $navbar->getItems() as $items}
+                        {$items}
+                    {/foreach}
+
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">

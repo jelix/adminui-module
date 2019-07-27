@@ -15,7 +15,21 @@ class adminuiResponse extends jResponseHtml {
     protected $_MetaOldContentType = false;
     public $metaViewport = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
 
-    protected function doAfterActions(){
+    protected $uiManager = null;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->uiManager = new \Jelix\AdminUI\UIManager();
+    }
+
+    public function getUIManager() {
+        return $this->uiManager;
+    }
+
+    protected function doAfterActions() {
+
+        jEvent::notify('adminui.loading', array('uiManager'=> $this->uiManager));
 
         $confAdminUI = \jApp::config()->adminui;
         $this->title .= ($this->title !=''?'Admin':'');
@@ -28,5 +42,6 @@ class adminuiResponse extends jResponseHtml {
         $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
         $this->body->assignIfNone('appVersion', $confAdminUI['appVersion']);
         $this->body->assignIfNone('breadcrumb', array());
+        $this->body->assign('navbar', $this->uiManager->navbar());
     }
 }
