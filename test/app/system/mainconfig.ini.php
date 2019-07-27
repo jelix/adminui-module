@@ -99,9 +99,12 @@ adminlte.css[]=adminlte-assets/SourceSansPro/SourceSansPro.css
 adminlte.js[]=adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
 adminlte.js[]=adminlte-assets/bower_components/fastclick/lib/fastclick.js
 adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
+adminlte.js[]=adminlte-assets/adminui.js
 ;adminlte.include=
 
-
-
-[session]
-storage=
+[adminui]
+appVersion=1.2.3
+cssBodyClass="hold-transition skin-blue sidebar-mini"
+htmlLogo="<b>Admin</b>UI"
+htmlLogoMini="<b>A</b>UI"
+htmlCopyright="<strong>Copyright &copy; 2019 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."

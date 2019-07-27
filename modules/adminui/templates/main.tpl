@@ -1,5 +1,4 @@
 {meta_html assets 'adminlte'}
-{meta_html bodyattr array('class'=>'hold-transition skin-blue sidebar-mini')}
 
 <div class="wrapper">
 
@@ -7,9 +6,9 @@
         <!-- Logo -->
         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini">{$appHtmlLogoMini}</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg">{$appHtmlLogo}</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -208,16 +207,43 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {$page_title|eschtml}
+                {if $sub_page_title}<small>{$sub_page_title|eschtml}</small>{/if}
+            </h1>
+            {if $breadcrumb}
+            <ol class="breadcrumb">
+                {foreach $breadcrumb as $item}
+                <li><a href="{$item['url']}">{if isset($item['icon-class'])}<i class="fa fa-dashboard"></i>{/if} {$item['label']}</a></li>
+                {/foreach}
+                <li class="active">{$page_title|eschtml}</li>
+            </ol>
+            {/if}
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
         {$MAIN}
+
+        </section>
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
+    <footer class="main-footer text-center">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.13
+             <a href="https://adminlte.io">AdminLTE</a> Theme
         </div>
-        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-        reserved.
+        {if $appHtmlCopyright}
+        <div class="pull-left hidden-xs">
+            {$appHtmlCopyright}
+        </div>
+        {/if}
+        {if $appVersion}
+            <b>Version</b> {$appVersion|eschtml}
+        {/if}
     </footer>
 
     <!-- Control Sidebar -->
@@ -416,9 +442,3 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<script>{literal}
-    $(document).ready(function () {
-        $('.sidebar-menu').tree()
-    })
-{/literal}</script>

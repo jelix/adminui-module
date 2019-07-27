@@ -18,10 +18,13 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
         // TODO
         // ask how www files should be copied, as the jelix module does (wwwfiles param)
         // setup config:
+        //      theme=adminlte
         //      [responses]
         //      html="module:adminui~adminuiResponse"
         //      [webassets_common]
         //      .. all web assets...
+        //      [adminui]
+        //      ...
 
     }
 }

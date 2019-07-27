@@ -17,9 +17,16 @@ class adminuiResponse extends jResponseHtml {
 
     protected function doAfterActions(){
 
+        $confAdminUI = \jApp::config()->adminui;
         $this->title .= ($this->title !=''?'Admin':'');
-
+        $this->bodyTagAttributes['class'] = $confAdminUI['cssBodyClass'];
         $this->body->assignIfNone('MAIN','<p>Empty page</p>');
         $this->body->assignIfNone('page_title', 'Admin');
+        $this->body->assignIfNone('sub_page_title', '');
+        $this->body->assignIfNone('appHtmlLogo', $confAdminUI['htmlLogo']);
+        $this->body->assignIfNone('appHtmlLogoMini', $confAdminUI['htmlLogoMini']);
+        $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
+        $this->body->assignIfNone('appVersion', $confAdminUI['appVersion']);
+        $this->body->assignIfNone('breadcrumb', array());
     }
 }
