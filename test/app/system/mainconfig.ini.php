@@ -95,7 +95,7 @@ adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
 adminlte.css[]=adminlte-assets/bower_components/Ionicons/css/ionicons.min.css
 adminlte.css[]=adminlte-assets/dist/css/AdminLTE.min.css
 adminlte.css[]=adminlte-assets/dist/css/skins/_all-skins.min.css
-adminlte.css[]="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+adminlte.css[]=adminlte-assets/SourceSansPro/SourceSansPro.css
 adminlte.js[]=adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
 adminlte.js[]=adminlte-assets/bower_components/fastclick/lib/fastclick.js
 adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
