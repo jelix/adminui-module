@@ -13,17 +13,33 @@ class UIManager {
     /**
      * @var  NavBar $navbar
      */
-    protected $navbar;
+    protected $_navbar;
+
+    /**
+     * @var  SideBar $navbar
+     */
+    protected $_sidebar;
 
     function __construct()
     {
-        $this->navbar = new NavBar();
+        $this->_navbar = new NavBar();
+        $this->_sidebar = new SideBar();
     }
 
     /**
      * @return NavBar
      */
     function navbar() {
-        return $this->navbar;
+        return $this->_navbar;
     }
+
+
+    /**
+     * @return SideBar
+     */
+    function sidebar() {
+        return $this->_sidebar;
+    }
+
+
 }

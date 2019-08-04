@@ -43,5 +43,6 @@ class adminuiResponse extends jResponseHtml {
         $this->body->assignIfNone('appVersion', $confAdminUI['appVersion']);
         $this->body->assignIfNone('breadcrumb', array());
         $this->body->assign('navbar', $this->uiManager->navbar());
+        $this->body->assign('sidebar', $this->uiManager->sidebar());
     }
 }

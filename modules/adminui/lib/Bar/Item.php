@@ -6,7 +6,7 @@
  * @licence MIT
  */
 
-namespace Jelix\AdminUI\NavBar;
+namespace Jelix\AdminUI\Bar;
 
 
 abstract class Item {

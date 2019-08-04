@@ -7,6 +7,8 @@
  */
 
 use Jelix\AdminUI\Link;
+use Jelix\AdminUI\SideBar\SubMenu;
+use Jelix\AdminUI\SideBar\UrlMenuItem;
 
 class adminuiListener extends jEventListener
 {
@@ -35,5 +37,45 @@ class adminuiListener extends jEventListener
         $menu->addLink(new Link('https://mozilla.org', 'Mozilla', true));
         $menu->addLink(new Link('https://php.net', 'PHP', true));
         $uim->navbar()->addItem($menu);
+
+        $navigation = new SubMenu('nav', 'Navigation', 10);
+        $dashboard = new SubMenu('dashboard', 'Dashboard', 10);
+        $dashboard->setIcon('dashboard');
+        $dashboard->addItemUrl('Dashboard v1', '#dash1', 'circle-o');
+        $dashboard->addItemUrl('Dashboard v2', '#dash2', 'circle-o');
+        $navigation->addMenuItem($dashboard);
+
+        $layout = new SubMenu('layout', 'Layout Options', 20);
+        $layout->setIcon('files-o');
+        $layout->addItemUrl('Top Navigation', '#top-nav', 'circle-o');
+        $layout->addItemUrl('Boxed', '#boxed', 'circle-o');
+        $layout->addItemUrl('Fixed', '#fixed', 'circle-o');
+        $layout->addItemUrl('Collapsed Sidebar', '#collapsed-sidebar', 'circle-o');
+        $navigation->addMenuItem($layout);
+
+        $navigation->addItemUrl('Widgets', '#widgets', 'th')->setOrder(30);
+
+        $multilevel =  new SubMenu('multilevel', 'Multilevel', 40);
+        $multilevel->setIcon('share');
+        $multilevel->addItemUrl('Level One 1', '#', 'circle-o')->setOrder(10);
+            $levelone =  new SubMenu('levelone', 'Level One 2', 20);
+            $levelone->setIcon('circle-o');
+            $levelone->addItemUrl('Level Two 1', '#', 'circle-o')->setOrder(10);
+                $leveltwo =  new SubMenu('leveltwo', 'Level Two 2', 20);
+                $leveltwo->setIcon('circle-o');
+                $leveltwo->addItemUrl('Level three 1', '#', 'circle-o')->setOrder(10);
+                $item = $leveltwo->addItemUrl('Level three 2', '#', 'circle-o');
+                $item->setOrder(20);
+                $item->setActive();
+                $leveltwo->addItemUrl('Level three 3', '#', 'circle-o')->setOrder(30);
+            $levelone->addMenuItem($leveltwo);
+        $multilevel->addMenuItem($levelone);
+        $multilevel->addItemUrl('Level One 3', '#', 'circle-o')->setOrder(30);
+
+        $navigation->addMenuItem($multilevel);
+
+        $uim->sidebar()->addMenuItem($navigation);
+
+        $uim->sidebar()->getSubMenu('system')->addItemUrl('Configuration', '#');
     }
 }

@@ -9,6 +9,7 @@
 namespace Jelix\AdminUI\NavBar;
 
 use Jelix\AdminUI\Link;
+use Jelix\AdminUI\Bar\Item;
 
 class DropDown extends Item {
 
