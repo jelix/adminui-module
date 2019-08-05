@@ -25,6 +25,6 @@ class DropDownMenu extends DropDown {
     public function __toString()
     {
         $this->tpl->assign('links', $this->links);
-        return $this->tpl->fetch($this->templateSelector);
+        return parent::__toString();
     }
 }

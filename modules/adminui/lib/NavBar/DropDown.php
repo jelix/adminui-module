@@ -8,14 +8,20 @@
 
 namespace Jelix\AdminUI\NavBar;
 
+use Jelix\AdminUI\Bar\BadgePillTrait;
 use Jelix\AdminUI\Link;
 use Jelix\AdminUI\Bar\Item;
 
 class DropDown extends Item {
 
-    const COUNTER_TYPE_OK = "ok";
-    const COUNTER_TYPE_WARNING = "warning";
-    const COUNTER_TYPE_ERROR = "error";
+    use BadgePillTrait;
+
+    const BADGE_PILL_PRIMARY = 'primary';
+    const BADGE_PILL_SECONDARY = 'secondary';
+    const BADGE_PILL_SUCCESS = 'success';
+    const BADGE_PILL_DANGER = 'danger';
+    const BADGE_PILL_WARNING = 'warning';
+    const BADGE_PILL_INFO = 'info';
 
     const ICON_ENVELOPE = "envelope";
 
@@ -44,11 +50,6 @@ class DropDown extends Item {
         ));
     }
 
-    function setCounter($count, $type) {
-        $this->tpl->assign('counter', $count);
-        $this->tpl->assign('counter_type', $type);
-    }
-
     function setHeader($header) {
         $this->tpl->assign('header', $header);
     }
@@ -73,6 +74,7 @@ class DropDown extends Item {
 
     public function __toString()
     {
+        $this->tpl->assign('badgePills', $this->badgePills);
         return $this->tpl->fetch($this->templateSelector);
     }
 }

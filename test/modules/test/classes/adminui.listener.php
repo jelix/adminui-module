@@ -25,7 +25,7 @@ class adminuiListener extends jEventListener
         $uim = $event->uiManager;
 
         $item = new \Jelix\AdminUI\NavBar\DropDown('foo', 'bookmark-o', 20);
-        $item->setCounter(17, $item::COUNTER_TYPE_OK);
+        $item->setBadgePill(17, $item::BADGE_PILL_SUCCESS);
         $item->setHeader('super foo');
         $item->setFooter(new Link('https://jelix.org', 'Go to Jelix.org'));
         $item->setContent('<p>Hello world</p>');
@@ -47,17 +47,24 @@ class adminuiListener extends jEventListener
 
         $layout = new SubMenu('layout', 'Layout Options', 20);
         $layout->setIcon('files-o');
+        $layout->setBadgePill(4);
         $layout->addLinkItem('Top Navigation', '#top-nav', 'circle-o');
         $layout->addLinkItem('Boxed', '#boxed', 'circle-o');
         $layout->addLinkItem('Fixed', '#fixed', 'circle-o');
         $layout->addLinkItem('Collapsed Sidebar', '#collapsed-sidebar', 'circle-o');
         $navigation->addMenuItem($layout);
 
-        $navigation->addLinkItem('Widgets', '#widgets', 'th')->setOrder(30);
+        $widget = $navigation->addLinkItem('Widgets', '#widgets', 'th');
+        $widget->setOrder(30);
+        $widget->setBadgePill('new', $widget::BADGE_PILL_SUCCESS);
 
         $multilevel =  new SubMenu('multilevel', 'Multilevel', 40);
         $multilevel->setIcon('share');
-        $multilevel->addLinkItem('Level One 1', '#', 'circle-o')->setOrder(10);
+        $level1 = $multilevel->addLinkItem('Level One 1', '#', 'circle-o');
+        $level1->setOrder(10);
+        $level1->setBadgePill('5', $widget::BADGE_PILL_SUCCESS, 'a');
+        $level1->setBadgePill('8', $widget::BADGE_PILL_WARNING, 'b');
+        $level1->setBadgePill('2', $widget::BADGE_PILL_DANGER, 'c');
             $levelone =  new SubMenu('levelone', 'Level One 2', 20);
             $levelone->setIcon('circle-o');
             $levelone->addLinkItem('Level Two 1', '#', 'circle-o')->setOrder(10);

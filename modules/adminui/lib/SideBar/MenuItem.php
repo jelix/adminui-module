@@ -8,8 +8,13 @@
 
 namespace Jelix\AdminUI\SideBar;
 
+use Jelix\AdminUI\Bar\BadgePillTrait;
+
 abstract class MenuItem
 {
+
+    use BadgePillTrait;
+
     protected $id = '';
     protected $label = '';
     protected $type = 'content';
@@ -17,6 +22,14 @@ abstract class MenuItem
     protected $icon = '';
 
     protected $active = null;
+
+
+    const BADGE_PILL_PRIMARY = 'primary';
+    const BADGE_PILL_SECONDARY = 'secondary';
+    const BADGE_PILL_SUCCESS = 'success';
+    const BADGE_PILL_DANGER = 'danger';
+    const BADGE_PILL_WARNING = 'warning';
+    const BADGE_PILL_INFO = 'info';
 
     public function __construct($id, $label, $icon = '', $order = 0)
     {
