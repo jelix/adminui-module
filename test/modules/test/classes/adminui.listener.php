@@ -8,7 +8,7 @@
 
 use Jelix\AdminUI\Link;
 use Jelix\AdminUI\SideBar\SubMenu;
-use Jelix\AdminUI\SideBar\UrlMenuItem;
+use Jelix\AdminUI\SideBar\LinkMenuItem;
 
 class adminuiListener extends jEventListener
 {
@@ -41,41 +41,41 @@ class adminuiListener extends jEventListener
         $navigation = new SubMenu('nav', 'Navigation', 10);
         $dashboard = new SubMenu('dashboard', 'Dashboard', 10);
         $dashboard->setIcon('dashboard');
-        $dashboard->addItemUrl('Dashboard v1', '#dash1', 'circle-o');
-        $dashboard->addItemUrl('Dashboard v2', '#dash2', 'circle-o');
+        $dashboard->addJelixLinkItem('index test', 'test~default:index', array(), 'circle-o');
+        $dashboard->addJelixLinkItem('index adminui', 'adminui~default:index', array(),'circle-o');
         $navigation->addMenuItem($dashboard);
 
         $layout = new SubMenu('layout', 'Layout Options', 20);
         $layout->setIcon('files-o');
-        $layout->addItemUrl('Top Navigation', '#top-nav', 'circle-o');
-        $layout->addItemUrl('Boxed', '#boxed', 'circle-o');
-        $layout->addItemUrl('Fixed', '#fixed', 'circle-o');
-        $layout->addItemUrl('Collapsed Sidebar', '#collapsed-sidebar', 'circle-o');
+        $layout->addLinkItem('Top Navigation', '#top-nav', 'circle-o');
+        $layout->addLinkItem('Boxed', '#boxed', 'circle-o');
+        $layout->addLinkItem('Fixed', '#fixed', 'circle-o');
+        $layout->addLinkItem('Collapsed Sidebar', '#collapsed-sidebar', 'circle-o');
         $navigation->addMenuItem($layout);
 
-        $navigation->addItemUrl('Widgets', '#widgets', 'th')->setOrder(30);
+        $navigation->addLinkItem('Widgets', '#widgets', 'th')->setOrder(30);
 
         $multilevel =  new SubMenu('multilevel', 'Multilevel', 40);
         $multilevel->setIcon('share');
-        $multilevel->addItemUrl('Level One 1', '#', 'circle-o')->setOrder(10);
+        $multilevel->addLinkItem('Level One 1', '#', 'circle-o')->setOrder(10);
             $levelone =  new SubMenu('levelone', 'Level One 2', 20);
             $levelone->setIcon('circle-o');
-            $levelone->addItemUrl('Level Two 1', '#', 'circle-o')->setOrder(10);
+            $levelone->addLinkItem('Level Two 1', '#', 'circle-o')->setOrder(10);
                 $leveltwo =  new SubMenu('leveltwo', 'Level Two 2', 20);
                 $leveltwo->setIcon('circle-o');
-                $leveltwo->addItemUrl('Level three 1', '#', 'circle-o')->setOrder(10);
-                $item = $leveltwo->addItemUrl('Level three 2', '#', 'circle-o');
+                $leveltwo->addLinkItem('Level three 1', '#', 'circle-o')->setOrder(10);
+                $item = $leveltwo->addLinkItem('Level three 2', '#', 'circle-o');
                 $item->setOrder(20);
-                $item->setActive();
-                $leveltwo->addItemUrl('Level three 3', '#', 'circle-o')->setOrder(30);
+                //$item->setActive();
+                $leveltwo->addLinkItem('Level three 3', '#', 'circle-o')->setOrder(30);
             $levelone->addMenuItem($leveltwo);
         $multilevel->addMenuItem($levelone);
-        $multilevel->addItemUrl('Level One 3', '#', 'circle-o')->setOrder(30);
+        $multilevel->addLinkItem('Level One 3', '#', 'circle-o')->setOrder(30);
 
         $navigation->addMenuItem($multilevel);
 
         $uim->sidebar()->addMenuItem($navigation);
 
-        $uim->sidebar()->getSubMenu('system')->addItemUrl('Configuration', '#');
+        $uim->sidebar()->getSubMenu('system')->addLinkItem('Configuration', '#');
     }
 }

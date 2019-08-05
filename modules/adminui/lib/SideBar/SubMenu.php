@@ -72,10 +72,16 @@ class SubMenu extends MenuItem
      * @param string $label
      * @param string $url
      * @param string $icon
-     * @return UrlMenuItem
+     * @return LinkMenuItem
      */
-    function addItemUrl($label, $url, $icon = '') {
-        $url = new UrlMenuItem($label, $url, $icon, count($this->childItems));
+    function addLinkItem($label, $url, $icon = '') {
+        $url = new LinkMenuItem($label, $url, $icon, count($this->childItems));
+        $this->childItems[] = $url;
+        return $url;
+    }
+
+    function addJelixLinkItem($label, $selector, $parameters, $icon = '') {
+        $url = new JelixLinkMenuItem($label, $selector, $parameters, $icon, count($this->childItems));
         $this->childItems[] = $url;
         return $url;
     }
@@ -86,7 +92,7 @@ class SubMenu extends MenuItem
      * @param string $icon
      * @return HtmlMenuItem
      */
-    function addItemHtml($label, $html, $icon = '') {
+    function addHtmlItem($label, $html, $icon = '') {
         $item = new HtmlMenuItem($label, $html, $icon, count($this->childItems));
         $this->childItems[] = $item;
         return $item;

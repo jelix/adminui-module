@@ -8,7 +8,7 @@
 
 namespace Jelix\AdminUI\SideBar;
 
-class UrlMenuItem extends MenuItem
+class LinkMenuItem extends MenuItem
 {
     protected $type = 'url';
     protected $newWindow = false;
