@@ -20,10 +20,11 @@
                     {foreach $navbar->getItems() as $items}
                         {$items}
                     {/foreach}
-
+                    {if $controlSidebar->hasPanels()}
                     <li>
                         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                     </li>
+                    {/if}
                 </ul>
             </div>
         </nav>
@@ -73,24 +74,24 @@
             <b>Version</b> {$appVersion|eschtml}
         {/if}
     </footer>
-
+    {if $controlSidebar->hasPanels()}
     <aside class="control-sidebar control-sidebar-dark">
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            {foreach $controlSidebar->getPanels() as $panel}
+                <li><a href="#control-sidebar-{$panel->getId()}-tab" data-toggle="tab" title="{$panel->getLabel()|eschtml}">
+                        {if $panel->getIcon()}<i class="fa fa-{$panel->getIcon()}"></i>{else}{$panel->getLabel()|eschtml}{/if}</a></li>
+            {/foreach}
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" id="control-sidebar-home-tab">
-
+            {foreach $controlSidebar->getPanels() as $panel}
+            <div class="tab-pane" id="control-sidebar-{$panel->getId()}-tab">
+                {$panel->getContent()}
             </div>
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-
-            </div>
+            {/foreach}
         </div>
     </aside>
     {* Add the sidebar's background. This div must be placed
          immediately after the control sidebar *}
     <div class="control-sidebar-bg"></div>
+    {/if}
 </div>

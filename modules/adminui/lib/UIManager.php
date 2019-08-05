@@ -20,10 +20,16 @@ class UIManager {
      */
     protected $_sidebar;
 
+    /**
+     * @var ControlSideBar
+     */
+    protected $_controlSidebar;
+
     function __construct()
     {
         $this->_navbar = new NavBar();
         $this->_sidebar = new SideBar();
+        $this->_controlSidebar = new ControlSideBar();
     }
 
     /**
@@ -41,5 +47,11 @@ class UIManager {
         return $this->_sidebar;
     }
 
+    /**
+     * @return ControlSideBar
+     */
+    function controlSidebar() {
+        return $this->_controlSidebar;
+    }
 
 }

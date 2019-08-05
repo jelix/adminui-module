@@ -15,7 +15,10 @@ class adminuiResponse extends jResponseHtml {
     protected $_MetaOldContentType = false;
     public $metaViewport = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
 
-    protected $uiManager = null;
+    /**
+     * @var \Jelix\AdminUI\UIManager
+     */
+    protected $uiManager;
 
     public function __construct()
     {
@@ -44,5 +47,6 @@ class adminuiResponse extends jResponseHtml {
         $this->body->assignIfNone('breadcrumb', array());
         $this->body->assign('navbar', $this->uiManager->navbar());
         $this->body->assign('sidebar', $this->uiManager->sidebar());
+        $this->body->assign('controlSidebar', $this->uiManager->controlSidebar());
     }
 }

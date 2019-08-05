@@ -9,6 +9,7 @@
 use Jelix\AdminUI\Link;
 use Jelix\AdminUI\SideBar\SubMenu;
 use Jelix\AdminUI\SideBar\LinkMenuItem;
+use Jelix\AdminUI\ControlSideBar\Panel;
 
 class adminuiListener extends jEventListener
 {
@@ -91,5 +92,15 @@ class adminuiListener extends jEventListener
         $uim->sidebar()->addMenuItem($navigation);
 
         $uim->sidebar()->getSubMenu('system')->addLinkItem('Configuration', '#');
+
+
+        $tpl = new jTpl();
+        $prefPanel = new Panel('settings', 'Settings', 'gears', 10);
+        $prefPanel->setContent($tpl->fetch('test~control_sidebar_settings'));
+        $uim->controlSidebar()->addPanel($prefPanel);
+
+        $homePanel = new Panel('home', 'Activity', 'home', 5);
+        $homePanel->setContent($tpl->fetch('test~control_sidebar_activity'));
+        $uim->controlSidebar()->addPanel($homePanel);
     }
 }
