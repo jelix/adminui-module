@@ -41,14 +41,14 @@ class DropDown extends Item {
         $this->tpl->assign('icon', $icon);
         $this->tpl->assign('label', $label);
         $this->tpl->assign(array(
-            'counter'=>null,
-            'counter_type'=>'',
             'header' => '',
             'content' => '',
             'footer' => '',
             'footerLink' => null,
         ));
     }
+
+
 
     function setHeader($header) {
         $this->tpl->assign('header', $header);

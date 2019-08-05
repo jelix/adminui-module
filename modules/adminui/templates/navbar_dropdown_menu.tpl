@@ -1,7 +1,7 @@
 {assign $badgeclass=array('primary'=>'label-primary','secondary'=>'label-default','success'=>'label-success','danger'=>'label-danger','warning'=>'label-warning','info'=>'label-info',)}
 
 <li class="dropdown notifications-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$label|eschtml}">
         <i class="fa fa-{$icon}"></i>
         {foreach $badgePills as $badge}
             <small class="label {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</small>

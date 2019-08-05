@@ -96,6 +96,7 @@ adminlte.css[]=adminlte-assets/bower_components/Ionicons/css/ionicons.min.css
 adminlte.css[]=adminlte-assets/dist/css/AdminLTE.min.css
 adminlte.css[]=adminlte-assets/dist/css/skins/_all-skins.min.css
 adminlte.css[]=adminlte-assets/SourceSansPro/SourceSansPro.css
+adminlte.css[]=adminlte-assets/adminui.css
 adminlte.js[]=adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
 adminlte.js[]=adminlte-assets/bower_components/fastclick/lib/fastclick.js
 adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
