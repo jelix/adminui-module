@@ -40,7 +40,20 @@ class DropDownMessages extends DropDownMenu {
 
     public function __toString()
     {
-        $this->setBadgePill(count($this->links), self::BADGE_PILL_SUCCESS);
+        $count = count($this->links);
+        if ($count) {
+            $this->setBadgePill(count($this->links), self::BADGE_PILL_SUCCESS);
+            if ($count == 1) {
+                $this->setHeader(\jLocale::get('adminui~ui.header.messages.count.one'));
+            }
+            else {
+                $this->setHeader(\jLocale::get('adminui~ui.header.messages.counts', $count));
+            }
+        }
+        else {
+            $this->setHeader(\jLocale::get('adminui~ui.header.messages.count.none'));
+        }
+
         return parent::__toString();
     }
 }

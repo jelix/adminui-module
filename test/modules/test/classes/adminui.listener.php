@@ -109,5 +109,13 @@ class adminuiListener extends jEventListener
         $messagesMenu->createAddMessage('first subject', '#firstmsg', '2019-08-01 10:30', 'Laurent');
         $messagesMenu->createAddMessage('second subject', '#secondmsg', '2019-08-02 15:30', 'Dave');
         $messagesMenu->createAddMessage('third subject', '#thirdmsg', '2019-08-05 18:10', 'Mickael');
+
+        $notifications = new \Jelix\AdminUI\NavBar\DropDownNotifications('#notifs');
+        $uim->navbar()->addItem($notifications);
+        $notifications->addLink(new Link('#firstnotif', 'first notification'));
+        $notifications->addLink(new Link('#secondnotif', 'second notification'));
+        $notifications->addLink(new Link('#thirdnotif', 'third notification'));
+        $notifications->addLink(new Link('#fournotif', 'notification number four'));
+
     }
 }
