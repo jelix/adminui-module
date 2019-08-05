@@ -19,12 +19,17 @@ class DropDownMenu extends DropDown {
 
     protected $templateSelector = 'adminui~navbar_dropdown_menu';
 
+    protected $cssClass = 'notifications-menu';
+
+
     function addLink(Link $link) {
         $this->links[] = $link;
     }
+
     public function __toString()
     {
         $this->tpl->assign('links', $this->links);
+        $this->tpl->assign('dropdownCssClass', $this->cssClass);
         return parent::__toString();
     }
 }

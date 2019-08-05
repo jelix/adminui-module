@@ -102,5 +102,12 @@ class adminuiListener extends jEventListener
         $homePanel = new Panel('home', 'Activity', 'home', 5);
         $homePanel->setContent($tpl->fetch('test~control_sidebar_activity'));
         $uim->controlSidebar()->addPanel($homePanel);
+
+        $messagesMenu = new \Jelix\AdminUI\NavBar\DropDownMessages('#messages');
+        $uim->navbar()->addItem($messagesMenu);
+
+        $messagesMenu->createAddMessage('first subject', '#firstmsg', '2019-08-01 10:30', 'Laurent');
+        $messagesMenu->createAddMessage('second subject', '#secondmsg', '2019-08-02 15:30', 'Dave');
+        $messagesMenu->createAddMessage('third subject', '#thirdmsg', '2019-08-05 18:10', 'Mickael');
     }
 }

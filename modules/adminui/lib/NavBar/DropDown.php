@@ -23,7 +23,9 @@ class DropDown extends Item {
     const BADGE_PILL_WARNING = 'warning';
     const BADGE_PILL_INFO = 'info';
 
-    const ICON_ENVELOPE = "envelope";
+    const ICON_ENVELOPE = "envelope-o";
+    const ICON_NOTIFICATION = "bell-o";
+    const ICON_tasks = "flag-o";
 
     protected $tpl;
 
