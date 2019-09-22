@@ -32,6 +32,7 @@ adminui.installparam[wwwfiles]=vhost
 
 [responses]
 html="module:adminui~adminuiResponse"
+htmlerror="module:adminui~adminuiResponse"
 
 
 [error_handling]
@@ -66,8 +67,7 @@ multiview=off
 basePath=
 
 ; leave empty to have jelix error messages
-notfoundAct=
-;notfoundAct = "jelix~error:notfound"
+notfoundAct="jelix~error:notfound"
 
 jelixWWWPath="jelix/"
 
