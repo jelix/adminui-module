@@ -33,7 +33,7 @@ adminui.installparam[wwwfiles]=vhost
 [responses]
 html="module:adminui~adminuiResponse"
 htmlerror="module:adminui~adminuiResponse"
-
+htmllogin="module:adminui~adminuiBareResponse"
 
 [error_handling]
 messageLogFormat="%date%\t%ip%\t[%code%]\t%msg%\n\tat: %file%\t%line%\n\turl: %url%\n\t%http_method%: %params%\n\treferer: %referer%\n%trace%\n\n"

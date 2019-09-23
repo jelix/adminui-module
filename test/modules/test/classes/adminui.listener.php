@@ -42,7 +42,7 @@ class adminuiListener extends jEventListener
 
         $accountMenu = $uim->navbar()->accountMenu();
         //$accountMenu->setNotAuthenticated('#signin');
-        $accountMenu->setAuthenticated('laurentj', 'Laurent Jouanneau', '#signout', '#profile');
+        $accountMenu->setAuthenticated('laurentj', 'Laurent Jouanneau', jUrl::get('test~default:login'), '#profile');
         //$accountMenu->setAuthenticated('laurentj', 'Laurent Jouanneau', '#signout', '#profile', \jApp::urlBasePath().'adminlte-assets/dist/img/user2-160x160.jpg');
         $accountMenu->addLink(new Link('#prefs', 'Your preferences'));
 

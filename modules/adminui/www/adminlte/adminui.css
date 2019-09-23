@@ -31,3 +31,17 @@
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
     height:auto;
 }
+
+
+.login-box-body .error-page {
+    width:auto;
+}
+
+.login-box-body .error-page .headline{
+    float: none;
+}
+
+.login-box-body .error-content {
+    margin-left:0;
+}
+
