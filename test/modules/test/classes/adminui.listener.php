@@ -6,6 +6,9 @@
  * @licence MIT
  */
 
+use Jelix\AdminUI\Dashboard\HtmlBox;
+use Jelix\AdminUI\Dashboard\SmallBox;
+use Jelix\AdminUI\Dashboard\SmallBox2;
 use Jelix\AdminUI\Link;
 use Jelix\AdminUI\SideBar\SubMenu;
 use Jelix\AdminUI\SideBar\LinkMenuItem;
@@ -15,7 +18,8 @@ class adminuiListener extends jEventListener
 {
 
     protected $eventMapping = array(
-        'adminui.loading' => 'onAdminUILoading'
+        'adminui.loading' => 'onAdminUILoading',
+        'adminui.dashboard.loading' => 'onDashboardLoading'
     );
 
     /**
@@ -117,5 +121,30 @@ class adminuiListener extends jEventListener
         $notifications->addLink(new Link('#thirdnotif', 'third notification'));
         $notifications->addLink(new Link('#fournotif', 'notification number four'));
 
+    }
+
+    /**
+     * @param jEvent $event
+     */
+    function onDashboardLoading($event) {
+        /** @var Jelix\AdminUI\Dashboard\Items $dashboard */
+        $dashboard = $event->dashboardItems;
+        $dashboard->addBox(new SmallBox('neworder', 'New Orders', '150','#', 'ion-bag', 'bg-aqua'));
+        $dashboard->addBox(new SmallBox('bouncerate', 'Bounce Rate', '53%', '#', 'ion-stats-bars', 'bg-green'));
+        $dashboard->addBox(new SmallBox2('cpu', 'CPU Traffic', '90%', 'ion-ios-gear-outline', 'bg-red'));
+        $dashboard->addBox(new SmallBox2('sales', 'Sales', '760', 'ion-ios-cart-outline', 'bg-yellow'));
+        $dashboard->addBox(new SmallBox2('newmembers', 'New Members', '2,000', 'ion-ios-people-outline', 'bg-orange'));
+
+        $tpl = new jTpl();
+        $dashboard->addBox(new HtmlBox('chatbox', $tpl->fetch('test~dashboard_chatbox')));
+        $dashboard->addBox(new HtmlBox('quick_email', $tpl->fetch('test~dashboard_quick_email')));
+        $dashboard->addBox(new HtmlBox('tabs_custom', $tpl->fetch('test~dashboard_tabs_custom')));
+        $dashboard->addBox(new HtmlBox('todolist', $tpl->fetch('test~dashboard_todolist')));
+        $dashboard->addBox(new HtmlBox('calendar', $tpl->fetch('test~dashboard_calendar')));
+        $dashboard->addBox(new HtmlBox('map', $tpl->fetch('test~dashboard_map')));
+        $dashboard->addBox(new HtmlBox('sales_graph', $tpl->fetch('test~dashboard_sales_graph')));
+
+        $dashboard->addTemplate(new Jelix\AdminUI\Dashboard\Template('template2', 'test~dashboard_template2'));
+        $dashboard->addTemplate(new Jelix\AdminUI\Dashboard\Template('template3', 'test~dashboard_template3'));
     }
 }

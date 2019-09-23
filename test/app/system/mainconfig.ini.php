@@ -108,3 +108,5 @@ appVersion=1.2.3
 htmlLogo="<b>Admin</b>UI"
 htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2019 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
+
+dashboardTemplate="test~dashboard"
