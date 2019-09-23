@@ -59,6 +59,7 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
             'htmlCopyright' => '<strong>Copyright &copy; 2019 My Company.</strong>.',
+            'dashboardTemplate'=>''
         ), 'adminui');
 
     }

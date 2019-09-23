@@ -37,7 +37,7 @@ class Dashboard {
 
         $templates = $items->getTemplates();
         foreach($templates as $template) {
-            $content .= $tpl->fetch($template);
+            $content .= $tpl->fetch($template->getTemplate());
         }
 
         if ($this->smallBoxHeaderEnabled) {
