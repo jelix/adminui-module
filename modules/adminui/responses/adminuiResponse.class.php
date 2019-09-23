@@ -37,7 +37,6 @@ class adminuiResponse extends jResponseHtml {
 
         $confAdminUI = \jApp::config()->adminui;
         $this->title .= ($this->title !=''?'Admin':'');
-        $this->bodyTagAttributes['class'] = $confAdminUI['cssBodyClass'];
         $this->body->assignIfNone('page_title', 'Admin');
         $this->body->assignIfNone('sub_page_title', '');
         $this->body->assignIfNone('appHtmlLogo', $confAdminUI['htmlLogo']);

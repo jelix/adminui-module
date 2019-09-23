@@ -55,7 +55,6 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
         $configIni->setValues(array(
             'appVersion' => '1.0.0',
-            'cssBodyClass' => 'hold-transition skin-blue sidebar-mini',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
             'htmlCopyright' => '<strong>Copyright &copy; 2019 My Company.</strong>.',

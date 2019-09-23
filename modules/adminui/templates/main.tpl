@@ -1,5 +1,5 @@
 {meta_html assets 'adminlte'}
-
+{meta_html bodyattr array('class'=>"hold-transition skin-blue sidebar-mini")}
 <div class="wrapper">
 
     <header class="main-header">

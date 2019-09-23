@@ -105,7 +105,6 @@ adminlte.js[]=adminlte-assets/adminui.js
 
 [adminui]
 appVersion=1.2.3
-cssBodyClass="hold-transition skin-blue sidebar-mini"
 htmlLogo="<b>Admin</b>UI"
 htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2019 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
