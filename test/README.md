@@ -7,9 +7,6 @@ To launch containers:
 ```
 docker-compose build
 docker-compose up -d
-
-docker exec -t -i jelix_adminui_php appctl.sh
-
 ```
 
 You can execute some commands into the php container, by using this command:

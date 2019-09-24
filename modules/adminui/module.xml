@@ -9,7 +9,7 @@
         <author name="Laurent Jouanneau"/>
     </info>
     <dependencies>
-        <jelix minversion="1.7.2" maxversion="1.7.*"/>
+        <jelix minversion="1.7.2-pre" maxversion="1.7.*"/>
     </dependencies>
     <autoload>
         <psr4 namespace="\Jelix\AdminUI\" dir="lib"/>
