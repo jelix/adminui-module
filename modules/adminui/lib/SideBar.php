@@ -22,7 +22,7 @@ class SideBar extends Bar {
         if (!isset(\jApp::config()->adminui['disable_dashboard_menu']) ||
             !\jApp::config()->adminui['disable_dashboard_menu']
         ) {
-            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('default:index'), 'dashboard');
+            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'dashboard');
         }
 
         $crud = new SubMenu('crud', \jLocale::get('adminui~ui.menu.item.crud'), 70);
