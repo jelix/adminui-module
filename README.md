@@ -5,7 +5,7 @@ This is a module for Jelix, providing an interface for an administration applica
 It uses the [AdminLTE theme](https://adminlte.io/), and is entirely customizable
 through APIs.
 
-This module is for Jelix 1.7.x and higher.
+This module is for Jelix 1.7.2 and higher.
 
 Setting up the module
 =====================
