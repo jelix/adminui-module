@@ -84,29 +84,29 @@ mailerType=file
 email="root@localhost"
 
 [webassets_common]
+jquery.js="adminlte-assets/plugins/jquery/jquery.js'
+adminlte-bootstrap.require=jquery,jquery_ui
+adminlte-bootstrap.css[]=adminlte-assets/plugins/bootstrap/dist/css/bootstrap.min.css
+adminlte-bootstrap.js[]=adminlte-assets/plugins/bootstrap/js/bootstrap.bundle.min.js
 
-adminlte-bootstrap.require=jquery
-adminlte-bootstrap.css[]=adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css
-adminlte-bootstrap.js[]=adminlte-assets/bower_components/bootstrap/dist/js/bootstrap.min.js
-
-adminlte-fontawesome.css[]=adminlte-assets/bower_components/font-awesome/css/font-awesome.min.css
+adminlte-fontawesome.css[]=adminlte-assets/plugins/fontawesome-free/css/all.min.css
 
 adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
-adminlte.css[]=adminlte-assets/bower_components/Ionicons/css/ionicons.min.css
-adminlte.css[]=adminlte-assets/dist/css/AdminLTE.min.css
-adminlte.css[]=adminlte-assets/dist/css/skins/_all-skins.min.css
-adminlte.css[]=adminlte-assets/SourceSansPro/SourceSansPro.css
-adminlte.css[]=adminlte-assets/adminui.css
-adminlte.js[]=adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
-adminlte.js[]=adminlte-assets/bower_components/fastclick/lib/fastclick.js
+adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
+adminlte.css[]=adminlte-assets/dist/css/adminlte.min.css
+adminlte.css[]=adminui-assets/SourceSansPro/SourceSansPro.css
+adminlte.css[]=adminui-assets/adminui.css
+adminlte.js[]=adminlte-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js
+adminlte.js[]=adminlte-assets/plugins/jquery-mousewheel/jquery.mousewheel.js
+adminlte.js[]=adminlte-assets/plugins/fastclick/fastclick.js
 adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
-adminlte.js[]=adminlte-assets/adminui.js
+adminlte.js[]=adminui-assets/adminui.js
 ;adminlte.include=
 
 [adminui]
 appVersion=1.2.3
 htmlLogo="<b>Admin</b>UI"
 htmlLogoMini="<b>A</b>UI"
-htmlCopyright="<strong>Copyright &copy; 2019 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
+htmlCopyright="<strong>Copyright &copy; 2019-2022 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 
 dashboardTemplate="test~dashboard"

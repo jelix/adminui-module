@@ -12,8 +12,13 @@ class adminuiModuleInstaller extends \Jelix\Installer\Module\Installer {
     function install(\Jelix\Installer\Module\API\InstallHelpers $helpers) {
         $helpers->setupModuleWebFiles(
             $this->getParameter('wwwfiles'),
-            'adminlte',
-            __DIR__.'/../www/adminlte'
+            'adminui-assets',
+            __DIR__ . '/../www/adminui-assets'
+        );
+        $helpers->setupModuleWebFiles(
+            $this->getParameter('wwwfiles'),
+            'adminlte-assets',
+            jApp::appPath('vendor/almasaeed2010/adminlte/')
         );
     }
 }

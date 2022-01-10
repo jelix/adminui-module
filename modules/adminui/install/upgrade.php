@@ -14,7 +14,7 @@ class adminuiModuleUpgrader extends \Jelix\Installer\Module\Installer
         $helpers->setupModuleWebFiles(
             $this->getParameter('wwwfiles'),
             'adminlte',
-            __DIR__.'/../www/adminlte'
+            __DIR__ . '/../www/adminui-assets'
         );
     }
 }
