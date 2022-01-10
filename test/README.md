@@ -2,21 +2,37 @@ This is an application to test the module.
 
 A docker configuration is provided to launch the application into a container.
 
-To launch containers:
+Before launching containers, you have to run this command:
 
 ```
-docker-compose build
-docker-compose up -d
+./run-docker build
 ```
+
+
+To launch containers, just run `./run-docker`.
+
+
+The first time you run the containers, you have to initialize the
+application configuration by executing this command:
+
+```
+./app-ctl reset
+```
+
+Then open your browser and go at `http://localhost:8029/` .
+
 
 You can execute some commands into the php container, by using this command:
 
 ```
-docker exec -t -i jelix_adminui_php appctl.sh <command>
+./app-ctl <command>
 ```
 
 Available commands:
 
-* `reset`: to reinitialize the application 
-* `composer_update`: to update PHP packages 
-* `clean_tmp`: to delete temp files 
+* `reset`: to reinitialize the application
+* `composer-update` and `composer-install`: to update PHP packages
+* `clean-tmp`: to delete temp files
+* `install`: to launch the Jelix installer
+* `psql`: to enter into the psql cli
+* `mysql`: to enter into the mysql cli 
