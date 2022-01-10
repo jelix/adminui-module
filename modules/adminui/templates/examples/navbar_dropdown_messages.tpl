@@ -1,29 +1,26 @@
-<!-- Messages: style can be found in dropdown.less-->
-<li class="dropdown messages-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-envelope-o"></i>
-        <span class="label label-success">4</span>
+<li class="nav-item dropdown">
+    <a class="nav-link" data-toggle="dropdown" href="#">
+        <i class="far fa-comments"></i>
+        <span class="badge badge-danger navbar-badge">3</span>
     </a>
-    <ul class="dropdown-menu">
-        <li class="header">You have 4 messages</li>
-        <li>
-            <!-- inner menu: contains the actual data -->
-            <ul class="menu">
-                <li><!-- start message -->
-                    <a href="#">
-                        <div class="pull-left">
-                            <img src="{$j_basepath}adminlte-assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        </div>
-                        <h4>
-                            Support Team
-                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <p>Why not buy a new awesome theme?</p>
-                    </a>
-                </li>
-                <!-- end message -->
-            </ul>
-        </li>
-        <li class="footer"><a href="#">See All Messages</a></li>
-    </ul>
+    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                    <h3 class="dropdown-item-title">
+                        Brad Diesel
+                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                    </h3>
+                    <p class="text-sm">Call me whenever you can...</p>
+                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+            </div>
+            <!-- Message End -->
+        </a>
+        <div class="dropdown-divider"></div>
+        <!-- ... -->
+        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+    </div>
 </li>

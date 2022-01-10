@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -13,7 +13,7 @@ use Jelix\AdminUI\Link;
 
 class DropDownMessages extends DropDownMenu {
 
-    protected $cssClass = 'messages-menu';
+    //protected $cssClass = 'messages-menu';
 
     function __construct($urlAllMessages, $label = '', $icon = '', $order = 0) {
         if ($label == '') {

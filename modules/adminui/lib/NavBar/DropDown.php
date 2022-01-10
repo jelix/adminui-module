@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -23,9 +23,9 @@ class DropDown extends Item {
     const BADGE_PILL_WARNING = 'warning';
     const BADGE_PILL_INFO = 'info';
 
-    const ICON_ENVELOPE = "envelope-o";
-    const ICON_NOTIFICATION = "bell-o";
-    const ICON_tasks = "flag-o";
+    const ICON_ENVELOPE = "comments";
+    const ICON_NOTIFICATION = "bell";
+    const ICON_TASKS = "flag";
 
     protected $tpl;
 
