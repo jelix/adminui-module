@@ -54,7 +54,8 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             )
         ), 'webassets_common');
 
-        $configIni->setValues(array(
+
+        $defaultValues = array(
             'appVersion' => '1.0.0',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
@@ -62,7 +63,13 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'dashboardTemplate'=>'',
             'bodyCSSClass'=>"hold-transition skin-blue sidebar-mini",
             'bareBodyCSSClass'=>"hold-transition login-page"
-        ), 'adminui');
+        );
 
+        foreach($defaultValues as $prop => $value) {
+            // only set the configuration property if it does already exists
+            if ($configIni->getValue($prop, 'adminui') === null) {
+                $configIni->setValue($prop, $value, 'adminui');
+            }
+        }
     }
 }
