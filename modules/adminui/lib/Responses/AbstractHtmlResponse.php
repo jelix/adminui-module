@@ -34,6 +34,7 @@ class AbstractHtmlResponse extends \jResponseHtml
         } else {
             $this->showErrorPage();
         }
+        $this->setBodyClass('bodyCSSClass');
     }
 
     protected function showErrorPage()
@@ -66,5 +67,19 @@ class AbstractHtmlResponse extends \jResponseHtml
         $this->body->assignIfNone('appHtmlLogoMini', $confAdminUI['htmlLogoMini']);
         $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
         $this->body->assignIfNone('appVersion', $confAdminUI['appVersion']);
+    }
+
+    protected function setBodyClass($configParam, $defaultClass='hold-transition')
+    {
+        if (!isset($this->bodyTagAttributes['class'])) {
+            $confAdminUI = \jApp::config()->adminui;
+            if (isset($confAdminUI[$configParam])) {
+                $bodyClass = $confAdminUI[$configParam];
+            }
+            else {
+                $bodyClass = $defaultClass;
+            }
+            $this->setBodyAttributes(array('class'=>$bodyClass));
+        }
     }
 }

@@ -110,3 +110,5 @@ htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2022 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 
 dashboardTemplate="test~dashboard"
+bodyCSSClass="hold-transition skin-blue sidebar-mini"
+bareBodyCSSClass="hold-transition login-page"

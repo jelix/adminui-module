@@ -21,10 +21,11 @@ class AdminUIBareResponse extends AbstractHtmlResponse
         $this->showAppMetadata();
 
         if (intval($this->_httpStatusCode) < 400 || $this->body->isAssigned('MAIN')) {
-            $this->body->assignIfNone('MAIN','<p>Empty page</p>');
+            $this->body->assignIfNone('MAIN', '<p>Empty page</p>');
         }
         else {
             $this->showErrorPage();
         }
+        $this->setBodyClass('bareBodyCSSClass', "hold-transition skin-blue login-page");
     }
 }

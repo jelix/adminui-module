@@ -58,8 +58,10 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'appVersion' => '1.0.0',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
-            'htmlCopyright' => '<strong>Copyright &copy; 2019 My Company.</strong>.',
-            'dashboardTemplate'=>''
+            'htmlCopyright' => '<strong>Copyright &copy; 2022 My Company.</strong>.',
+            'dashboardTemplate'=>'',
+            'bodyCSSClass'=>"hold-transition skin-blue sidebar-mini",
+            'bareBodyCSSClass'=>"hold-transition login-page"
         ), 'adminui');
 
     }

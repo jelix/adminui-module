@@ -46,10 +46,12 @@ class AdminUIResponse extends AbstractHtmlResponse
         $this->body->assign('controlSidebar', $this->uiManager->controlSidebar());
 
         if (intval($this->_httpStatusCode) < 400 || $this->body->isAssigned('MAIN')) {
-            $this->body->assignIfNone('MAIN','<p>Empty page</p>');
+            $this->body->assignIfNone('MAIN', '<p>Empty page</p>');
         }
         else {
             $this->showErrorPage();
         }
+        $this->setBodyClass('bodyCSSClass', "hold-transition skin-blue sidebar-mini");
+
     }
 }
