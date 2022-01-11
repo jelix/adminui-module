@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
     <info id="adminui@jelix.org" name="adminui" createdate="2019-07-26">
-        <version date="2019-10-19">0.9.1</version>
+        <version date="2022-01-11">0.10.0</version>
         <label lang="en_US">adminui</label>
         <description lang="en_US" />
         <license>MIT</license>
-        <copyright>2019 Laurent Jouanneau and other contributors</copyright>
+        <copyright>2019-2022 Laurent Jouanneau and other contributors</copyright>
         <author name="Laurent Jouanneau"/>
     </info>
     <dependencies>

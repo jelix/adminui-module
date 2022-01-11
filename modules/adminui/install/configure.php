@@ -30,9 +30,9 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
         $configIni = $helpers->getConfigIni();
         $configIni->setValue('theme', 'adminlte');
-        $configIni->setValue('html', "module:adminui~adminuiResponse", 'responses');
-        $configIni->setValue('htmlerror', "module:adminui~adminuiResponse", 'responses');
-        $configIni->setValue('htmllogin', "module:adminui~adminuiBareResponse", 'responses');
+        $configIni->setValue('html', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
+        $configIni->setValue('htmlerror', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
+        $configIni->setValue('htmllogin', "\\Jelix\\AdminUI\\Responses\\AdminUIBareResponse", 'responses');
         $configIni->setValues(array(
             'adminlte-bootstrap.require' =>'jquery',
             'adminlte-bootstrap.css' =>array('adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css'),
