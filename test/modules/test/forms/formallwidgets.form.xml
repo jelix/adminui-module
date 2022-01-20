@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form xmlns="http://jelix.org/ns/forms/1.1">
+
+    <group ref="identity">
+        <label>Your identity</label>
+
+        <input ref="nom" required="true">
+            <label>Your name</label>
+        </input>
+
+        <input ref="prenom" defaultvalue="robert">
+            <label>Your firstname</label>
+        </input>
+
+        <radiobuttons ref="sexe" required="true">
+            <label>You are </label>
+            <item value="h">a man</item>
+            <item value="f">a woman</item>
+            <item value="no">I don't know</item>
+            <alert type="required">You should indicate your sex, even if
+                you don't know :-)</alert>
+        </radiobuttons>
+
+        <input ref="mail" type="email">
+            <label>Your email</label>
+        </input>
+
+        <checkbox ref="geek">
+            <label>Are you a geek ?</label>
+            <help>A geek is a person which is extremely keen on computer science</help>
+            <hint>Check the box if you are a geek</hint>
+            <oncheckvalue label="yes" />
+            <onuncheckvalue label="no" />
+        </checkbox>
+    </group>
+
+    <menulist ref="conf" >
+        <label>Select one value</label>
+        <emptyitem>-- choices --</emptyitem>
+        <emptyvaluelabel>no value</emptyvaluelabel>
+        <help>Simple test</help>
+        <item value="cf1">Config 1</item>
+        <item value="cf2">Config 2</item>
+        <item value="cf3">Config 3</item>
+        <item value="cf4">Config 4</item>
+        <item value="cf5">Config 5</item>
+    </menulist>
+
+    <menulist ref="autocompletetown" >
+        <label>An autocomplete input</label>
+        <help>type few letters</help>
+        <item value="pa">Paris</item>
+        <item value="ma">Marseille</item>
+        <item value="ly">Lyon</item>
+        <item value="br">Brest</item>
+        <item value="li">Lille</item>
+        <item value="bo">Bordeaux</item>
+    </menulist>
+
+
+
+    <group ref="location" withcheckbox="true" defaultvalue="no-loc">
+        <label>Your location</label>
+        <oncheckvalue label="" value="has-location"/>
+        <onuncheckvalue label="no location" value="no-loc"/>
+        <input ref="country" required="true">
+            <label>Your country</label>
+        </input>
+        <listbox ref="home">
+            <label>You leave at</label>
+            <item value="pa">Paris</item>
+            <item value="ma">Marseille</item>
+            <item value="ly">Lyon</item>
+            <item value="br">Brest</item>
+            <item value="li">Lille</item>
+            <item value="bo">Bordeaux</item>
+        </listbox>
+        <textarea ref="address">
+            <label>Your address</label>
+        </textarea>
+    </group>
+
+    <htmleditor ref="description">
+        <label>Description in html</label>
+    </htmleditor>
+
+    <wikieditor ref="wikicontent">
+        <label>a wiki editor</label>
+    </wikieditor>
+
+    <color ref="couleur">
+        <label>prefered color</label>
+    </color>
+
+    <checkboxes ref="objets" required="true">
+        <label>You have </label>
+        <item value="maison">a house</item>
+        <item value="voiture">a car</item>
+        <item value="bateau">a boat</item>
+        <item value="assiette">a plate</item>
+    </checkboxes>
+
+    <date ref="birthdaydate">
+        <label>Your birthday</label>
+    </date>
+
+    <datetime ref="meeting">
+        <label>Next meeting</label>
+    </datetime>
+
+    <time ref="testtime" seconds="true">
+        <label>Time for test no 2</label>
+    </time>
+
+    <secret ref="pwd">
+        <label>A password</label>
+        <confirm>Type again the password to confirm</confirm>
+    </secret>
+
+    <image ref="image" mimetype="image/jpg;image/png;" maxWidth="1024" maxHeight="800">
+        <label>Your photo </label>
+        <alert>The file should be a jpg or png image</alert>
+    </image>
+
+    <upload ref="file1">
+        <label>A document</label>
+    </upload>
+
+    <upload2 ref="file2">
+        <label>Advanced uploader</label>
+    </upload2>
+
+    <upload2 ref="file3" required="true">
+        <label>Required document</label>
+    </upload2>
+
+
+    <choice ref="task">
+        <label>Task status</label>
+        <item value="new">
+            <label>New</label>
+        </item>
+        <item value="assigned">
+            <label>Assigned</label>
+            <input ref="assignee" required="true">
+                <label>assignee name</label>
+            </input>
+            <textarea ref="explanation">
+                <label>Explaination</label>
+            </textarea>
+        </item>
+        <item value="closed">
+            <label>Closed</label>
+            <menulist ref="task-done">
+                <help>Is the task closed ?</help>
+                <label>Status</label>
+                <item value="done">Done</item>
+                <item value="cancelled">Cancelled</item>
+                <item value="later">Later</item>
+            </menulist>
+        </item>
+    </choice>
+
+    <captcha ref="cap">
+        <label>Antispam filter</label>
+    </captcha>
+
+    <reset ref="cancel">
+        <label>Cancel</label>
+    </reset>
+
+    <submit ref="valid">
+        <label>Validate</label>
+        <item value="save">Save</item>
+        <item value="prev">Preview</item>
+    </submit>
+
+</form>

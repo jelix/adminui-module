@@ -55,6 +55,7 @@ class adminuiListener extends jEventListener
         $dashboard->setIcon('dashboard');
         $dashboard->addJelixLinkItem('index test', 'test~default:index', array(), 'circle-o');
         $dashboard->addJelixLinkItem('index adminui', 'adminui~default:index', array(),'circle-o');
+        $dashboard->addJelixLinkItem('form', 'test~default:form', array(),'circle-o');
         $navigation->addMenuItem($dashboard);
 
         $layout = new SubMenu('layout', 'Layout Options', 20);

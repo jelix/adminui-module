@@ -45,3 +45,21 @@
     margin-left:0;
 }
 
+fieldset {
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+
+}
+legend {
+    float: left;
+}
+
+
+.jforms-ctrl-date.form-control,
+.jforms-ctrl-datetime.form-control,
+.jforms-ctrl-time.form-control
+
+{
+    width:auto;
+    display:inline;
+}

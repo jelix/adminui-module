@@ -43,5 +43,22 @@ class defaultCtrl extends jController
         $rep->action = 'test~default:index';
         return $rep;
     }
+
+    function form()
+    {
+        $rep = $this->getResponse('html');
+        $tpl = new jTpl();
+
+        $form = jForms::create('test~formallwidgets');
+
+        $tpl->assign('form', $form);
+
+        $rep->body->assign('page_title', 'A form');
+        $rep->body->assign('sub_page_title', 'Show all jForms widgets for AdminLte');
+
+        $rep->body->assign('MAIN', $tpl->fetch('test~form'));
+        return $rep;
+    }
+
 }
 
