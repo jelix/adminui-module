@@ -30,7 +30,7 @@
                 {/foreach}
             </ul>
         </li>
-        {if $footerLink}<li class="footer">{$footerLink}</a></li>
+        {if $footerLink}<li class="footer">{$footerLink}</li>
         {elseif $footer}<li class="footer">{$footer}</li>
         {/if}
     </ul>
