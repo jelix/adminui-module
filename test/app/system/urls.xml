@@ -2,9 +2,8 @@
 <urls xmlns="http://jelix.org/ns/urls/1.0">
     <classicentrypoint name="index" default="true" optionalTrailingSlash="true">
         <url pathinfo="/" module="adminui" action="default:index"/>
-        <url pathinfo="/blank" module="test" action="default:index"/>
-        <url pathinfo="/login" module="test" action="default:login"/>
-        <url pathinfo="/login/check" module="test" action="default:logincheck"/>
-        <url pathinfo="/test/form" module="test" action="default:form"/>
+        <url pathinfo="/test" module="test" include="urls.xml"/>
+
+
     </classicentrypoint>
 </urls>

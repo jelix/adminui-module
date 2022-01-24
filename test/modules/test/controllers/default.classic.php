@@ -49,7 +49,22 @@ class defaultCtrl extends jController
         $rep = $this->getResponse('html');
         $tpl = new jTpl();
 
-        $form = jForms::create('test~formallwidgets');
+        $form = jForms::get('test~formallwidgets');
+        if (!$form || $this->param('delete')) {
+            $form = jForms::create('test~formallwidgets');
+            $form->setData('nom', 'Laurent');
+            $form->setData('sexe', 'h');
+            $form->setData('mail', 'laurent@example.com');
+            $form->setData('conf', 'cf3');
+            $form->setData('autocompletetown', 'ma');
+            $form->setData('description', '<p>This is a <strong>document</strong> in html</p>');
+            $form->setData('wikicontent', 'Lorem __ipsum__');
+            $form->setData('objets', 'voiture');
+            $form->setData('birthdaydate', '1990-01-01');
+            $form->setData('task', 'assigned');
+            $form->setData('assignee', 'Maurice');
+            $form->setData('explanation', 'He should fix bugs');
+        }
 
         $tpl->assign('form', $form);
 
@@ -57,6 +72,36 @@ class defaultCtrl extends jController
         $rep->body->assign('sub_page_title', 'Show all jForms widgets for AdminLte');
 
         $rep->body->assign('MAIN', $tpl->fetch('test~form'));
+        return $rep;
+    }
+
+    function formsave()
+    {
+        $rep = $this->getResponse('redirect');
+        $form = jForms::fill('test~formallwidgets');
+        if (!$form->check()) {
+            $rep->action = 'test~default:formsave';
+        }
+        else {
+            $rep->action = 'test~default:formdata';
+        }
+        return $rep;
+    }
+
+
+    function formdata()
+    {
+        $rep = $this->getResponse('html');
+        $tpl = new jTpl();
+
+        $form = jForms::get('test~formallwidgets');
+
+        $tpl->assign('form', $form);
+
+        $rep->body->assign('page_title', 'Values of the form');
+        $rep->body->assign('sub_page_title', 'Show all jForms widgets for AdminLte in the view mode');
+
+        $rep->body->assign('MAIN', $tpl->fetch('test~formview'));
         return $rep;
     }
 

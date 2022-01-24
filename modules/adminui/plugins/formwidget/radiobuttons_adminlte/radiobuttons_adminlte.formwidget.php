@@ -11,6 +11,8 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/radiobuttons_html/radiobuttons_h
 
 class radiobuttons_adminlteFormWidget extends radiobuttons_htmlFormWidget
 {
+    use \Jelix\AdminUI\Form\WidgetTrait;
+
     protected function displayRadioCheckbox($attr, $label, $checked)
     {
         echo '<div class="radio jforms-chkbox jforms-ctl-'.$this->ctrl->ref.'">'.

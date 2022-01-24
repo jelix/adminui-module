@@ -11,6 +11,7 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/autocomplete_html/autocompleteaj
 
 class autocompleteajax_adminlteFormWidget extends autocompleteajax_htmlFormWidget
 {
+    use \Jelix\AdminUI\Form\WidgetTrait;
     /**
      * @param array $attrAutoComplete
      * @param array $attrHidden attributes for the hidden input that will contain the selected value

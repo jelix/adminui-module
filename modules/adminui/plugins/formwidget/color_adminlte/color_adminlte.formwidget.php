@@ -16,4 +16,15 @@ class color_adminlteFormWidget extends color_htmlFormWidget
         $class = parent::getCSSClass();
         return $class.' form-control';
     }
+
+    public function outputControlValue()
+    {
+        $attr = $this->getValueAttributes();
+        $value = $this->getValue();
+        $value = $this->ctrl->getDisplayValue($value);
+        $attr['style'] = 'display:inline-block;width:20px;height:20px;background-color:'.$value;
+        echo '<span data-value="'.$value.'" ';
+        $this->_outputAttr($attr);
+        echo '> </span>';
+    }
 }

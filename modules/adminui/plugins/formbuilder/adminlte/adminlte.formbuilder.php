@@ -157,7 +157,6 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
             return;
         }
         $widget = $this->getWidget($ctrl, $this->rootWidget);
-        $widget->setLabelAttributes(array('class' => 'control-label'));
         $widget->outputLabel($format, $editMode);
     }
 
@@ -169,5 +168,32 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
         }
         $widget = $this->getWidget($ctrl, $this->rootWidget);
         echo '<p class="help-block" id="'.$widget->getId().'-help">'.htmlspecialchars($ctrl->help).'</p>';
+    }
+
+    public function outputAllControlsValues()
+    {
+        echo '<div class="box"><div class="box-body form-horizontal jforms-view">';
+        foreach ($this->_form->getRootControls() as $ctrlref => $ctrl) {
+            if ($ctrl->type == 'submit' || $ctrl->type == 'reset' ||
+                $ctrl->type == 'hidden' || $ctrl->type == 'captcha' ||
+                $ctrl->type == 'secretconfirm'
+            ) {
+                continue;
+            }
+            if (!$this->_form->isActivated($ctrlref)) {
+                continue;
+            }
+            echo '<div class="form-group">';
+            if ($ctrl->type == 'group') {
+                $this->outputControlValue($ctrl);
+            } else {
+                $this->outputControlLabel($ctrl, '', false);
+                echo '<div class="controls col-sm-10">';
+                $this->outputControlValue($ctrl);
+                echo "</div>\n";
+            }
+            echo "</div>\n";
+        }
+        echo "</div>\n</div>\n";
     }
 }

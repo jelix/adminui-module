@@ -11,7 +11,7 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/autocomplete_html/autocomplete_h
 
 class autocomplete_adminlteFormWidget extends autocomplete_htmlFormWidget
 {
-
+    use \Jelix\AdminUI\Form\WidgetTrait;
     /**
      * @param array $attrAutoComplete
      * @param array $attrSelect
