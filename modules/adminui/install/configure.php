@@ -57,6 +57,7 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
         $defaultValues = array(
             'appVersion' => '1.0.0',
+            'appTitle' => 'Admin',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
             'htmlCopyright' => '<strong>Copyright &copy; 2022 My Company.</strong>.',

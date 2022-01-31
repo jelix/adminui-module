@@ -62,7 +62,8 @@ class AbstractHtmlResponse extends \jResponseHtml
     protected function showAppMetadata()
     {
         $confAdminUI = \jApp::config()->adminui;
-        $this->title .= ($this->title != '' ? 'Admin' : '');
+        $appTitle = (isset($confAdminUI['appTitle'])?$confAdminUI['appTitle']: '');
+        $this->title .= ($appTitle != '' ? ' - '.$appTitle : '');
         $this->body->assignIfNone('appHtmlLogo', $confAdminUI['htmlLogo']);
         $this->body->assignIfNone('appHtmlLogoMini', $confAdminUI['htmlLogoMini']);
         $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
