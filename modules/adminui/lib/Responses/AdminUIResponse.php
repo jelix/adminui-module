@@ -44,6 +44,7 @@ class AdminUIResponse extends AbstractHtmlResponse
         $this->body->assign('navbar', $this->uiManager->navbar());
         $this->body->assign('sidebar', $this->uiManager->sidebar());
         $this->body->assign('controlSidebar', $this->uiManager->controlSidebar());
+        $this->body->assign('footer', $this->uiManager->footer());
 
         if (intval($this->_httpStatusCode) < 400 || $this->body->isAssigned('MAIN')) {
             $this->body->assignIfNone('MAIN', '<p>Empty page</p>');
