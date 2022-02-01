@@ -45,3 +45,38 @@
     margin-left:0;
 }
 
+fieldset {
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+}
+legend {
+    float: left;
+}
+
+
+.jforms-ctrl-date.form-control,
+.jforms-ctrl-datetime.form-control,
+.jforms-ctrl-time.form-control
+
+{
+    width:auto;
+    display:inline;
+}
+
+.jforms-choice-value legend {
+    font-size: 14px;
+}
+.jforms-choice-value ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jforms-view .form-control {
+    border: 0px;
+}
+
+.jforms-view fieldset {
+    margin-left: 15px;
+    margin-right: 15px;
+}

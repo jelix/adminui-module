@@ -1,8 +1,10 @@
 {if $isAuthenticated}
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        {if $photoUrl}<img src="{$photoUrl}" class="user-image" alt="{$username|eschtml}">{/if}
-
+        {if $photoUrl}<img src="{$photoUrl}" class="user-image" alt="{$username|eschtml}">
+        {else}
+            <span class="glyphicon glyphicon-user"></span>
+        {/if}
         <span class="hidden-xs">{$username|eschtml}</span>
     </a>
     <ul class="dropdown-menu">

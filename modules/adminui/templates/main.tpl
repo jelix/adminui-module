@@ -1,5 +1,4 @@
 {meta_html assets 'adminlte'}
-{meta_html bodyattr array('class'=>"hold-transition sidebar-mini")}
 <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -73,19 +72,7 @@
     </div>
 
     <footer class="main-footer text-center">
-        <div class="pull-right hidden-xs">
-             <a href="https://adminlte.io">AdminLTE</a> Theme
-        </div>
-        {if $appHtmlCopyright}
-        <div class="pull-left hidden-xs">
-            {$appHtmlCopyright}
-        </div>
-        {/if}
-        {if $appVersion}
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> {$appVersion|eschtml}
-        </div>
-        {/if}
+        {$footer}
     </footer>
     {if $controlSidebar->hasPanels()}
     <aside class="control-sidebar control-sidebar-dark">

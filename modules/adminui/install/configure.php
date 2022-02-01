@@ -30,9 +30,9 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
 
         $configIni = $helpers->getConfigIni();
         $configIni->setValue('theme', 'adminlte');
-        $configIni->setValue('html', "module:adminui~adminuiResponse", 'responses');
-        $configIni->setValue('htmlerror', "module:adminui~adminuiResponse", 'responses');
-        $configIni->setValue('htmllogin', "module:adminui~adminuiBareResponse", 'responses');
+        $configIni->setValue('html', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
+        $configIni->setValue('htmlerror', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
+        $configIni->setValue('htmllogin', "\\Jelix\\AdminUI\\Responses\\AdminUIBareResponse", 'responses');
         $configIni->setValues(array(
             'jquery.js' => "adminlte-assets/plugins/jquery/jquery.js",
             'adminlte-bootstrap.require' =>'jquery,jquery_ui',
@@ -55,13 +55,23 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             )
         ), 'webassets_common');
 
-        $configIni->setValues(array(
+
+        $defaultValues = array(
             'appVersion' => '1.0.0',
+            'appTitle' => 'Admin',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
             'htmlCopyright' => '<strong>Copyright &copy; 2022 My Company.</strong>.',
-            'dashboardTemplate'=>''
-        ), 'adminui');
+            'dashboardTemplate'=>'',
+            'bodyCSSClass'=>"hold-transition skin-blue sidebar-mini",
+            'bareBodyCSSClass'=>"hold-transition login-page"
+        );
 
+        foreach($defaultValues as $prop => $value) {
+            // only set the configuration property if it does already exists
+            if ($configIni->getValue($prop, 'adminui') === null) {
+                $configIni->setValue($prop, $value, 'adminui');
+            }
+        }
     }
 }

@@ -25,11 +25,17 @@ class UIManager {
      */
     protected $_controlSidebar;
 
+    /**
+     * @var Footer
+     */
+    protected $_footer;
+
     function __construct()
     {
         $this->_navbar = new NavBar();
         $this->_sidebar = new SideBar();
         $this->_controlSidebar = new ControlSideBar();
+        $this->_footer = new Footer();
     }
 
     /**
@@ -54,4 +60,11 @@ class UIManager {
         return $this->_controlSidebar;
     }
 
+    /**
+     * @return Footer
+     */
+    function footer()
+    {
+        return $this->_footer;
+    }
 }
