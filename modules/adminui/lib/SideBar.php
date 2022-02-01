@@ -19,11 +19,18 @@ class SideBar extends Bar {
         parent::__construct();
         $this->topMenu = new SubMenu('top','');
 
-        if (!isset(\jApp::config()->adminui['disable_dashboard_menu']) ||
-            !\jApp::config()->adminui['disable_dashboard_menu']
+        if (!isset(\jApp::config()->adminui['disableDashboardMenu']) ||
+            !\jApp::config()->adminui['disableDashboardMenu']
         ) {
             $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'dashboard');
         }
+
+        if (!isset(\jApp::config()->adminui['disableDashboardMenu']) ||
+            !\jApp::config()->adminui['disableDashboardMenu']
+        ) {
+            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'dashboard');
+        }
+
 
         $crud = new SubMenu('crud', \jLocale::get('adminui~ui.menu.item.crud'), 70);
         $this->topMenu->addMenuItem($crud);
@@ -59,5 +66,11 @@ class SideBar extends Bar {
             }
         }
         return $this->subMenus[$menuId];
+    }
+
+    function isSearchFormMenuEnabled()
+    {
+        return (!isset(\jApp::config()->adminui['disableDashboardMenuItem']) ||
+                !\jApp::config()->adminui['disableDashboardMenuItem']);
     }
 }

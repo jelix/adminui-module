@@ -71,6 +71,7 @@ class AbstractHtmlResponse extends \jResponseHtml
         $this->body->assignIfNone('appHtmlLogoMini', $confAdminUI['htmlLogoMini']);
         $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
         $this->body->assignIfNone('appVersion', $confAdminUI['appVersion']);
+        $this->body->assign('urlAdminLteAssets', \jApp::urlBasePath().$confAdminUI['adminlteAssetsUrl']);
     }
 
     protected function setBodyClass($configParam, $defaultClass='hold-transition')

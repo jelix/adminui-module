@@ -1,10 +1,9 @@
 <!-- Sidebar user panel -->
-<div class="user-panel">
-    <div class="pull-left image">
-        <img src="{$j_basepath}adminlte-assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="image">
+        <img src="{$urlAdminLteAssets}dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
     </div>
-    <div class="pull-left info">
-        <p>Alexander Pierce</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    <div class="info">
+        <a href="#" class="d-block">Alexander Pierce</a>
     </div>
 </div>
