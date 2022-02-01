@@ -63,7 +63,10 @@ class AbstractHtmlResponse extends \jResponseHtml
     {
         $confAdminUI = \jApp::config()->adminui;
         $appTitle = (isset($confAdminUI['appTitle'])?$confAdminUI['appTitle']: '');
-        $this->title .= ($appTitle != '' ? ' - '.$appTitle : '');
+        if ($appTitle) {
+            $this->title .= ($this->title != '' ? ' - ':''). $appTitle;
+        }
+
         $this->body->assignIfNone('appHtmlLogo', $confAdminUI['htmlLogo']);
         $this->body->assignIfNone('appHtmlLogoMini', $confAdminUI['htmlLogoMini']);
         $this->body->assignIfNone('appHtmlCopyright', $confAdminUI['htmlCopyright']);
