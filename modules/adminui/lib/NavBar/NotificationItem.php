@@ -9,17 +9,13 @@
 namespace Jelix\AdminUI\NavBar;
 
 /**
- * Represents a message item into a DropDownMessages
+ * Represents a notification item into a DropDownNotifications
  */
-class NotificationTypeItem {
-
-    protected $senderName;
-
-    protected $senderImage = '';
-
+class NotificationItem
+{
     protected $date;
 
-    protected $subject;
+    protected $label;
 
     protected $url;
 
@@ -27,9 +23,9 @@ class NotificationTypeItem {
 
     protected $icon = '';
 
-    function __construct($subject, $url, $date, $icon, $newWindow = false) {
+    function __construct($label, $url, $date, $icon, $newWindow = false) {
         $this->url = $url;
-        $this->subject = $subject;
+        $this->label = $label;
         $this->date = $date;
         $this->newWindow = $newWindow;
         $this->icon = $icon;
@@ -38,8 +34,8 @@ class NotificationTypeItem {
     function getUrl() {
         return $this->url;
     }
-    function getSubject() {
-        return $this->subject;
+    function getLabel() {
+        return $this->label;
     }
 
     function getIcon() {

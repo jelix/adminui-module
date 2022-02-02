@@ -56,23 +56,32 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>
-                {$page_title|eschtml}
-                {if $sub_page_title}<small>{$sub_page_title|eschtml}</small>{/if}
-            </h1>
-            {if $breadcrumb}
-            <ol class="breadcrumb">
-                {foreach $breadcrumb as $item}
-                <li><a href="{$item['url']}">{if isset($item['icon-class'])}<i class="fa fa-dashboard"></i>{/if} {$item['label']}</a></li>
-                {/foreach}
-                <li class="active">{$page_title|eschtml}</li>
-            </ol>
-            {/if}
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            {$page_title|eschtml}
+                            {if $sub_page_title}<small>{$sub_page_title|eschtml}</small>{/if}
+                        </h1>
+                    </div>
+                    <div class="col-sm-6">
+                        {if $breadcrumb}
+                        <ol class="breadcrumb">
+                            {foreach $breadcrumb as $item}
+                            <li><a href="{$item['url']}">{if isset($item['icon-class'])}<i class="fa fa-dashboard"></i>{/if} {$item['label']}</a></li>
+                            {/foreach}
+                            <li class="active">{$page_title|eschtml}</li>
+                        </ol>
+                        {/if}
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="content">
+            <div class="container-fluid">
         {$MAIN}
-
+            </div>
         </section>
     </div>
 

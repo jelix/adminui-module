@@ -1,19 +1,20 @@
 {if $isAuthenticated}
-<li class="dropdown user user-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<li class="nav-item  dropdown user user-menu">
+    <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
         {if $photoUrl}<img src="{$photoUrl}" class="user-image" alt="{$username|eschtml}">
         {else}
-            <span class="glyphicon glyphicon-user"></span>
+            <i class="far fa-user"></i>
         {/if}
         <span class="hidden-xs">{$username|eschtml}</span>
     </a>
-    <ul class="dropdown-menu">
-        <li class="user-header">
+    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-item user-header">
             {if $photoUrl}<img src="{$photoUrl}" class="img-circle" alt="{$username|eschtml}">{/if}
             <p>
                 {$username|eschtml}
             </p>
-        </li>
+        </div>
+        <div class="dropdown-divider"></div>
         <!--<li class="user-body">
             <div class="row">
                 <div class="col-xs-4 text-center">
@@ -27,22 +28,23 @@
                 </div>
             </div>
         </li>-->
-        <li>
-            <ul class="menu">
+
                 {foreach $links as $link}
-                    <li>{$link}</li>
+                    <a href="{$link->getUrl()}"  {if $link->toNewWindow()} target="_blank"{/if} class="dropdown-item">
+                        {$link->getLabel()}
+                    </a>
+
                 {/foreach}
-            </ul>
-        </li>
-        <li class="user-footer">
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item user-footer">
             <div class="pull-left">
                 {if $profileLink}<a href="{$profileLink}" class="btn btn-default btn-flat">{@adminui~ui.header.account.profile@}</a>{/if}
             </div>
             <div class="pull-right">
                 {if $signOutLink}<a href="{$signOutLink}" class="btn btn-default btn-flat">{@adminui~ui.header.account.signout@}</a>{/if}
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </li>
 {else}
 <li class="">

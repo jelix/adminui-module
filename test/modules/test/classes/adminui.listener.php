@@ -29,26 +29,54 @@ class adminuiListener extends jEventListener
         /** @var \Jelix\AdminUI\UIManager $uim */
         $uim = $event->uiManager;
 
-        $item = new \Jelix\AdminUI\NavBar\DropDown('foo', 'bookmark-o', 20);
+        // ------------- Navigation bar
+
+        $item = new \Jelix\AdminUI\NavBar\Link(jApp::urlBasePath(), 'Home');
+        $uim->navbar()->addLeftItem($item);
+
+        $item = new \Jelix\AdminUI\NavBar\Link('#', 'Contact');
+        $uim->navbar()->addLeftItem($item);
+
+
+        $uim->navbar()->setFullScreenModeAvailable();
+
+        $item = new \Jelix\AdminUI\NavBar\DropDown('foo', 'bars', 20);
         $item->setBadgePill(17, $item::BADGE_PILL_SUCCESS);
         $item->setHeader('super foo');
         $item->setFooter(new Link('https://jelix.org', 'Go to Jelix.org'));
-        $item->setContent('<p>Hello world</p>');
-
+        $item->setContent('<p class="text-sm">Hello world</p>');
         $uim->navbar()->addItem($item);
 
-        $menu = new \Jelix\AdminUI\NavBar\DropDownMenu('liens', 'reorder', 10);
+        $menu = new \Jelix\AdminUI\NavBar\DropDownMenu('liens', 'bookmark', 10);
+        $menu->setBadgePill(3, $item::BADGE_PILL_DANGER);
         $menu->addLink(new Link('https://jelix.org', 'Go to Jelix.org', true));
         $menu->addLink(new Link('https://mozilla.org', 'Mozilla', true));
         $menu->addLink(new Link('https://php.net', 'PHP', true));
         $uim->navbar()->addItem($menu);
-
 
         $accountMenu = $uim->navbar()->accountMenu();
         //$accountMenu->setNotAuthenticated('#signin');
         $accountMenu->setAuthenticated('laurentj', 'Laurent Jouanneau', jUrl::get('test~default:login'), '#profile');
         //$accountMenu->setAuthenticated('laurentj', 'Laurent Jouanneau', '#signout', '#profile', \jApp::urlBasePath().'adminlte-assets/dist/img/user2-160x160.jpg');
         $accountMenu->addLink(new Link('#prefs', 'Your preferences'));
+
+        $messagesMenu = new \Jelix\AdminUI\NavBar\DropDownMessages('#messages');
+        $uim->navbar()->addItem($messagesMenu);
+
+        $messagesMenu->createAddMessage('first subject', '#firstmsg', '2019-08-01 10:30', 'Laurent');
+        $messagesMenu->createAddMessage('second subject', '#secondmsg', '2019-08-02 15:30', 'Dave');
+        $messagesMenu->createAddMessage('third subject', '#thirdmsg', '2019-08-05 18:10', 'Mickael');
+
+        $notifications = new \Jelix\AdminUI\NavBar\DropDownNotifications('#notifs');
+        $uim->navbar()->addItem($notifications);
+        $notifications->createAddNotification('first notification', '#firstnotif', '2022-02-01 12:00', 'envelope');
+        $notifications->createAddNotification( 'second notification', '#secondnotif', '2022-02-01 15:00', 'users');
+        $notifications->createAddNotification('third notification', '#thirdnotif', '2022-02-01 16:00', 'file');
+        $notifications->createAddNotification('notification number four', '#fournotif', '2022-01-30 08:00');
+
+
+
+        // ------------- Sidebar bar
 
         $navigation = new SubMenu('nav', 'Navigation', 10);
         $dashboard = new SubMenu('dashboard', 'Dashboard', 10);
@@ -98,6 +126,7 @@ class adminuiListener extends jEventListener
 
         $uim->sidebar()->getSubMenu('system')->addLinkItem('Configuration', '#');
 
+        // ---------------- Control sidebar
 
         $tpl = new jTpl();
         $prefPanel = new Panel('settings', 'Settings', 'gears', 10);
@@ -108,19 +137,6 @@ class adminuiListener extends jEventListener
         $homePanel->setContent($tpl->fetch('test~control_sidebar_activity'));
         $uim->controlSidebar()->addPanel($homePanel);
 
-        $messagesMenu = new \Jelix\AdminUI\NavBar\DropDownMessages('#messages');
-        $uim->navbar()->addItem($messagesMenu);
-
-        $messagesMenu->createAddMessage('first subject', '#firstmsg', '2019-08-01 10:30', 'Laurent');
-        $messagesMenu->createAddMessage('second subject', '#secondmsg', '2019-08-02 15:30', 'Dave');
-        $messagesMenu->createAddMessage('third subject', '#thirdmsg', '2019-08-05 18:10', 'Mickael');
-
-        $notifications = new \Jelix\AdminUI\NavBar\DropDownNotifications('#notifs');
-        $uim->navbar()->addItem($notifications);
-        $notifications->addLink(new Link('#firstnotif', 'first notification'));
-        $notifications->addLink(new Link('#secondnotif', 'second notification'));
-        $notifications->addLink(new Link('#thirdnotif', 'third notification'));
-        $notifications->addLink(new Link('#fournotif', 'notification number four'));
 
     }
 
@@ -137,6 +153,7 @@ class adminuiListener extends jEventListener
         $dashboard->addBox(new SmallBox2('newmembers', 'New Members', '2,000', 'ion-ios-people-outline', 'bg-orange'));
 
         $tpl = new jTpl();
+        $tpl->assign('urlAdminLteAssets', \jApp::urlBasePath().\jApp::config()->adminui['adminlteAssetsUrl']);
         $dashboard->addBox(new HtmlBox('chatbox', $tpl->fetch('test~dashboard_chatbox')));
         $dashboard->addBox(new HtmlBox('quick_email', $tpl->fetch('test~dashboard_quick_email')));
         $dashboard->addBox(new HtmlBox('tabs_custom', $tpl->fetch('test~dashboard_tabs_custom')));

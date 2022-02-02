@@ -45,8 +45,7 @@ class DropDown extends Item {
         $this->tpl->assign(array(
             'header' => '',
             'content' => '',
-            'footer' => '',
-            'footerLink' => null,
+            'footer' => ''
         ));
     }
 
@@ -65,17 +64,14 @@ class DropDown extends Item {
      */
     function setFooter($footer) {
         if ($footer instanceof Link) {
-            $this->tpl->assign('footerLink', $footer);
-            $this->tpl->assign('footer', '');
+            $footer->setCssClass('dropdown-item dropdown-footer');
         }
-        else {
-            $this->tpl->assign('footer', $footer);
-            $this->tpl->assign('footerLink', null);
-        }
+        $this->tpl->assign('footer', $footer);
     }
 
     public function __toString()
     {
+        $this->tpl->assignIfNone('footer', '');
         $this->tpl->assign('badgePills', $this->badgePills);
         return $this->tpl->fetch($this->templateSelector);
     }

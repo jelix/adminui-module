@@ -84,16 +84,16 @@ mailerType=file
 email="root@localhost"
 
 [webassets_common]
-jquery.js="adminlte-assets/plugins/jquery/jquery.js'
+jquery.js="adminlte-assets/plugins/jquery/jquery.js"
+
 adminlte-bootstrap.require=jquery,jquery_ui
-adminlte-bootstrap.css[]=adminlte-assets/plugins/bootstrap/dist/css/bootstrap.min.css
 adminlte-bootstrap.js[]=adminlte-assets/plugins/bootstrap/js/bootstrap.bundle.min.js
 
 adminlte-fontawesome.css[]=adminlte-assets/plugins/fontawesome-free/css/all.min.css
 
 adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
-adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
 adminlte.css[]=adminlte-assets/dist/css/adminlte.min.css
+adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
 adminlte.css[]=adminui-assets/SourceSansPro/SourceSansPro.css
 adminlte.css[]=adminui-assets/adminui.css
 adminlte.js[]=adminlte-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js
