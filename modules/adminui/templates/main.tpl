@@ -61,8 +61,9 @@
                     <div class="col-sm-6">
                         <h1>
                             {$page_title|eschtml}
-                            {if $sub_page_title}<small>{$sub_page_title|eschtml}</small>{/if}
+
                         </h1>
+                        {if $sub_page_title}<small>{$sub_page_title|eschtml}</small>{/if}
                     </div>
                     <div class="col-sm-6">
                         {if $breadcrumb}

@@ -15,7 +15,7 @@
         <p>{$item->getLabel()}
               <i class="right fas fa-angle-left"></i>
                 {foreach $item->getBadgePills() as $badge}
-                    <span class="label pull-right {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
+                    <span class="badge right {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
                 {/foreach}
         </p>
     </a>

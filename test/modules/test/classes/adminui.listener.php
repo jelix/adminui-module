@@ -79,20 +79,20 @@ class adminuiListener extends jEventListener
         // ------------- Sidebar bar
 
         $navigation = new SubMenu('nav', 'Navigation', 10);
-        $dashboard = new SubMenu('dashboard', 'Dashboard', 10);
-        $dashboard->setIcon('dashboard');
-        $dashboard->addJelixLinkItem('index test', 'test~default:index', array(), 'circle-o');
-        $dashboard->addJelixLinkItem('index adminui', 'adminui~default:index', array(),'circle-o');
-        $dashboard->addJelixLinkItem('form', 'test~default:form', array(),'circle-o');
+        $dashboard = new SubMenu('pages', 'Pages', 10);
+        $dashboard->setIcon('book');
+        $dashboard->addJelixLinkItem('index test', 'test~default:index', array(), 'circle');
+        $dashboard->addJelixLinkItem('index adminui', 'adminui~default:index', array(),'circle');
+        $dashboard->addJelixLinkItem('form', 'test~default:form', array(),'edit');
         $navigation->addMenuItem($dashboard);
 
         $layout = new SubMenu('layout', 'Layout Options', 20);
-        $layout->setIcon('files-o');
+        $layout->setIcon('copy');
         $layout->setBadgePill(4);
-        $layout->addLinkItem('Top Navigation', '#top-nav', 'circle-o');
-        $layout->addLinkItem('Boxed', '#boxed', 'circle-o');
-        $layout->addLinkItem('Fixed', '#fixed', 'circle-o');
-        $layout->addLinkItem('Collapsed Sidebar', '#collapsed-sidebar', 'circle-o');
+        $layout->addLinkItem('Top Navigation', '#top-nav', 'circle');
+        $layout->addLinkItem('Boxed', '#boxed', 'circle');
+        $layout->addLinkItem('Fixed', '#fixed', 'circle');
+        $layout->addLinkItem('Collapsed Sidebar', '#collapsed-sidebar', 'circle');
         $navigation->addMenuItem($layout);
 
         $widget = $navigation->addLinkItem('Widgets', '#widgets', 'th');
@@ -101,24 +101,24 @@ class adminuiListener extends jEventListener
 
         $multilevel =  new SubMenu('multilevel', 'Multilevel', 40);
         $multilevel->setIcon('share');
-        $level1 = $multilevel->addLinkItem('Level One 1', '#', 'circle-o');
+        $level1 = $multilevel->addLinkItem('Level One 1', '#', 'circle');
         $level1->setOrder(10);
         $level1->setBadgePill('5', $widget::BADGE_PILL_SUCCESS, 'a');
         $level1->setBadgePill('8', $widget::BADGE_PILL_WARNING, 'b');
         $level1->setBadgePill('2', $widget::BADGE_PILL_DANGER, 'c');
             $levelone =  new SubMenu('levelone', 'Level One 2', 20);
-            $levelone->setIcon('circle-o');
-            $levelone->addLinkItem('Level Two 1', '#', 'circle-o')->setOrder(10);
+            $levelone->setIcon('circle');
+            $levelone->addLinkItem('Level Two 1', '#', 'circle')->setOrder(10);
                 $leveltwo =  new SubMenu('leveltwo', 'Level Two 2', 20);
-                $leveltwo->setIcon('circle-o');
-                $leveltwo->addLinkItem('Level three 1', '#', 'circle-o')->setOrder(10);
-                $item = $leveltwo->addLinkItem('Level three 2', '#', 'circle-o');
+                $leveltwo->setIcon('circle');
+                $leveltwo->addLinkItem('Level three 1', '#', 'circle')->setOrder(10);
+                $item = $leveltwo->addLinkItem('Level three 2', '#', 'circle');
                 $item->setOrder(20);
                 //$item->setActive();
-                $leveltwo->addLinkItem('Level three 3', '#', 'circle-o')->setOrder(30);
+                $leveltwo->addLinkItem('Level three 3', '#', 'circle')->setOrder(30);
             $levelone->addMenuItem($leveltwo);
         $multilevel->addMenuItem($levelone);
-        $multilevel->addLinkItem('Level One 3', '#', 'circle-o')->setOrder(30);
+        $multilevel->addLinkItem('Level One 3', '#', 'circle')->setOrder(30);
 
         $navigation->addMenuItem($multilevel);
 

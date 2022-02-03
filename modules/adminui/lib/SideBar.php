@@ -22,17 +22,10 @@ class SideBar extends Bar {
         if (!isset(\jApp::config()->adminui['disableDashboardMenu']) ||
             !\jApp::config()->adminui['disableDashboardMenu']
         ) {
-            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'dashboard');
+            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'tachometer-alt');
         }
 
-        if (!isset(\jApp::config()->adminui['disableDashboardMenu']) ||
-            !\jApp::config()->adminui['disableDashboardMenu']
-        ) {
-            $this->topMenu->addLinkItem(\jLocale::get('adminui~ui.menu.item.dashboard'), \jUrl::get('adminui~default:index'), 'dashboard');
-        }
-
-
-        $crud = new SubMenu('crud', \jLocale::get('adminui~ui.menu.item.crud'), 70);
+         $crud = new SubMenu('crud', \jLocale::get('adminui~ui.menu.item.crud'), 70);
         $this->topMenu->addMenuItem($crud);
         $refdata = new SubMenu('refdata', \jLocale::get('adminui~ui.menu.item.refdata'), 80);
         $this->topMenu->addMenuItem($refdata);

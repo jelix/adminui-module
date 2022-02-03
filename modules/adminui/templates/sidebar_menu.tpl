@@ -27,7 +27,7 @@
 
     {foreach $sidebar->getMenuItems() as $item}
         {if $item->getType() == 'submenu' && $item->hasChildren()}
-            <li class="header">{$item->getLabel()}</li>
+            <li class="nav-header">{$item->getLabel()}</li>
             {fetchtpl 'adminui~sidebar_submenu', array('menuitems'=>$item->getChildren()) }
         {elseif $item->getType() == 'url'}
             <li class="nav-item">
