@@ -67,11 +67,11 @@
                     </div>
                     <div class="col-sm-6">
                         {if $breadcrumb}
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb float-sm-right">
                             {foreach $breadcrumb as $item}
-                            <li><a href="{$item['url']}">{if isset($item['icon-class'])}<i class="fa fa-dashboard"></i>{/if} {$item['label']}</a></li>
+                            <li class="breadcrumb-item"><a href="{$item['url']}">{if isset($item['icon-class'])}<i class="fa fa-dashboard"></i>{/if} {$item['label']}</a></li>
                             {/foreach}
-                            <li class="active">{$page_title|eschtml}</li>
+                            <li class="breadcrumb-item active">{$page_title|eschtml}</li>
                         </ol>
                         {/if}
                     </div>

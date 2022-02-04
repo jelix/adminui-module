@@ -42,6 +42,7 @@ class AbstractHtmlResponse extends \jResponseHtml
         $this->title = $this->_httpStatusCode . ' ' . $this->_httpStatusMsg;
         $tpl = new \jTpl();
         $tpl->assign('httpCode', $this->_httpStatusCode);
+        $tpl->assign('classText', 'text-warning');
         $httpMessage = $this->_httpStatusMsg;
         $details = $this->body->get('httpErrorDetails');
         if ($this->_httpStatusCode == 404) {
@@ -51,6 +52,7 @@ class AbstractHtmlResponse extends \jResponseHtml
             $httpMessage = \jLocale::get('adminui~ui.http.error.403.title');
             $details = \jLocale::get('adminui~ui.http.error.403.description');
         } else if ($this->_httpStatusCode == 500) {
+            $tpl->assign('classText', 'text-danger');
             $httpMessage = \jLocale::get('adminui~ui.http.error.500.title');
             $details = \jLocale::get('adminui~ui.http.error.500.description');
         }

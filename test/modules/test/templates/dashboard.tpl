@@ -1,5 +1,7 @@
 {meta_html assets 'jquery_ui'}
 {meta_html js $j_basepath.'assets/pages/dashboard.js'}
+{meta_html css 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'}
+
 
 <div class="row">
     <!-- Left col -->

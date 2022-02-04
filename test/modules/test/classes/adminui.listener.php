@@ -84,6 +84,8 @@ class adminuiListener extends jEventListener
         $dashboard->addJelixLinkItem('index test', 'test~default:index', array(), 'circle');
         $dashboard->addJelixLinkItem('index adminui', 'adminui~default:index', array(),'circle');
         $dashboard->addJelixLinkItem('form', 'test~default:form', array(),'edit');
+        $dashboard->addJelixLinkItem('err404', 'test~default:error404', array(),'edit');
+        $dashboard->addJelixLinkItem('err500', 'test~default:error500', array(),'edit');
         $navigation->addMenuItem($dashboard);
 
         $layout = new SubMenu('layout', 'Layout Options', 20);
@@ -146,16 +148,15 @@ class adminuiListener extends jEventListener
     function onDashboardLoading($event) {
         /** @var Jelix\AdminUI\Dashboard\Items $dashboard */
         $dashboard = $event->dashboardItems;
-        $dashboard->addBox(new SmallBox('neworder', 'New Orders', '150','#', 'ion-bag', 'bg-aqua'));
-        $dashboard->addBox(new SmallBox('bouncerate', 'Bounce Rate', '53%', '#', 'ion-stats-bars', 'bg-green'));
-        $dashboard->addBox(new SmallBox2('cpu', 'CPU Traffic', '90%', 'ion-ios-gear-outline', 'bg-red'));
-        $dashboard->addBox(new SmallBox2('sales', 'Sales', '760', 'ion-ios-cart-outline', 'bg-yellow'));
-        $dashboard->addBox(new SmallBox2('newmembers', 'New Members', '2,000', 'ion-ios-people-outline', 'bg-orange'));
+        $dashboard->addBox(new SmallBox('neworder', 'New Orders', '150','#', 'ion ion-bag', 'bg-info'));
+        $dashboard->addBox(new SmallBox('bouncerate', 'Bounce Rate', '53%', '#', 'ion ion-stats-bars', 'bg-success'));
+        $dashboard->addBox(new SmallBox2('cpu', 'CPU Traffic', '90%', 'fas fa-cog', 'bg-info elevation-1'));
+        $dashboard->addBox(new SmallBox2('sales', 'Sales', '760', 'fas fa-shopping-cart', ' bg-success elevation-1'));
+        $dashboard->addBox(new SmallBox2('newmembers', 'New Members', '2,000', 'fas fa-users', 'bg-warning elevation-1'));
 
         $tpl = new jTpl();
         $tpl->assign('urlAdminLteAssets', \jApp::urlBasePath().\jApp::config()->adminui['adminlteAssetsUrl']);
         $dashboard->addBox(new HtmlBox('chatbox', $tpl->fetch('test~dashboard_chatbox')));
-        $dashboard->addBox(new HtmlBox('quick_email', $tpl->fetch('test~dashboard_quick_email')));
         $dashboard->addBox(new HtmlBox('tabs_custom', $tpl->fetch('test~dashboard_tabs_custom')));
         $dashboard->addBox(new HtmlBox('todolist', $tpl->fetch('test~dashboard_todolist')));
         $dashboard->addBox(new HtmlBox('calendar', $tpl->fetch('test~dashboard_calendar')));

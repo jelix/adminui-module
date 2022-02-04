@@ -105,5 +105,19 @@ class defaultCtrl extends jController
         return $rep;
     }
 
+
+    function error404()
+    {
+        $rep = $this->getResponse('html');
+        $rep->setHttpStatus(404, 'Not found');
+        return $rep;
+    }
+
+    function error500()
+    {
+        $rep = $this->getResponse('html');
+        $rep->setHttpStatus(500, 'Error');
+        return $rep;
+    }
 }
 

@@ -1,11 +1,10 @@
-{meta_html js $j_basepath.'adminlte-assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js'}
-{meta_html js $j_basepath.'assets/jvectormap/jquery-jvectormap-1.2.2.min.js'}
-{meta_html css $j_basepath.'assets/jvectormap/jquery-jvectormap-1.2.2.css'}
-{meta_html js $j_basepath.'assets/jvectormap/jquery-jvectormap-world-mill-en.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/jquery-knob/dist/jquery.knob.min.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/moment/min/moment.min.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/bootstrap-daterangepicker/daterangepicker.js'}
-{meta_html css $j_basepath.'adminlte-assets/bower_components/bootstrap-daterangepicker/daterangepicker.css'}
+{meta_html js $urlAdminLteAssets.'plugins/sparklines/sparkline.js'}
+{meta_html js $urlAdminLteAssets.'plugins/jqvmap/jquery.vmap.js'}
+{meta_html css $urlAdminLteAssets.'plugins/jqvmap/jqvmap.css'}
+{meta_html js $urlAdminLteAssets.'plugins/jqvmap/maps/jquery.vmap.usa.js'}
+{meta_html js $urlAdminLteAssets.'plugins/jquery-knob/jquery.knob.min.js'}
+{meta_html js $urlAdminLteAssets.'plugins/daterangepicker/daterangepicker.js'}
+{meta_html css $urlAdminLteAssets.'plugins/daterangepicker/daterangepicker.css'}
 
 
 <div class="box box-solid bg-light-blue-gradient">
