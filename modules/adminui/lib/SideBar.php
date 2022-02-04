@@ -15,6 +15,9 @@ class SideBar extends Bar {
 
     protected $topMenu = null;
 
+    protected $_color = 'primary';
+    protected $_lightmode = 'dark';
+
     function __construct() {
         parent::__construct();
         $this->topMenu = new SubMenu('top','');

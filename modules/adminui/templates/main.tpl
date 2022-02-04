@@ -6,7 +6,7 @@
   </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-{$navbar->color()} navbar-{$navbar->lightMode()}">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -41,7 +41,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-{$sidebar->lightMode()}-{$sidebar->color()} elevation-4">
         <!-- Brand Logo -->
         <a href="{$j_basepath}" class="brand-link">
             {$appHtmlLogoMini}

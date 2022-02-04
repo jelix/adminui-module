@@ -23,6 +23,9 @@ class NavBar extends Bar {
 
     protected $fullScreenModeEnabled = false;
 
+    protected $_color = 'white';
+    protected $_lightmode = 'light';
+
     function __construct() {
         parent::__construct();
         $this->_accountMenu = new AccountDropDown();

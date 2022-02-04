@@ -16,6 +16,9 @@ class Bar {
      */
     protected $items = array();
 
+    protected $_color = 'white';
+    protected $_lightmode = 'light';
+
     function __construct() {
 
     }
@@ -36,6 +39,25 @@ class Bar {
         });
 
         return $this->items;
+    }
+
+
+    function setColor($color, $lightmode = '')
+    {
+        $this->_color = $color;
+        if ($lightmode) {
+            $this->_lightmode = $lightmode;
+        }
+    }
+
+    function color()
+    {
+        return $this->_color;
+    }
+
+    function lightMode()
+    {
+        return $this->_lightmode;
     }
 
 }
