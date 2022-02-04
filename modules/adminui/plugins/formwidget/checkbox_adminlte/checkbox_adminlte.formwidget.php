@@ -22,12 +22,17 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
         $this->commonJs();
     }
 
+    protected function getCSSClass()
+    {
+        return 'form-check-input '.parent::getCSSClass();
+    }
+
     public function outputControl()
     {
         if ($this->ctrl->valueLabelOnCheck !== '' or $this->ctrl->valueLabelOnUncheck !== '') {
-            $this->labelAttributes['class'] = 'radio jforms-radio';
+            $this->labelAttributes['class'] = 'form-check-label jforms-radio';
         } else {
-            $this->labelAttributes['class'] = 'checkbox';
+            $this->labelAttributes['class'] = 'form-check-label';
         }
         $attrLabel = $this->getLabelAttributes(true);
 
@@ -35,7 +40,7 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
 
         if ($this->ctrl->valueLabelOnCheck !== '' or $this->ctrl->valueLabelOnUncheck !== '') {
 
-            echo '<div class="radio"><label class="',$attrLabel['class'],'" ',$attrLabel['hint'],'>';
+            echo '<div class="form-check">';
 
             $attrid = ''.$attr['id'];
 
@@ -54,10 +59,11 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
             echo '<input';
             $this->_outputAttr($attr);
             echo '/>';
+            echo '<label class="',$attrLabel['class'],'" for="',$attr['id'],'" ',$attrLabel['hint'],'>';
             echo htmlspecialchars($this->ctrl->valueLabelOnCheck);
             echo "</label></div>\n";
 
-            echo '<div class="radio"><label class="',$attrLabel['class'],'" ',$attrLabel['hint'],'>';
+            echo '<div class="form-check">';
 
             if ($this->ctrl->valueOnCheck == $this->getValue()) {
                 unset($attr['checked']);
@@ -70,10 +76,11 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
             echo '<input';
             $this->_outputAttr($attr);
             echo '/>';
+            echo '<label class="',$attrLabel['class'],'" for="',$attr['id'],'" ',$attrLabel['hint'],'>';
             echo htmlspecialchars($this->ctrl->valueLabelOnUncheck);
             echo "</label></div>\n";
         } else {
-            echo '<div class="checkbox"><label class="',$attrLabel['class'],'" for="',$this->getId(),'"',$attrLabel['idLabel'],$attrLabel['hint'],'>';
+            echo '<div class="form-check">';
 
             if ($this->ctrl->valueOnCheck == $this->getValue()) {
                 $attr['checked'] = 'checked';
@@ -87,6 +94,7 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
             echo '<input';
             $this->_outputAttr($attr);
             echo '/>';
+            echo '<label class="',$attrLabel['class'],'" for="',$this->getId(),'"',$attrLabel['idLabel'],$attrLabel['hint'],'>';
             echo htmlspecialchars($this->ctrl->label), $attrLabel['reqHtml'];
             echo "</label></div>\n";
         }
