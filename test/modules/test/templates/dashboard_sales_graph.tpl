@@ -1,6 +1,4 @@
-{meta_html js $urlAdminLteAssets.'plugins/jquery-knob/jquery.knob.min.js'}
-{meta_html js $urlAdminLteAssets.'plugins/chart.js/Chart.min.js'}
-{meta_html css $urlAdminLteAssets.'plugins/chart.js/Chart.css'}
+{meta_html assets 'dashboard_sales_graph'}
 
 <!-- solid sales graph -->
 <div class="card bg-gradient-info">

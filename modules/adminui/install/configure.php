@@ -36,7 +36,7 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
         $configIni->setValues(array(
             'jquery.js' => "adminlte-assets/plugins/jquery/jquery.js",
             'adminlte-bootstrap.require' =>'jquery,jquery_ui',
-            'adminlte-bootstrap.css' =>array('adminlte-assets/plugins/bootstrap/dist/css/bootstrap.min.css'),
+            //'adminlte-bootstrap.css' =>array('adminlte-assets/plugins/bootstrap/dist/css/bootstrap.min.css'),
             'adminlte-bootstrap.js' =>array('adminlte-assets/plugins/bootstrap/js/bootstrap.bundle.min.js'),
             'adminlte-fontawesome.css' =>array('adminlte-assets/plugins/fontawesome-free/css/all.min.css'),
             'adminlte.require' =>'jquery,adminlte-bootstrap,adminlte-fontawesome',
@@ -52,7 +52,30 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
                 'adminlte-assets/plugins/fastclick/fastclick.js',
                 'adminlte-assets/dist/js/adminlte.min.js',
                 'adminui-assets/adminui.js',
-            )
+            ),
+
+            'knob.js' =>  ['adminlte-assets/plugins/jquery-knob/jquery.knob.min.js'],
+
+            'daterangepicker.require' =>  'moment',
+            'daterangepicker.js' =>  ['adminlte-assets/plugins/daterangepicker/daterangepicker.js'],
+            'daterangepicker.css' =>  ['adminlte-assets/plugins/daterangepicker/daterangepicker.css'],
+
+            'jqvmap.js' =>  ['adminlte-assets/plugins/jqvmap/jquery.vmap.js'],
+            'jqvmap.css' =>  ['adminlte-assets/plugins/jqvmap/jqvmap.css'],
+
+            'sparkline.js' =>  ['adminlte-assets/plugins/sparklines/sparkline.js'],
+
+            'chartjs.js' =>  ['adminlte-assets/plugins/chart.js/Chart.min.js'],
+            'chartjs.css' =>  ['adminlte-assets/plugins/chart.js/Chart.css'],
+
+            'summernote.js' =>  ['adminlte-assets/plugins/summernote/summernote-bs4.min.js'],
+
+            'moment.js' =>  ['adminlte-assets/plugins/moment/moment.min.js'],
+
+            'tempusdominus.require' => 'moment',
+            'tempusdominus.js' =>  ['adminlte-assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'],
+            'tempusdominus.css' =>  ['adminlte-assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'],
+
         ), 'webassets_common');
 
 
@@ -63,8 +86,10 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'htmlLogoMini' => '<b>A</b>UI',
             'htmlCopyright' => '<strong>Copyright &copy; 2022 My Company.</strong>.',
             'dashboardTemplate'=>'',
+            'disableDashboardMenuItem' => false,
             'bodyCSSClass'=>"hold-transition skin-blue sidebar-mini",
-            'bareBodyCSSClass'=>"hold-transition login-page"
+            'bareBodyCSSClass'=>"hold-transition login-page",
+            'adminlteAssetsUrl'=> "adminlte-assets/"
         );
 
         foreach($defaultValues as $prop => $value) {

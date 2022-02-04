@@ -1,7 +1,5 @@
 
-{meta_html css $urlAdminLteAssets.'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'}
-{meta_html js $j_basepath.'adminlte-assets/plugins/moment/moment.min.js'}
-{meta_html js $urlAdminLteAssets.'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'}
+{meta_html assets 'dashboard_calendar'}
 
 <div class="card bg-gradient-success">
     <div class="card-header border-0">

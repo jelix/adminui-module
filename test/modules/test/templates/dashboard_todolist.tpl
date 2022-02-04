@@ -1,4 +1,4 @@
-{meta_html js $urlAdminLteAssets.'plugins/summernote/summernote-bs4.min.js'}
+{meta_html assets 'summernote'}
 
 
 <div class="card">

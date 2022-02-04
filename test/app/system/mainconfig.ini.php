@@ -103,6 +103,34 @@ adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
 adminlte.js[]=adminui-assets/adminui.js
 ;adminlte.include=
 
+knob.js[] = adminlte-assets/plugins/jquery-knob/jquery.knob.min.js
+
+daterangepicker.require=moment
+daterangepicker.js[]=adminlte-assets/plugins/daterangepicker/daterangepicker.js
+daterangepicker.css[]=adminlte-assets/plugins/daterangepicker/daterangepicker.css
+
+jqvmap.js[]=adminlte-assets/plugins/jqvmap/jquery.vmap.js
+jqvmap.css[]=adminlte-assets/plugins/jqvmap/jqvmap.css
+
+sparkline.js[]=adminlte-assets/plugins/sparklines/sparkline.js
+
+chartjs.js[]=adminlte-assets/plugins/chart.js/Chart.min.js
+chartjs.css[]=adminlte-assets/plugins/chart.js/Chart.css
+
+summernote.js[]=adminlte-assets/plugins/summernote/summernote-bs4.min.js
+
+moment.js[]=adminlte-assets/plugins/moment/moment.min.js
+
+tempusdominus.require=moment
+tempusdominus.js[]=adminlte-assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js
+tempusdominus.css[]=adminlte-assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css
+
+dashboard.require=adminlte,knob
+
+dashboard_map.require="dashboard,jqvmap,sparkline,daterangepicker"
+dashboard_sales_graph.require=dashboard,chartjs
+dashboard_calendar.require=dashboard,tempusdominus
+
 [adminui]
 appVersion=1.2.3
 htmlLogo="<b>Admin</b>UI"
