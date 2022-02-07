@@ -3,8 +3,8 @@
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
+            <input type="checkbox" checked>
             Report panel usage
-            <input type="checkbox" class="pull-right" checked>
         </label>
 
         <p>
@@ -15,8 +15,8 @@
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
+            <input type="checkbox" checked>
             Allow mail redirect
-            <input type="checkbox" class="pull-right" checked>
         </label>
 
         <p>
@@ -27,8 +27,8 @@
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
+            <input type="checkbox" checked>
             Expose author name in posts
-            <input type="checkbox" class="pull-right" checked>
         </label>
 
         <p>
@@ -41,24 +41,24 @@
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
+            <input type="checkbox" checked>
             Show me as online
-            <input type="checkbox" class="pull-right" checked>
         </label>
     </div>
     <!-- /.form-group -->
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
+            <input type="checkbox" >
             Turn off notifications
-            <input type="checkbox" class="pull-right">
         </label>
     </div>
     <!-- /.form-group -->
 
     <div class="form-group">
         <label class="control-sidebar-subheading">
-            Delete chat history
             <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            Delete chat history
         </label>
     </div>
     <!-- /.form-group -->

@@ -134,7 +134,7 @@ class adminuiListener extends jEventListener
         // ---------------- Control sidebar
 
         $tpl = new jTpl();
-        $prefPanel = new Panel('settings', 'Settings', 'gears', 10);
+        $prefPanel = new Panel('settings', 'Settings', 'cog', 10);
         $prefPanel->setContent($tpl->fetch('test~control_sidebar_settings'));
         $uim->controlSidebar()->addPanel($prefPanel);
 

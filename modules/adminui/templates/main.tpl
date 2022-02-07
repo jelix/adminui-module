@@ -92,14 +92,20 @@
     {if $controlSidebar->hasPanels()}
     <aside class="control-sidebar control-sidebar-dark">
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            {foreach $controlSidebar->getPanels() as $panel}
-                <li><a href="#control-sidebar-{$panel->getId()}-tab" data-toggle="tab" title="{$panel->getLabel()|eschtml}">
+            {foreach $controlSidebar->getPanels() as $k => $panel}
+                <li class="nav-item">
+                    <a href="#control-sidebar-{$panel->getId()}-tab" title="{$panel->getLabel()|eschtml}"
+                    class="nav-link {if $k==0}active{/if}" data-toggle="pill" role="tab"
+                       aria-controls="control-sidebar-{$panel->getId()}-tab" {if $k==0}aria-selected="true"{/if}
+                    >
                         {if $panel->getIcon()}<i class="fa fa-{$panel->getIcon()}"></i>{else}{$panel->getLabel()|eschtml}{/if}</a></li>
             {/foreach}
         </ul>
         <div class="tab-content">
-            {foreach $controlSidebar->getPanels() as $panel}
-            <div class="tab-pane" id="control-sidebar-{$panel->getId()}-tab">
+            {foreach $controlSidebar->getPanels() as $k=>$panel}
+            <div class="tab-pane {if $k==0}show active{/if}" id="control-sidebar-{$panel->getId()}-tab"
+                role="tabpanel" aria-labelledby="control-sidebar-{$panel->getId()}-tab"
+            >
                 {$panel->getContent()}
             </div>
             {/foreach}
