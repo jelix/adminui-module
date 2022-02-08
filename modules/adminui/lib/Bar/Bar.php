@@ -1,13 +1,15 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
 
 namespace Jelix\AdminUI\Bar;
 
+
+use Jelix\AdminUI\UIConfig;
 
 class Bar {
 
@@ -16,8 +18,17 @@ class Bar {
      */
     protected $items = array();
 
-    function __construct() {
+    protected $_color = 'white';
+    protected $_lightmode = 'light';
 
+    /**
+     * @var UIConfig
+     */
+    protected $_config;
+
+    function __construct(UIConfig $config)
+    {
+        $this->_config = $config;
     }
 
     function addItem(Item $item) {
@@ -37,5 +48,4 @@ class Bar {
 
         return $this->items;
     }
-
 }

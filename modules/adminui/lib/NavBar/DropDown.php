@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -23,9 +23,9 @@ class DropDown extends Item {
     const BADGE_PILL_WARNING = 'warning';
     const BADGE_PILL_INFO = 'info';
 
-    const ICON_ENVELOPE = "envelope-o";
-    const ICON_NOTIFICATION = "bell-o";
-    const ICON_tasks = "flag-o";
+    const ICON_ENVELOPE = "comments";
+    const ICON_NOTIFICATION = "bell";
+    const ICON_TASKS = "flag";
 
     protected $tpl;
 
@@ -45,8 +45,7 @@ class DropDown extends Item {
         $this->tpl->assign(array(
             'header' => '',
             'content' => '',
-            'footer' => '',
-            'footerLink' => null,
+            'footer' => ''
         ));
     }
 
@@ -65,17 +64,14 @@ class DropDown extends Item {
      */
     function setFooter($footer) {
         if ($footer instanceof Link) {
-            $this->tpl->assign('footerLink', $footer);
-            $this->tpl->assign('footer', '');
+            $footer->setCssClass('dropdown-item dropdown-footer');
         }
-        else {
-            $this->tpl->assign('footer', $footer);
-            $this->tpl->assign('footerLink', null);
-        }
+        $this->tpl->assign('footer', $footer);
     }
 
     public function __toString()
     {
+        $this->tpl->assignIfNone('footer', '');
         $this->tpl->assign('badgePills', $this->badgePills);
         return $this->tpl->fetch($this->templateSelector);
     }

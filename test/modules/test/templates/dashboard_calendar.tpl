@@ -1,77 +1,41 @@
-{meta_html js $j_basepath.'adminlte-assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'}
-{meta_html css $j_basepath.'adminlte-assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'}
 
-<div class="box box-solid bg-green-gradient">
-    <div class="box-header">
-        <i class="fa fa-calendar"></i>
+{meta_html assets 'dashboard_calendar'}
 
-        <h3 class="box-title">Calendar</h3>
-        <!-- tools box -->
-        <div class="pull-right box-tools">
+<div class="card bg-gradient-success">
+    <div class="card-header border-0">
+
+        <h3 class="card-title">
+            <i class="far fa-calendar-alt"></i>
+            Calendar
+        </h3>
+        <!-- tools card -->
+        <div class="card-tools">
             <!-- button with a dropdown -->
             <div class="btn-group">
-                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i></button>
-                <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Add new event</a></li>
-                    <li><a href="#">Clear events</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View calendar</a></li>
-                </ul>
+                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="#" class="dropdown-item">Add new event</a>
+                    <a href="#" class="dropdown-item">Clear events</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">View calendar</a>
+                </div>
             </div>
-            <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+            <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
             </button>
-            <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+            <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                <i class="fas fa-times"></i>
             </button>
         </div>
         <!-- /. tools -->
     </div>
-    <!-- /.box-header -->
-    <div class="box-body no-padding">
+    <!-- /.card-header -->
+    <div class="card-body pt-0">
         <!--The calendar -->
         <div id="calendar" style="width: 100%"></div>
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer text-black">
-        <div class="row">
-            <div class="col-sm-6">
-                <!-- Progress bars -->
-                <div class="clearfix">
-                    <span class="pull-left">Task #1</span>
-                    <small class="pull-right">90%</small>
-                </div>
-                <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                </div>
-
-                <div class="clearfix">
-                    <span class="pull-left">Task #2</span>
-                    <small class="pull-right">70%</small>
-                </div>
-                <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-6">
-                <div class="clearfix">
-                    <span class="pull-left">Task #3</span>
-                    <small class="pull-right">60%</small>
-                </div>
-                <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                </div>
-
-                <div class="clearfix">
-                    <span class="pull-left">Task #4</span>
-                    <small class="pull-right">40%</small>
-                </div>
-                <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                </div>
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-    </div>
+    <!-- /.card-body -->
 </div>
+

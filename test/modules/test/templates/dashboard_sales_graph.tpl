@@ -1,50 +1,52 @@
-{meta_html js $j_basepath.'assets/raphael/raphael.min.js'}
-{meta_html js $j_basepath.'assets/morris.js/morris.min.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/jquery-knob/dist/jquery.knob.min.js'}
-{meta_html css $j_basepath.'assets/morris.js/morris.css'}
+{meta_html assets 'dashboard_sales_graph'}
 
-<div class="box box-solid bg-teal-gradient">
-    <div class="box-header">
-        <i class="fa fa-th"></i>
+<!-- solid sales graph -->
+<div class="card bg-gradient-info">
+    <div class="card-header border-0">
+        <h3 class="card-title">
+            <i class="fas fa-th mr-1"></i>
+            Sales Graph
+        </h3>
 
-        <h3 class="box-title">Sales Graph</h3>
-
-        <div class="box-tools pull-right">
-            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+        <div class="card-tools">
+            <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
             </button>
-            <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+            <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                <i class="fas fa-times"></i>
             </button>
         </div>
     </div>
-    <div class="box-body border-radius-none">
-        <div class="chart" id="line-chart" style="height: 250px;"></div>
+    <div class="card-body">
+        <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer no-border">
+    <!-- /.card-body -->
+    <div class="card-footer bg-transparent">
         <div class="row">
-            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+            <div class="col-4 text-center">
                 <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                        data-fgColor="#39CCCC">
 
-                <div class="knob-label">Mail-Orders</div>
+                <div class="text-white">Mail-Orders</div>
             </div>
             <!-- ./col -->
-            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+            <div class="col-4 text-center">
                 <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                        data-fgColor="#39CCCC">
 
-                <div class="knob-label">Online</div>
+                <div class="text-white">Online</div>
             </div>
             <!-- ./col -->
-            <div class="col-xs-4 text-center">
+            <div class="col-4 text-center">
                 <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                        data-fgColor="#39CCCC">
 
-                <div class="knob-label">In-Store</div>
+                <div class="text-white">In-Store</div>
             </div>
             <!-- ./col -->
         </div>
         <!-- /.row -->
     </div>
-    <!-- /.box-footer -->
+    <!-- /.card-footer -->
 </div>
+<!-- /.card -->

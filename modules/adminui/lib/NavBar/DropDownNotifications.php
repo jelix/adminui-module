@@ -27,6 +27,16 @@ class DropDownNotifications extends DropDownMenu {
         $this->setFooter(new Link($urlAllMessages, \jLocale::get('adminui~ui.header.notifications.all')));
     }
 
+    function addNotification(NotificationItem $notif) {
+        $this->links[] = $notif;
+    }
+
+    function createAddNotification($label, $url, $date, $icon = '', $newWindow = false) {
+        $msg = new NotificationItem($label, $url, $date,  $icon, $newWindow);
+        $this->links[] = $msg;
+        return $msg;
+    }
+
     public function __toString()
     {
         $count = count($this->links);

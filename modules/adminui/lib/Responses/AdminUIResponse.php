@@ -24,7 +24,8 @@ class AdminUIResponse extends AbstractHtmlResponse
     public function __construct()
     {
         parent::__construct();
-        $this->uiManager = new \Jelix\AdminUI\UIManager();
+
+        $this->uiManager = new \Jelix\AdminUI\UIManager($this->_UIConfig);
     }
 
     public function getUIManager()
@@ -45,6 +46,7 @@ class AdminUIResponse extends AbstractHtmlResponse
         $this->body->assign('sidebar', $this->uiManager->sidebar());
         $this->body->assign('controlSidebar', $this->uiManager->controlSidebar());
         $this->body->assign('footer', $this->uiManager->footer());
+        $this->body->assign('brandClass', $this->_UIConfig->get('header.brand.smalltext') ?'text-sm': '');
 
         if (intval($this->_httpStatusCode) < 400 || $this->body->isAssigned('MAIN')) {
             $this->body->assignIfNone('MAIN', '<p>Empty page</p>');
@@ -52,7 +54,6 @@ class AdminUIResponse extends AbstractHtmlResponse
         else {
             $this->showErrorPage();
         }
-        $this->setBodyClass('bodyCSSClass', "hold-transition skin-blue sidebar-mini");
-
+        $this->addBodyClass($this->uiManager->bodyCssClass());
     }
 }

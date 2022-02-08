@@ -84,24 +84,52 @@ mailerType=file
 email="root@localhost"
 
 [webassets_common]
+jquery.js="adminlte-assets/plugins/jquery/jquery.js"
 
-adminlte-bootstrap.require=jquery
-adminlte-bootstrap.css[]="adminlte-assets/bower_components/bootstrap/dist/css/bootstrap.min.css"
-adminlte-bootstrap.js[]="adminlte-assets/bower_components/bootstrap/dist/js/bootstrap.min.js"
+adminlte-bootstrap.require=jquery,jquery_ui
+adminlte-bootstrap.js[]=adminlte-assets/plugins/bootstrap/js/bootstrap.bundle.min.js
 
-adminlte-fontawesome.css[]="adminlte-assets/bower_components/font-awesome/css/font-awesome.min.css"
+adminlte-fontawesome.css[]=adminlte-assets/plugins/fontawesome-free/css/all.min.css
 
-adminlte.require="jquery,adminlte-bootstrap,adminlte-fontawesome"
-adminlte.css[]="adminlte-assets/bower_components/Ionicons/css/ionicons.min.css"
-adminlte.css[]="adminlte-assets/dist/css/AdminLTE.min.css"
-adminlte.css[]="adminlte-assets/dist/css/skins/_all-skins.min.css"
-adminlte.css[]="adminlte-assets/SourceSansPro/SourceSansPro.css"
-adminlte.css[]="adminlte-assets/adminui.css"
-adminlte.js[]="adminlte-assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"
-adminlte.js[]="adminlte-assets/bower_components/fastclick/lib/fastclick.js"
-adminlte.js[]="adminlte-assets/dist/js/adminlte.min.js"
-adminlte.js[]="adminlte-assets/adminui.js"
+adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
+adminlte.css[]=adminlte-assets/dist/css/adminlte.min.css
+adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
+adminlte.css[]=adminui-assets/SourceSansPro/SourceSansPro.css
+adminlte.css[]=adminui-assets/adminui.css
+adminlte.js[]=adminlte-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js
+adminlte.js[]=adminlte-assets/plugins/jquery-mousewheel/jquery.mousewheel.js
+adminlte.js[]=adminlte-assets/plugins/fastclick/fastclick.js
+adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
+adminlte.js[]=adminui-assets/adminui.js
 ;adminlte.include=
+
+knob.js[] = adminlte-assets/plugins/jquery-knob/jquery.knob.min.js
+
+daterangepicker.require=moment
+daterangepicker.js[]=adminlte-assets/plugins/daterangepicker/daterangepicker.js
+daterangepicker.css[]=adminlte-assets/plugins/daterangepicker/daterangepicker.css
+
+jqvmap.js[]=adminlte-assets/plugins/jqvmap/jquery.vmap.js
+jqvmap.css[]=adminlte-assets/plugins/jqvmap/jqvmap.css
+
+sparkline.js[]=adminlte-assets/plugins/sparklines/sparkline.js
+
+chartjs.js[]=adminlte-assets/plugins/chart.js/Chart.min.js
+chartjs.css[]=adminlte-assets/plugins/chart.js/Chart.css
+
+summernote.js[]=adminlte-assets/plugins/summernote/summernote-bs4.min.js
+
+moment.js[]=adminlte-assets/plugins/moment/moment.min.js
+
+tempusdominus.require=moment
+tempusdominus.js[]=adminlte-assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js
+tempusdominus.css[]=adminlte-assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css
+
+dashboard.require=adminlte,knob
+
+dashboard_map.require="dashboard,jqvmap,sparkline,daterangepicker"
+dashboard_sales_graph.require=dashboard,chartjs
+dashboard_calendar.require=dashboard,tempusdominus
 
 [adminui]
 appVersion=1.2.3
@@ -109,6 +137,66 @@ htmlLogo="<b>Admin</b>UI"
 htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2022 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 
-dashboardTemplate="test~dashboard"
-bodyCSSClass="hold-transition skin-blue sidebar-mini"
+bodyCSSClass="hold-transition skin-blue"
 bareBodyCSSClass="hold-transition login-page"
+adminlteAssetsUrl="adminlte-assets/"
+
+dashboardTemplate="test~dashboard"
+disableDashboardMenuItem=off
+fullScreenModeEnabled=off
+
+; body.dark-mode
+darkmode=off
+
+; body.layout-navbar-fixed
+header.fixed=off
+
+; .main-header.border-bottom-0
+header.border=on
+
+; .main-header.text-sm
+header.smalltext=off
+
+; .main-header.navbar-*
+header.color=white
+
+; .main-header.navbar-dark or .main-header.navbar-light
+header.darktext=off
+
+; .brand-link.text-sm
+header.brand.smalltext = off
+
+; body.sidebar-collapse
+sidebar.collapsed=off
+
+; body.layout-fixed
+sidebar.fixed=off
+
+; body.sidebar-mini
+; when collapsed, the sidebar is still visible in a mini format
+sidebar.mini=on
+
+; .nav-sidebar.nav-flat
+sidebar.nav.flat.style=off
+; .nav-sidebar.nav-compact
+sidebar.nav.compact=off
+; .nav-sidebar.nav-child-indent
+sidebar.nav.child.indent=off
+; .nav-sidebar.nav-collapse-hide-child
+sidebar.nav.child.collapsed=
+; .nav-sidebar.text-sm
+sidebar.nav.smalltext = off
+
+; .main-sidebar.sidebar-dark-<color> or .main-sidebar.sidebar-light-<color>
+sidebar.dark=on
+sidebar.current-item.color=primary
+
+; body.layout-footer-fixed
+footer.fixed=off
+; .main-footer.text-sm
+footer.smalltext = off
+
+; body.text-sm
+body.smalltext = off
+
+

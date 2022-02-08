@@ -13,7 +13,8 @@
     "require": {
         "php": ">=5.6",
         "jelix/jelix": "dev-jelix-1.7.x",
-        "jelix/wikirenderer-plugin": "1.7.*"
+        "jelix/wikirenderer-plugin": "1.7.*",
+        "almasaeed2010/adminlte": "~3.1.0"
     },
     "require-dev" : {
         

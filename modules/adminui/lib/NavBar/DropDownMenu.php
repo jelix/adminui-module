@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -19,7 +19,7 @@ class DropDownMenu extends DropDown {
 
     protected $templateSelector = 'adminui~navbar_dropdown_menu';
 
-    protected $cssClass = 'notifications-menu';
+    //protected $cssClass = 'notifications-menu';
 
 
     function addLink(Link $link) {
@@ -29,7 +29,7 @@ class DropDownMenu extends DropDown {
     public function __toString()
     {
         $this->tpl->assign('links', $this->links);
-        $this->tpl->assign('dropdownCssClass', $this->cssClass);
+        //$this->tpl->assign('dropdownCssClass', $this->cssClass);
         return parent::__toString();
     }
 }

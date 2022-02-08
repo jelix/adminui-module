@@ -19,10 +19,13 @@ class Link {
 
     protected $newWindow = false;
 
-    function __construct($url, $label, $newWindow = false) {
+    protected $cssClass = '';
+
+    function __construct($url, $label, $newWindow = false, $cssClass = '') {
         $this->url = $url;
         $this->label = $label;
         $this->newWindow = $newWindow;
+        $this->cssClass = $cssClass;
     }
 
     function getUrl() {
@@ -37,12 +40,18 @@ class Link {
         return $this->newWindow;
     }
 
+    function setCssClass($classes)
+    {
+        $this->cssClass = $classes;
+    }
+
     function __toString()
     {
         $l = '<a href="'.$this->getUrl().'"';
         if ($this->toNewWindow()) {
             $l .= ' target="_blank"';
         }
+        $l .= ' class="'.$this->cssClass.'"';
         $l .= '>'.$this->getLabel().'</a>';
         return $l;
     }

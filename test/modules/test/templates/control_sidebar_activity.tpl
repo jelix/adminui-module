@@ -5,7 +5,7 @@
             <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
             <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                <h6 class="control-sidebar-subheading">Langdon's Birthday</h6>
 
                 <p>Will be 23 on April 24th</p>
             </div>
@@ -16,7 +16,7 @@
             <i class="menu-icon fa fa-user bg-yellow"></i>
 
             <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                <h6 class="control-sidebar-subheading">Frodo Updated His Profile</h6>
 
                 <p>New phone +1(800)555-1234</p>
             </div>
@@ -27,7 +27,7 @@
             <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
 
             <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                <h6 class="control-sidebar-subheading">Nora Joined Mailing List</h6>
 
                 <p>nora@example.com</p>
             </div>
@@ -38,7 +38,7 @@
             <i class="menu-icon fa fa-file-code-o bg-green"></i>
 
             <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                <h6 class="control-sidebar-subheading">Cron Job 254 Executed</h6>
 
                 <p>Execution time 5 seconds</p>
             </div>

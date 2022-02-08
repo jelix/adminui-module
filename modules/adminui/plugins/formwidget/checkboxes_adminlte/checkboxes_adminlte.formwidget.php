@@ -12,15 +12,20 @@ class checkboxes_adminlteFormWidget extends checkboxes_htmlFormWidget
 {
     use \Jelix\AdminUI\Form\WidgetTrait;
 
+    protected function getCSSClass()
+    {
+        return 'form-check-input '.parent::getCSSClass();
+    }
+
     protected function displayRadioCheckbox($attr, $label, $checked)
     {
-        echo '<div class="checkbox jforms-chkbox jforms-ctl-'.$this->ctrl->ref.'">'.
-            '<label><input type="checkbox"';
+        echo '<div class="jforms-chkbox jforms-ctl-'.$this->ctrl->ref.' form-check">'.
+            '<input type="checkbox"';
         $this->_outputAttr($attr);
         if ($checked) {
             echo ' checked';
         }
-        echo '/>',htmlspecialchars($label),"</label></div>\n";
+        echo '/><label class="form-check-label" for="'.$attr['id'].'">',htmlspecialchars($label),"</label></div>\n";
     }
 
 

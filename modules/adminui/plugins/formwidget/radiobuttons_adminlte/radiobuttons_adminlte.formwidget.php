@@ -13,14 +13,19 @@ class radiobuttons_adminlteFormWidget extends radiobuttons_htmlFormWidget
 {
     use \Jelix\AdminUI\Form\WidgetTrait;
 
+    protected function getCSSClass()
+    {
+        return 'form-check-input '.parent::getCSSClass();
+    }
+
     protected function displayRadioCheckbox($attr, $label, $checked)
     {
-        echo '<div class="radio jforms-chkbox jforms-ctl-'.$this->ctrl->ref.'">'.
-            '<label><input type="radio"';
+        echo '<div class="radio jforms-chkbox jforms-ctl-'.$this->ctrl->ref.' form-check">'.
+            '<input type="radio"';
         $this->_outputAttr($attr);
         if ($checked) {
             echo ' checked';
         }
-        echo '/>',htmlspecialchars($label),"</label></div>\n";
+        echo '/><label class="form-check-label" for="'.$attr['id'].'">',htmlspecialchars($label),"</label></div>\n";
     }
 }

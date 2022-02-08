@@ -1,54 +1,48 @@
-{meta_html js $j_basepath.'adminlte-assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js'}
-{meta_html js $j_basepath.'assets/jvectormap/jquery-jvectormap-1.2.2.min.js'}
-{meta_html css $j_basepath.'assets/jvectormap/jquery-jvectormap-1.2.2.css'}
-{meta_html js $j_basepath.'assets/jvectormap/jquery-jvectormap-world-mill-en.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/jquery-knob/dist/jquery.knob.min.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/moment/min/moment.min.js'}
-{meta_html js $j_basepath.'adminlte-assets/bower_components/bootstrap-daterangepicker/daterangepicker.js'}
-{meta_html css $j_basepath.'adminlte-assets/bower_components/bootstrap-daterangepicker/daterangepicker.css'}
+{meta_html assets 'dashboard_map'}
+{meta_html js $urlAdminLteAssets.'plugins/jqvmap/maps/jquery.vmap.usa.js'}
 
 
-<div class="box box-solid bg-light-blue-gradient">
-    <div class="box-header">
-        <!-- tools box -->
-        <div class="pull-right box-tools">
-            <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip"
-                    title="Date range">
-                <i class="fa fa-calendar"></i></button>
-            <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse"
-                    data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                <i class="fa fa-minus"></i></button>
-        </div>
-        <!-- /. tools -->
-
-        <i class="fa fa-map-marker"></i>
-
-        <h3 class="box-title">
+<!-- Map card -->
+<div class="card bg-gradient-primary">
+    <div class="card-header border-0">
+        <h3 class="card-title">
+            <i class="fas fa-map-marker-alt mr-1"></i>
             Visitors
         </h3>
+        <!-- card tools -->
+        <div class="card-tools">
+            <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
+                <i class="far fa-calendar-alt"></i>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <!-- /.card-tools -->
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div id="world-map" style="height: 250px; width: 100%;"></div>
     </div>
-    <!-- /.box-body-->
-    <div class="box-footer no-border">
+    <!-- /.card-body-->
+    <div class="card-footer bg-transparent">
         <div class="row">
-            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+            <div class="col-4 text-center">
                 <div id="sparkline-1"></div>
-                <div class="knob-label">Visitors</div>
+                <div class="text-white">Visitors</div>
             </div>
             <!-- ./col -->
-            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+            <div class="col-4 text-center">
                 <div id="sparkline-2"></div>
-                <div class="knob-label">Online</div>
+                <div class="text-white">Online</div>
             </div>
             <!-- ./col -->
-            <div class="col-xs-4 text-center">
+            <div class="col-4 text-center">
                 <div id="sparkline-3"></div>
-                <div class="knob-label">Exists</div>
+                <div class="text-white">Sales</div>
             </div>
             <!-- ./col -->
         </div>
         <!-- /.row -->
     </div>
 </div>
+<!-- /.card -->

@@ -70,7 +70,7 @@ class defaultCtrl extends jController
 
         $rep->body->assign('page_title', 'A form');
         $rep->body->assign('sub_page_title', 'Show all jForms widgets for AdminLte');
-
+        $tpl->assign('customform' , $this->param('custom'));
         $rep->body->assign('MAIN', $tpl->fetch('test~form'));
         return $rep;
     }
@@ -105,5 +105,19 @@ class defaultCtrl extends jController
         return $rep;
     }
 
+
+    function error404()
+    {
+        $rep = $this->getResponse('html');
+        $rep->setHttpStatus(404, 'Not found');
+        return $rep;
+    }
+
+    function error500()
+    {
+        $rep = $this->getResponse('html');
+        $rep->setHttpStatus(500, 'Error');
+        return $rep;
+    }
 }
 
