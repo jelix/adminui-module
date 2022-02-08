@@ -2,10 +2,16 @@ AdminUI module
 ==============
 
 This is a module for Jelix, providing an interface for an administration application.
-It uses the [AdminLTE theme](https://adminlte.io/) 2.4.16, and is entirely customizable
+It uses the [AdminLTE theme](https://adminlte.io/) 3.2.0, and is entirely customizable
 through APIs.
 
-This module is for Jelix 1.7.2 and higher.
+You can easily add content into the sidebar, the navbar or the dashboard, without
+manipulating HTML.
+
+The module provide also widgets for jForms, that generate HTML for Bootstrap
+and CSS of AdminLTE.
+
+This module is for Jelix 1.7.9 and higher.
 
 Setting up the module
 =====================
