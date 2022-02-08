@@ -137,11 +137,66 @@ htmlLogo="<b>Admin</b>UI"
 htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2022 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 
-bodyCSSClass="hold-transition skin-blue sidebar-mini"
+bodyCSSClass="hold-transition skin-blue"
 bareBodyCSSClass="hold-transition login-page"
 adminlteAssetsUrl="adminlte-assets/"
 
 dashboardTemplate="test~dashboard"
 disableDashboardMenuItem=off
+fullScreenModeEnabled=off
+
+; body.dark-mode
+darkmode=off
+
+; body.layout-navbar-fixed
+header.fixed=off
+
+; .main-header.border-bottom-0
+header.border=on
+
+; .main-header.text-sm
+header.smalltext=off
+
+; .main-header.navbar-*
+header.color=white
+
+; .main-header.navbar-dark or .main-header.navbar-light
+header.darktext=off
+
+; .brand-link.text-sm
+header.brand.smalltext = off
+
+; body.sidebar-collapse
+sidebar.collapsed=off
+
+; body.layout-fixed
+sidebar.fixed=off
+
+; body.sidebar-mini
+; when collapsed, the sidebar is still visible in a mini format
+sidebar.mini=on
+
+; .nav-sidebar.nav-flat
+sidebar.nav.flat.style=off
+; .nav-sidebar.nav-compact
+sidebar.nav.compact=off
+; .nav-sidebar.nav-child-indent
+sidebar.nav.child.indent=off
+; .nav-sidebar.nav-collapse-hide-child
+sidebar.nav.child.collapsed=
+; .nav-sidebar.text-sm
+sidebar.nav.smalltext = off
+
+; .main-sidebar.sidebar-dark-<color> or .main-sidebar.sidebar-light-<color>
+sidebar.dark=on
+sidebar.current-item.color=primary
+
+; body.layout-footer-fixed
+footer.fixed=off
+; .main-footer.text-sm
+footer.smalltext = off
+
+; body.text-sm
+body.smalltext = off
 
 

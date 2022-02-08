@@ -26,6 +26,11 @@ class AdminUIBareResponse extends AbstractHtmlResponse
         else {
             $this->showErrorPage();
         }
-        $this->setBodyClass('bareBodyCSSClass', "hold-transition skin-blue login-page");
+
+        $cssClass = $this->_UIConfig->get('bareBodyCSSClass');
+        if ($cssClass == '') {
+            $cssClass = "hold-transition skin-blue login-page";
+        }
+        $this->addBodyClass($cssClass);
     }
 }

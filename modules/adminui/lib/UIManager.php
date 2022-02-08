@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019 Laurent Jouanneau
+ * @copyright 2019-2022 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -30,13 +30,28 @@ class UIManager {
      */
     protected $_footer;
 
-    function __construct()
+    /**
+     * @var UIConfig
+     */
+    protected $_config;
+
+    function __construct(UIConfig $config)
     {
-        $this->_navbar = new NavBar();
-        $this->_sidebar = new SideBar();
-        $this->_controlSidebar = new ControlSideBar();
-        $this->_footer = new Footer();
+        $this->_config = $config;
+        $this->_navbar = new NavBar($config);
+        $this->_sidebar = new SideBar($config);
+        $this->_controlSidebar = new ControlSideBar($config);
+        $this->_footer = new Footer($config);
     }
+
+    /**
+     * @return UIConfig
+     */
+    function config()
+    {
+        return $this->_config;
+    }
+
 
     /**
      * @return NavBar
@@ -67,4 +82,18 @@ class UIManager {
     {
         return $this->_footer;
     }
+
+    function bodyCssClass()
+    {
+        return $this->_config->get('bodyCSSClass').
+            ($this->_config->get('darkmode')?' dark-mode':'').
+            ($this->_config->get('header.fixed')?' layout-navbar-fixed':'').
+            ($this->_config->get('sidebar.collapsed')?' sidebar-collapse':'').
+            ($this->_config->get('sidebar.fixed')?' layout-fixed':'').
+            ($this->_config->get('sidebar.mini')?' sidebar-mini':'').
+            ($this->_config->get('footer.fixed')?' layout-footer-fixed':'').
+            ($this->_config->get('body.smalltext')?' text-sm':'')
+            ;
+    }
+
 }

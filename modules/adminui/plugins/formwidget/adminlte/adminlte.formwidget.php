@@ -19,22 +19,23 @@ class adminlteFormWidget extends \jelix\forms\HtmlWidget\RootWidget
     public function outputHeader($builder)
     {
         $conf = jApp::config()->urlengine;
-        $form = $builder->getForm();
+        $collection = jApp::config()->webassets['useCollection'];
+        $jquery = jApp::config()->{'webassets_'.$collection}['jquery.js'];
 
         // no scope into an anonymous js function, because jFormsJQ.tForm is used by other generated source code
-        echo '<script type="text/javascript">
-//<![CDATA[
-jFormsJQ.selectFillUrl=\''.jUrl::get('jelix~jforms:getListData').'\';
-jFormsJQ.config = {locale:'.$builder->escJsStr(jApp::config()->locale).
-            ',basePath:'.$builder->escJsStr($conf['basePath']).
+        $js = "jFormsJQ.selectFillUrl='".jUrl::get('jelix~jforms:getListData')."';\n";
+        $js .= 'jFormsJQ.config = {locale:'.$builder->escJsStr(jApp::config()->locale).
+            ',basePath:'.$builder->escJsStr(jApp::urlBasePath()).
             ',jqueryPath:'.$builder->escJsStr($conf['jqueryPath']).
-            ',jqueryFile:'.$builder->escJsStr(jApp::config()->jquery['jquery']).
-            ',jelixWWWPath:'.$builder->escJsStr($conf['jelixWWWPath']).'};
-jFormsJQ.tForm = new jFormsJQForm(\''.$builder->getName().'\',\''.$form->getSelector().'\',\''.$form->getContainer()->formId.'\');
-jFormsJQ.tForm.setErrorDecorator(new '.$builder->getOption('errorDecorator').'());
-jFormsJQ.declareForm(jFormsJQ.tForm);
-//]]>
-</script>';
+            ',jqueryFile:'.$builder->escJsStr($jquery).
+            ',jelixWWWPath:'.$builder->escJsStr($conf['jelixWWWPath'])."};\n";
+        $js .= "jFormsJQ.tForm = new jFormsJQForm('".$builder->getName()."','".
+            $builder->getForm()->getSelector()."','".
+            $builder->getForm()->getContainer()->formId."');\n";
+        $js .= 'jFormsJQ.tForm.setErrorDecorator(new '.$builder->getOption('errorDecorator')."());\n";
+        $js .= "jFormsJQ.declareForm(jFormsJQ.tForm);\n";
+        $this->addJs($js);
+
         if ($builder->getOption('modal')) {
             echo '<div class="modal-body">';
         }
@@ -49,6 +50,14 @@ jFormsJQ.declareForm(jFormsJQ.tForm);
         if ($this->builder->getOption('modal')) {
             echo '</div>';
         }
-        parent::outputFooter($builder);
+        $js = "jQuery(document).ready(function() { var c, c2;\n".$this->js.$this->finalJs.'});';
+        $container = $builder->getForm()->getContainer();
+        $container->privateData['__jforms_js'] = $js;
+        $formId = $container->formId;
+        $formName = $builder->getForm()->getSelector();
+        echo '<script type="text/javascript" src="'.\jUrl::get(
+                'jelix~jforms:js',
+                array('__form' => $formName, '__fid' => $formId)
+            ).'"></script>';
     }
 }

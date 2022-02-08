@@ -6,7 +6,7 @@
   </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-{$navbar->color()} navbar-{$navbar->lightMode()}">
+    <nav class="main-header navbar navbar-expand {$navbar->cssClass()}">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -41,9 +41,9 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-{$sidebar->lightMode()}-{$sidebar->color()} elevation-4">
+    <aside class="main-sidebar {$sidebar->cssClass()} elevation-4">
         <!-- Brand Logo -->
-        <a href="{$j_basepath}" class="brand-link">
+        <a href="{$j_basepath}" class="brand-link {$brandClass}">
             {$appHtmlLogoMini}
             <span class="brand-text font-weight-light">{$appHtmlLogo}</span>
         </a>
@@ -86,7 +86,7 @@
         </section>
     </div>
 
-    <footer class="main-footer text-center">
+    <footer class="main-footer text-center {$footer->cssClass()}">
         {$footer}
     </footer>
     {if $controlSidebar->hasPanels()}

@@ -7,6 +7,8 @@
  */
 namespace Jelix\AdminUI\Responses;
 
+use Jelix\AdminUI\UIConfig;
+
 require_once (JELIX_LIB_PATH.'core/response/jResponseHtml.class.php');
 
 /**
@@ -20,8 +22,14 @@ class AbstractHtmlResponse extends \jResponseHtml
     protected $_MetaOldContentType = false;
     public $metaViewport = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
 
+    /**
+     * @var UIConfig
+     */
+    protected $_UIConfig;
+
     public function __construct()
     {
+        $this->_UIConfig = new UIConfig(\jApp::config()->adminui);
         parent::__construct();
     }
 
@@ -76,17 +84,13 @@ class AbstractHtmlResponse extends \jResponseHtml
         $this->body->assign('urlAdminLteAssets', \jApp::urlBasePath().$confAdminUI['adminlteAssetsUrl']);
     }
 
-    protected function setBodyClass($configParam, $defaultClass='hold-transition')
+    public function addBodyClass($class)
     {
         if (!isset($this->bodyTagAttributes['class'])) {
-            $confAdminUI = \jApp::config()->adminui;
-            if (isset($confAdminUI[$configParam])) {
-                $bodyClass = $confAdminUI[$configParam];
-            }
-            else {
-                $bodyClass = $defaultClass;
-            }
-            $this->setBodyAttributes(array('class'=>$bodyClass));
+            $this->bodyTagAttributes['class'] = $class;
+        }
+        else {
+            $this->bodyTagAttributes['class'] .= $class;
         }
     }
 }

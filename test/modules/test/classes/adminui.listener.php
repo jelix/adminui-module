@@ -30,7 +30,7 @@ class adminuiListener extends jEventListener
         $uim = $event->uiManager;
 
         // ------------- Navigation bar
-        $uim->navbar()->setColor('blue', 'dark');
+        $uim->navbar()->setColor('blue', true);
 
         $item = new \Jelix\AdminUI\NavBar\Link(jApp::urlBasePath(), 'Home');
         $uim->navbar()->addLeftItem($item);
@@ -38,8 +38,7 @@ class adminuiListener extends jEventListener
         $item = new \Jelix\AdminUI\NavBar\Link('#', 'Contact');
         $uim->navbar()->addLeftItem($item);
 
-
-        $uim->navbar()->setFullScreenModeAvailable();
+        $uim->config()->setFullScreenModeAvailable();
 
         $item = new \Jelix\AdminUI\NavBar\DropDown('foo', 'bars', 20);
         $item->setBadgePill(17, $item::BADGE_PILL_SUCCESS);
@@ -129,7 +128,7 @@ class adminuiListener extends jEventListener
 
         $uim->sidebar()->getSubMenu('system')->addLinkItem('Configuration', '#');
 
-        $uim->sidebar()->setColor('cyan', 'light');
+        $uim->sidebar()->setColor('cyan', true);
 
         // ---------------- Control sidebar
 
@@ -141,8 +140,6 @@ class adminuiListener extends jEventListener
         $homePanel = new Panel('home', 'Activity', 'home', 5);
         $homePanel->setContent($tpl->fetch('test~control_sidebar_activity'));
         $uim->controlSidebar()->addPanel($homePanel);
-
-
     }
 
     /**

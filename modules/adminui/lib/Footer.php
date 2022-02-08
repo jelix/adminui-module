@@ -16,12 +16,17 @@ class Footer
 
     protected $templateSelector = 'adminui~footer';
 
-    public function __construct()
+    /**
+     * @var UIConfig
+     */
+    protected $_config;
+
+    function __construct(UIConfig $config)
     {
+        $this->_config = $config;
         $this->tpl = new \jTpl();
-        $confAdminUI = \jApp::config()->adminui;
-        $this->tpl->assign('appHtmlCopyright', $confAdminUI['htmlCopyright']);
-        $this->tpl->assign('appVersion', $confAdminUI['appVersion']);
+        $this->tpl->assign('appHtmlCopyright', $config->get('htmlCopyright'));
+        $this->tpl->assign('appVersion', $config->get('appVersion'));
     }
 
     function setTemplateSelector($selector)
@@ -40,6 +45,14 @@ class Footer
     {
         $this->tpl->assign($name, $value);
     }
+
+    function cssClass()
+    {
+        return
+            ($this->_config->get('footer.smalltext')?'text-sm':'')
+            ;
+    }
+
 
     public function __toString()
     {

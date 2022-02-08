@@ -23,7 +23,7 @@
 
 <!-- Sidebar Menu -->
 <nav class="mt-2">
-    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <ul class="nav nav-pills nav-sidebar flex-column {$sidebar->navCssClass()}" data-widget="treeview" role="menu" data-accordion="false">
 
     {foreach $sidebar->getMenuItems() as $item}
         {if $item->getType() == 'submenu' && $item->hasChildren()}
