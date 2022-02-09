@@ -53,7 +53,7 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
     public function outputAllControls()
     {
         $modal = $this->getOption('local');
-        echo '<div class="box"><div class="box-body">';
+        echo '<div class="card"><div class="card-body">';
         foreach ($this->_form->getRootControls() as $ctrlref => $ctrl) {
             if ($ctrl->type == 'submit' || $ctrl->type == 'reset' || $ctrl->type == 'hidden') {
                 continue;
@@ -77,7 +77,7 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
         if ($modal) {
             echo "</div>\n".'<div class="modal-footer"><div class="jforms-submit-buttons box-footer">';
         } else {
-            echo '<div class="jforms-submit-buttons form-actions box-footer">';
+            echo '<div class="jforms-submit-buttons form-actions card-footer">';
         }
         if ($ctrl = $this->_form->getReset()) {
             if ($this->_form->isActivated($ctrl->ref)) {
@@ -172,7 +172,7 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
 
     public function outputAllControlsValues()
     {
-        echo '<div class="box"><div class="box-body form-horizontal jforms-view">';
+        echo '<div class="card"><div class="card-body form-horizontal jforms-view">';
         foreach ($this->_form->getRootControls() as $ctrlref => $ctrl) {
             if ($ctrl->type == 'submit' || $ctrl->type == 'reset' ||
                 $ctrl->type == 'hidden' || $ctrl->type == 'captcha' ||
