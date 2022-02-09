@@ -30,7 +30,7 @@ class adminuiListener extends jEventListener
         $uim = $event->uiManager;
 
         // ------------- Navigation bar
-        $uim->navbar()->setColor('blue', true);
+        //$uim->navbar()->setColor('blue', true);
 
         $item = new \Jelix\AdminUI\NavBar\Link(jApp::urlBasePath(), 'Home');
         $uim->navbar()->addLeftItem($item);
@@ -128,7 +128,7 @@ class adminuiListener extends jEventListener
 
         $uim->sidebar()->getSubMenu('system')->addLinkItem('Configuration', '#');
 
-        $uim->sidebar()->setColor('cyan', true);
+        //$uim->sidebar()->setColor('cyan', true);
 
         // ---------------- Control sidebar
 

@@ -52,7 +52,7 @@ class NavBar extends Bar {
     function cssClass()
     {
         return 'navbar-'.$this->_config->get('header.color').
-            ($this->_config->get('header.darktext')?' navbar-dark':' navbar-light').
+            ($this->_config->get('header.darktext')?' navbar-light':' navbar-dark').
             ($this->_config->get('header.border')?' border-bottom-0':'').
             ($this->_config->get('header.smalltext')?' text-sm':'')
             ;

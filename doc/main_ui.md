@@ -37,6 +37,9 @@ disableDashboardMenuItem=off
 ; show the button into the header, to activate the full screen mode 
 fullScreenModeEnabled=off
 
+; show a preloader icon with a vertical animation, during the loading of the page
+showPreloader=off
+
 ; activate the dark mode
 darkmode=off
 

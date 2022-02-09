@@ -93,12 +93,12 @@ adminlte-fontawesome.css[]=adminlte-assets/plugins/fontawesome-free/css/all.min.
 
 adminlte.require=jquery,adminlte-bootstrap,adminlte-fontawesome
 adminlte.css[]=adminlte-assets/dist/css/adminlte.min.css
-adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
+;adminlte.css[]=adminlte-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css
 adminlte.css[]=adminui-assets/SourceSansPro/SourceSansPro.css
 adminlte.css[]=adminui-assets/adminui.css
-adminlte.js[]=adminlte-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js
-adminlte.js[]=adminlte-assets/plugins/jquery-mousewheel/jquery.mousewheel.js
-adminlte.js[]=adminlte-assets/plugins/fastclick/fastclick.js
+;adminlte.js[]=adminlte-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js
+;adminlte.js[]=adminlte-assets/plugins/jquery-mousewheel/jquery.mousewheel.js
+;adminlte.js[]=adminlte-assets/plugins/fastclick/fastclick.js
 adminlte.js[]=adminlte-assets/dist/js/adminlte.min.js
 adminlte.js[]=adminui-assets/adminui.js
 ;adminlte.include=
@@ -145,6 +145,9 @@ dashboardTemplate="test~dashboard"
 disableDashboardMenuItem=off
 fullScreenModeEnabled=off
 
+; show a preloader icon with a vertical animation
+showPreloader=off
+
 ; body.dark-mode
 darkmode=off
 
@@ -158,7 +161,7 @@ header.border=on
 header.smalltext=off
 
 ; .main-header.navbar-*
-header.color=white
+header.color=blue
 
 ; .main-header.navbar-dark or .main-header.navbar-light
 header.darktext=off
@@ -189,7 +192,7 @@ sidebar.nav.smalltext = off
 
 ; .main-sidebar.sidebar-dark-<color> or .main-sidebar.sidebar-light-<color>
 sidebar.dark=on
-sidebar.current-item.color=primary
+sidebar.current-item.color=blue
 
 ; body.layout-footer-fixed
 footer.fixed=off
