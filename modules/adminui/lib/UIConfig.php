@@ -31,6 +31,9 @@ class UIConfig {
                 'dashboardTemplate' =>  '',
                 'disableDashboardMenuItem' =>  false,
                 'fullScreenModeEnabled' => false,
+
+                'showPreloader' => false,
+
                 //body.dark-mode
                 'darkmode' =>  false,
 

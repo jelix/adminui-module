@@ -47,6 +47,7 @@ class AdminUIResponse extends AbstractHtmlResponse
         $this->body->assign('controlSidebar', $this->uiManager->controlSidebar());
         $this->body->assign('footer', $this->uiManager->footer());
         $this->body->assign('brandClass', $this->_UIConfig->get('header.brand.smalltext') ?'text-sm': '');
+        $this->body->assign('showPreloader', $this->_UIConfig->get('showPreloader'));
 
         if (intval($this->_httpStatusCode) < 400 || $this->body->isAssigned('MAIN')) {
             $this->body->assignIfNone('MAIN', '<p>Empty page</p>');
