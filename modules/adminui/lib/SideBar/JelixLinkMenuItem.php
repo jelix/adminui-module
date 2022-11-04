@@ -21,7 +21,7 @@ class JelixLinkMenuItem extends MenuItem
         parent::__construct('', $label, $icon, $order);
 
         $this->selector = $selector;
-        $this->parameters = array();
+        $this->parameters = $parameters;
     }
 
     public function getUrl() {
