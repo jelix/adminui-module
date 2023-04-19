@@ -11,7 +11,7 @@ manipulating HTML.
 The module provide also widgets for jForms, that generate HTML for Bootstrap
 and CSS of AdminLTE.
 
-This module is for Jelix 1.7.9 and higher.
+This module is for Jelix 1.7.10 and higher.
 
 Setting up the module
 =====================

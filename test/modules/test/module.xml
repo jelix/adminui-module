@@ -4,6 +4,6 @@
         <version date="2019-10-19">0.9.1</version>
     </info>
     <dependencies>
-        <jelix minversion="1.7.2" maxversion="1.7.*"/>
+        <jelix minversion="1.7.10" maxversion="1.8.*"/>
     </dependencies>
 </module>
