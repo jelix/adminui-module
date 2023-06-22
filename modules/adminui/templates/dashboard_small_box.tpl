@@ -1,8 +1,8 @@
 <div class="small-box {$backgroundClass}">
     <div class="inner">
-        <h3>{$information}</h3>
+        <h3>{$title}</h3>
 
-        <p>{$title}</p>
+        <p>{$information}</p>
     </div>
     <div class="icon">
         <i class="{$iconClass}"></i>
