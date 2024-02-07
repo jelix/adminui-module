@@ -6,7 +6,11 @@
         </div>
 
         {form $form, 'test~default:formsave', array(), 'adminlte', array(
-        'plugins' => array( 'autocompletetown' => 'autocomplete_adminlte') )}
+        'plugins' => array(
+            'autocompletetown' => 'autocomplete_adminlte' ,
+            'pwd_widgetpasswordeditor' => 'passwordeditor_adminlte',
+            'pwd_widgetpassword' => 'password_adminlte'
+          ))}
             <div class="card-body">
 
                 {formcontrols}

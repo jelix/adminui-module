@@ -117,6 +117,14 @@
         <confirm>Type again the password to confirm</confirm>
     </secret>
 
+    <secret ref="pwd_widgetpassword">
+        <label>A password with view widget</label>
+    </secret>
+
+    <secret ref="pwd_widgetpasswordeditor">
+        <label>A password with full widget (view/regenerate/copy)</label>
+    </secret>
+
     <image ref="image" mimetype="image/jpg;image/png;" maxWidth="1024" maxHeight="800">
         <label>Your photo </label>
         <alert>The file should be a jpg or png image</alert>
