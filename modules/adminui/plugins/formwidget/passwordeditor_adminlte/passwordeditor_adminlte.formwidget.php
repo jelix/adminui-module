@@ -53,7 +53,7 @@ EOHTML;
         echo <<<EOHTML
             ></div>
         </div>
-    </div>
+    </div></div>
 
 EOHTML;
     }
