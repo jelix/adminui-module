@@ -30,16 +30,17 @@ Launch the configurator for your application to enable the module
 php dev.php module:configure adminui
 ```
 
-It will asks you how to install web assets (JS and CSS files): 
+It will ask you how to install web assets (JS and CSS files): 
 
 - by copying them into the www directory of your application, 
-- or by doing nothing if you setup into your web server configuration, an alias named `adminlte-assets`  to 
-  `vendor/jelix/adminui-module/modules/adminui/www/adminlte/`.
+- or by doing nothing if you define into your web server configuration, 
+  1. an alias named `adminui-assets`  to `vendor/jelix/adminui-module/modules/adminui/www/adminui-assets/`.
+  2. an alias named `adminlte-assets`  to `vendor/vendor/almasaeed2010/adminlte/`.
 
 The configurator will create also some parameters into your application configuration:
 - it defines the jelix theme to `adminlte`
 - it redefines the default html and htmlerror response
-- it setup web assets
+- it configures web assets
 
 You can change some configuration parameters into the `app/system/mainconfig.ini.php`:
 

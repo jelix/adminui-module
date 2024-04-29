@@ -1,11 +1,20 @@
 Using adminui widgets for jForms
 ================================
 
-The adminui module provides widget for jForms, so your forms will be well
+The adminui module provides widgets for jForms, so your forms will be well
 integrated into the adminLTE theme.
 
-In your template, you should indicate the `adminlte` jforms builder, to `{form}`
-and similaire jtpl tags.
+You should indicate the `adminlte` builder to jForms.
+
+For all forms, you must indicate into the configuration
+
+```ini
+[tplplugins]
+defaultJformsBuilder=adminlte
+```
+
+Or if you want to use the builder only for specific forms, in your templates, you should indicate 
+the `adminlte` jforms builder into the `{form}` tag and similaire jtpl tags.
 
 Examples: 
 
