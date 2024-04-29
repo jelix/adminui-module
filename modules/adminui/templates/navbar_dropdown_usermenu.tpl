@@ -47,9 +47,10 @@
     </div>
 </li>
 {else}
-<li class="">
-    <a href="{$signInLink}" title="{$label|eschtml}">
-        <i class="fa fa-{$icon}"></i>
-    </a>
-</li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{$signInLink}" title="{$label|eschtml}" class="nav-link">
+            <i class="fa fa-{$icon}"></i>
+            <span class="hidden-xs">{$label|eschtml}</span>
+        </a>
+    </li>
 {/if}
