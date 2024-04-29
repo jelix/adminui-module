@@ -1,8 +1,8 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2022 Laurent Jouanneau
- * @link     http://jelix.org
+ * @copyright 2022-2024 Laurent Jouanneau
+ * @link     https://jelix.org
  * @licence MIT
  */
 namespace Jelix\AdminUI\NavBar;
@@ -16,6 +16,14 @@ class Link extends Item
 
     protected $templateSelector = 'adminui~navbar_link';
 
+    protected $newWindow = false;
+
+    /**
+     * @param string $url   the url of the link
+     * @param string $label label of the link
+     * @param bool $newWindow true if a click on the link should open a new window/tab
+     * @param int $order order of the item in the list of the item
+     */
     function __construct($url, $label, $newWindow = false, $order = 0) {
         $this->url = $url;
         $this->newWindow = $newWindow;
@@ -32,8 +40,8 @@ class Link extends Item
 
     public function __toString()
     {
-        $this->tpl = new \jTpl();
-        $this->tpl->assign('link', $this);
-        return $this->tpl->fetch($this->templateSelector);
+        $tpl = new \jTpl();
+        $tpl->assign('link', $this);
+        return $tpl->fetch($this->templateSelector);
     }
 }
