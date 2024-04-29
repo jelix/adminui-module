@@ -4,7 +4,7 @@ set -e
 
 export FPM_USER_ID=${FPM_USER_ID:-$(id -u)}
 export FPM_GROUP_ID=${FPM_GROUP_ID:-$(id -g)}
-export PHP_VERSION=${PHP_VERSION:-7.4}
+export PHP_VERSION=${PHP_VERSION:-8.3}
 
 CMD=$1
 
@@ -20,4 +20,4 @@ if [ "$ADMINUI_WEB_PORT" == "" ]; then
   export ADMINUI_WEB_PORT=8029
 fi
 
-docker-compose -p jelix-adminui-tests $CMD
+docker compose -p jelix-adminui-tests $CMD

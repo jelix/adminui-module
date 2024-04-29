@@ -4,6 +4,7 @@
     "description": "app to test adminui module",
     "keywords": [],
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Laurent Jouanneau",
@@ -18,6 +19,11 @@
     },
     "require-dev" : {
         
+    },
+    "config": {
+        "allow-plugins": {
+            "jelix/composer-module-setup": true
+        }
     },
     "minimum-stability": "stable"
 
