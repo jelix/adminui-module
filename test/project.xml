@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://jelix.org/ns/project/1.0">
     <info id="test-adminui@jelix.org" name="test">
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <label lang="en-EN">adminui Test</label>
         <description lang="en-EN">Application to test the adminui module</description>
         <licence>MIT</licence>
-        <copyright>2019-2023 Laurent Jouanneau and other contributors</copyright>
+        <copyright>2019-2024 Laurent Jouanneau and other contributors</copyright>
         <creator name="Laurent Jouanneau" email="laurent@jelix.org"/>
     </info>
 </project>
