@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.2
+-----
+
+- add a template plugin: pagelinksadminui
+
 1.0.1
 -----
 
