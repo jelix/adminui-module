@@ -26,6 +26,8 @@ class UIConfig {
 
                 'bodyCSSClass' =>  'hold-transition',
                 'bareBodyCSSClass' =>  'hold-transition login-page',
+                'loginBodyCSSClass' =>  'hold-transition login-page',
+                'registerBodyCSSClass' =>  'hold-transition register-page',
                 'adminlteAssetsUrl' =>  '',
 
                 'dashboardTemplate' =>  '',

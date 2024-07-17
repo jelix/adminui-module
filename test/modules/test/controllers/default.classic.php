@@ -44,6 +44,61 @@ class defaultCtrl extends jController
         return $rep;
     }
 
+    function forgotpassword()
+    {
+        $rep = $this->getResponse('htmllogin');
+        $tpl = new jTpl();
+
+        $rep->body->assign('page_title', 'Login');
+        $rep->body->assign('boxTitle', 'You forgot your password? Here you can easily retrieve a new password');
+        $rep->body->assign('MAIN', $tpl->fetch('test~forgotpassword'));
+        return $rep;
+    }
+
+    function recoverpassword()
+    {
+        $rep = $this->getResponse('htmllogin');
+        $tpl = new jTpl();
+
+        $rep->body->assign('page_title', 'Login');
+        $rep->body->assign('boxTitle', 'You are only one step a way from your new password, recover your password now.');
+        $rep->body->assign('MAIN', $tpl->fetch('test~recoverpassword'));
+        return $rep;
+    }
+
+
+    function passwordrecovered()
+    {
+        $rep = $this->getResponse('htmllogin');
+        $tpl = new jTpl();
+
+        $rep->body->assign('page_title', 'Login');
+        $rep->body->assign('boxTitle', '');
+        $rep->body->assign('MAIN', $tpl->fetch('test~passwordrecovered'));
+        return $rep;
+    }
+
+    function register()
+    {
+        $rep = $this->getResponse('htmlregister');
+        $tpl = new jTpl();
+
+        $rep->body->assign('page_title', 'Register');
+        $rep->body->assign('MAIN', $tpl->fetch('test~register'));
+        return $rep;
+    }
+
+    function registersave()
+    {
+        $rep = $this->getResponse('htmlregister');
+        $tpl = new jTpl();
+
+        $rep->body->assign('page_title', 'Register');
+        $rep->body->assign('MAIN', $tpl->fetch('test~registersaved'));
+        return $rep;
+    }
+
+
     function form()
     {
         $rep = $this->getResponse('html');

@@ -32,7 +32,9 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
         $configIni->setValue('theme', 'adminlte');
         $configIni->setValue('html', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
         $configIni->setValue('htmlerror', "\\Jelix\\AdminUI\\Responses\\AdminUIResponse", 'responses');
-        $configIni->setValue('htmllogin', "\\Jelix\\AdminUI\\Responses\\AdminUIBareResponse", 'responses');
+        $configIni->setValue('htmlbare', "\\Jelix\\AdminUI\\Responses\\AdminUIBareResponse", 'responses');
+        $configIni->setValue('htmllogin', "\\Jelix\\AdminUI\\Responses\\AdminUILoginResponse", 'responses');
+        $configIni->setValue('htmlregister', "\\Jelix\\AdminUI\\Responses\\AdminUIRegisterResponse", 'responses');
         $configIni->setValues(array(
             'jquery.js' => "adminlte-assets/plugins/jquery/jquery.js",
             'adminlte-bootstrap.require' =>'jquery,jquery_ui',
@@ -88,7 +90,9 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'dashboardTemplate'=>'',
             'disableDashboardMenuItem' => false,
             'bodyCSSClass'=>"hold-transition",
-            'bareBodyCSSClass'=>"hold-transition login-page",
+            'bareBodyCSSClass'=>"",
+            'loginBodyCSSClass'=>"hold-transition login-page",
+            'registerBodyCSSClass'=>"hold-transition register-page",
             'adminlteAssetsUrl'=> "adminlte-assets/",
             'fullScreenModeEnabled' => false,
             'darkmode' =>  false,

@@ -22,8 +22,14 @@ htmlCopyright="<strong>Copyright &copy; 2022 <a href="https://jelix.org">Jelix</
 ; also some CSS classes on the body element
 bodyCSSClass="hold-transition skin-blue"
 
-; some CSS classes to set on the body element, for simple page, like the login page
+; some CSS classes to set on the body element, for simple page
 bareBodyCSSClass="hold-transition login-page"
+
+; some CSS classes to set on the body element, for the login page
+loginBodyCSSClass="hold-transition login-page"
+
+; some CSS classes to set on the body element, for the register page
+registerBodyCSSClass="hold-transition register-page"
 
 ; the url path to adminlte assets (without the base path of the application)
 adminlteAssetsUrl="adminlte-assets/"

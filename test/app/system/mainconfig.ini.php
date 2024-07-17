@@ -33,7 +33,9 @@ adminui.installparam[wwwfiles]=vhost
 [responses]
 html="\Jelix\AdminUI\Responses\AdminUIResponse"
 htmlerror="\Jelix\AdminUI\Responses\AdminUIResponse"
-htmllogin="\Jelix\AdminUI\Responses\AdminUIBareResponse"
+htmlbare="\Jelix\AdminUI\Responses\AdminUIBareResponse"
+htmllogin="\Jelix\AdminUI\Responses\AdminUILoginResponse"
+htmlregister="\Jelix\AdminUI\Responses\AdminUIRegisterResponse"
 
 [error_handling]
 messageLogFormat="%date%\t%ip%\t[%code%]\t%msg%\n\tat: %file%\t%line%\n\turl: %url%\n\t%http_method%: %params%\n\treferer: %referer%\n%trace%\n\n"
@@ -138,7 +140,8 @@ htmlLogoMini="<b>A</b>UI"
 htmlCopyright="<strong>Copyright &copy; 2022 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 
 bodyCSSClass="hold-transition skin-blue"
-bareBodyCSSClass="hold-transition login-page"
+bareBodyCSSClass=""
+loginBodyCSSClass="hold-transition login-page"
 adminlteAssetsUrl="adminlte-assets/"
 
 dashboardTemplate="test~dashboard"

@@ -3,6 +3,11 @@
     <url pathinfo="/blank" action="default:index"/>
     <url pathinfo="/login" action="default:login"/>
     <url pathinfo="/login/check" action="default:logincheck"/>
+    <url pathinfo="/password/forgot" action="default:forgotpassword"/>
+    <url pathinfo="/password/recover" action="default:recoverpassword"/>
+    <url pathinfo="/password/recovered" action="default:passwordrecovered"/>
+    <url pathinfo="/register" action="default:register"/>
+    <url pathinfo="/registersave" action="default:registersave"/>
     <url pathinfo="/form"  action="default:form"/>
     <url pathinfo="/form/save" action="default:formsave"/>
     <url pathinfo="/form/data" action="default:formdata"/>

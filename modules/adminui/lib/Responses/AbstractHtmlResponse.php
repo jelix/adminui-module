@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2022 Laurent Jouanneau
+ * @copyright 2022-2024 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -42,7 +42,7 @@ class AbstractHtmlResponse extends \jResponseHtml
         } else {
             $this->showErrorPage();
         }
-        $this->setBodyClass('bodyCSSClass');
+
     }
 
     protected function showErrorPage()
