@@ -14,6 +14,10 @@ class defaultCtrl extends jController
     function index()
     {
         $rep = $this->getResponse('html');
+
+        jMessage::add('Lorem ipsum error', 'error');
+        jMessage::add('Lorem ipsum info', 'notice');
+
         $tpl = new jTpl();
 
 
@@ -23,7 +27,7 @@ class defaultCtrl extends jController
             array('url' => jUrl::get('adminui~default:index'), 'label' => 'Home', 'icon-class' => 'fa fa-dashboard'),
             array('url' => '#', 'label' => 'Examples')
         ));
-        $rep->body->assign('MAIN', $tpl->fetch('adminui~blank'));
+        $rep->body->assign('MAIN', $tpl->fetch('test~blank'));
         return $rep;
     }
 

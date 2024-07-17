@@ -65,3 +65,12 @@ legend {
 {
     height:auto;
 }
+
+.jelix-toast-msg {
+    display:none;
+}
+
+.toasts-top-right {
+    top: 4em;
+    right: 2em;
+}

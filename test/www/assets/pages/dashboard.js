@@ -107,9 +107,9 @@ $(function () {
   })
 
   // SLIMSCROLL FOR CHAT WIDGET
-  $('#chat-box').overlayScrollbars({
+  /*$('#chat-box').overlayScrollbars({
     height: '250px'
-  })
+  })*/
 
   /* Chart.js Charts */
   // Sales chart
