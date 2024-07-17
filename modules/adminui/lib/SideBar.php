@@ -28,6 +28,8 @@ class SideBar extends Bar {
         $this->topMenu->addMenuItem($crud);
         $refdata = new SubMenu('refdata', \jLocale::get('adminui~ui.menu.item.refdata'), 80);
         $this->topMenu->addMenuItem($refdata);
+        $system = new SubMenu('users', \jLocale::get('adminui~ui.menu.item.users'), 90);
+        $this->topMenu->addMenuItem($system);
         $system = new SubMenu('system', \jLocale::get('adminui~ui.menu.item.system'), 100);
         $this->topMenu->addMenuItem($system);
     }
