@@ -7,7 +7,7 @@
  * @licence    MIT
  */
 
-class adminuiModuleUpgrader_1newresponses extends \Jelix\Installer\Module\Installer {
+class adminuiModuleUpgrader_01newresponses extends \Jelix\Installer\Module\Installer {
 
     protected $targetVersions = array('0.10.0');
     protected $date = '2022-01-11';
