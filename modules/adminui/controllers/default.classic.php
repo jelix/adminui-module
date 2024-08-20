@@ -25,9 +25,23 @@ class defaultCtrl extends jController
     public function __construct($request)
     {
         $this->_UIConfig = new UIConfig(\jApp::config()->adminui);
-        if ($this->_UIConfig->get('dashboardAuthRequired')) {
+        $authRequired = $this->_UIConfig->get('dashboardAuthRequired');
+
+        if ($authRequired === true) {
             $this->pluginParams['*']['auth.required'] = true;
         }
+        else if ($authRequired == 'inherit') {
+            if (jApp::isModuleEnabled('jauth') || jApp::isModuleEnabled('jcommunity')) {
+                $authConfig = jAuth::loadConfig();
+                if ($authConfig && $authConfig['auth_required']) {
+                    $this->pluginParams['*']['auth.required'] = true;
+                }
+            }
+            else if (jApp::isModuleEnabled('authcore') && isset(jApp::config()->sessionauth['authRequired'])) {
+                $this->pluginParams['*']['auth.required'] = jApp::config()->sessionauth['authRequired'];
+            }
+        }
+
         parent::__construct($request);
     }
 

@@ -31,7 +31,7 @@ class UIConfig {
                 'adminlteAssetsUrl' =>  '',
 
                 'dashboardTemplate' =>  '',
-                'dashboardAuthRequired'=>false,
+                'dashboardAuthRequired'=> 'inherit',
                 'disableDashboardMenuItem' =>  false,
                 'fullScreenModeEnabled' => false,
 
