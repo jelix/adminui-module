@@ -12,6 +12,7 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/radiobuttons_html/radiobuttons_h
 class radiobuttons_adminlteFormWidget extends radiobuttons_htmlFormWidget
 {
     use \Jelix\AdminUI\Form\WidgetTrait;
+    use \Jelix\AdminUI\Form\ChoiceControlTrait;
 
     protected function getCSSClass()
     {
