@@ -1,3 +1,7 @@
+{meta_html title 'Form example' }
+{meta_adminui page_title 'A form'}
+{meta_adminui sub_page_title 'Show all jForms widgets for AdminLte'}
+
 {if $customform}
     <p>Custom form template. <a href="{jurl 'test~default:form'}">Switch to automatic form template</a>.</p>
     <div class="card card-success">
