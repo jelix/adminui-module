@@ -11,6 +11,7 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/checkboxes_html/checkboxes_html.
 class checkboxes_adminlteFormWidget extends checkboxes_htmlFormWidget
 {
     use \Jelix\AdminUI\Form\WidgetTrait;
+    use \Jelix\AdminUI\Form\ChoiceControlTrait;
 
     protected function getCSSClass()
     {
