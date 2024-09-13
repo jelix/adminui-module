@@ -127,8 +127,6 @@ class defaultCtrl extends jController
 
         $tpl->assign('form', $form);
 
-        $rep->body->assign('page_title', 'A form');
-        $rep->body->assign('sub_page_title', 'Show all jForms widgets for AdminLte');
         $tpl->assign('customform' , $this->param('custom'));
         $rep->body->assign('MAIN', $tpl->fetch('test~form'));
         return $rep;
