@@ -31,8 +31,11 @@ class AdminUIResponse extends AbstractHtmlResponse
         $this->uiManager = new \Jelix\AdminUI\UIManager($this->_UIConfig);
 
         $currentResponse = \jApp::coord()->response;
-        if ($currentResponse && $currentResponse instanceof AdminUIResponse) {
-            $this->previousResponseHadFullUI = true;
+        if (! $currentResponse) {
+            $this->previousResponseHadFullUI = null;
+        }
+        else {
+            $this->previousResponseHadFullUI = ($currentResponse instanceof AdminUIResponse);
         }
     }
 
@@ -52,11 +55,12 @@ class AdminUIResponse extends AbstractHtmlResponse
             else if (\jApp::isModuleEnabled('authcore') && isset(\jApp::config()->sessionauth['authRequired'])) {
                 $isAuthenticated = \jAuthentication::isCurrentUserAuthenticated();
             }
-            if ($this->previousResponseHadFullUI && $isAuthenticated) {
-                $showError = 1;
+            if ($this->previousResponseHadFullUI !== null) {
+
+                $showError = ($this->previousResponseHadFullUI && $isAuthenticated ? 1 : 2);
             }
             else {
-                $showError = 2;
+                $showError = ($isAuthenticated ? 1 : 2);
             }
         }
 
