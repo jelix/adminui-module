@@ -11,6 +11,8 @@ require_once JELIX_LIB_PATH . 'plugins/formwidget/passwordeditor_html/passworded
 class passwordeditor_adminlteFormWidget extends passwordeditor_htmlFormWidget {
     use \Jelix\AdminUI\Form\WidgetTrait;
 
+    protected $domPathToParentNode = '.parentNode.parentNode';
+
     public function outputMetaContent($resp) {
         $JelixWWWPath = jApp::urlJelixWWWPath();
         $resp->addJSLink($JelixWWWPath . 'js/jforms/password-editor.js');
@@ -46,14 +48,14 @@ class passwordeditor_adminlteFormWidget extends passwordeditor_htmlFormWidget {
             <button type="button" class="btn btn-outline-secondary jforms-password-copy" title="$copyLabel">
                 <img src="$urlcopy"  alt="$copyLabel" width="15"/>
             </button>
-
-            <div class="jforms-password-score input-group-text" 
+        </div>
+    </div>
+    <div class="jforms-password-score" 
 EOHTML;
         $this->_outputAttr($attrScore);
         echo <<<EOHTML
-            ></div>
-        </div>
-    </div></div>
+        ></div>
+</div>
 
 EOHTML;
     }
