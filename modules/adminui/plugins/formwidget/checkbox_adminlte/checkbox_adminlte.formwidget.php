@@ -11,6 +11,7 @@ require_once JELIX_LIB_PATH.'plugins/formwidget/checkbox_html/checkbox_html.form
 class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
 {
     use \Jelix\AdminUI\Form\WidgetTrait;
+    use \Jelix\AdminUI\Form\ChoiceControlTrait;
 
     protected function outputJs()
     {
@@ -51,11 +52,6 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
             $attr['value'] = $this->ctrl->valueOnCheck;
             $attr['id'] = $attrid.'_'.$this->ctrl->valueOnCheck;
 
-            // attribute readonly is not enough to make checkboxes readonly. Note that value won't be sent by submit but it is not a problem as it is readonly
-            if (array_key_exists('readonly', $attr)) {
-                $attr['disabled'] = 'disabled';
-            }
-
             echo '<input';
             $this->_outputAttr($attr);
             echo '/>';
@@ -87,10 +83,7 @@ class checkbox_adminlteFormWidget extends checkbox_htmlFormWidget
             }
             $attr['value'] = $this->ctrl->valueOnCheck;
             $attr['type'] = 'checkbox';
-            // attribute readonly is not enough to make checkboxes readonly. Note that value won't be sent by submit but it is not a problem as it is readonly
-            if (array_key_exists('readonly', $attr)) {
-                $attr['disabled'] = 'disabled';
-            }
+
             echo '<input';
             $this->_outputAttr($attr);
             echo '/>';
