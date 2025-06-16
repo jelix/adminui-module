@@ -100,6 +100,26 @@
         <item value="assiette">a plate</item>
     </checkboxes>
 
+    <checkboxes ref="outerspace_house" readonly='true'>
+        <label>You own an house on  </label>
+        <item value="mars">Mars</item>
+        <item value="moon">Moon</item>
+        <item value="pluto">Pluto</item>
+    </checkboxes>
+
+    <radiobuttons ref="superhero" readonly='true'>
+        <label>You are </label>
+        <item value="bat">batman</item>
+        <item value="spider">spiderman</item>
+        <item value="iron">ironman</item>
+    </radiobuttons>
+
+    <checkbox ref="no_awnser_possible" readonly='true'>
+        <label>Question ?</label>
+        <oncheckvalue label="yes" />
+        <onuncheckvalue label="no" />
+    </checkbox>
+
     <date ref="birthdaydate">
         <label>Your birthday</label>
     </date>
