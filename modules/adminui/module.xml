@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
     <info id="adminui@jelix.org" name="adminui" createdate="2019-07-26">
-        <version date="2024-05-01">1.0.2</version>
+        <version date="2025-06-16">1.1.0</version>
         <label lang="en_US">adminui</label>
         <description lang="en_US" />
         <license>MIT</license>
-        <copyright>2019-2024 Laurent Jouanneau and other contributors</copyright>
+        <copyright>2019-2025 Laurent Jouanneau and other contributors</copyright>
         <author name="Laurent Jouanneau"/>
     </info>
     <dependencies>
-        <jelix minversion="1.7.10" maxversion="1.8.*"/>
+        <jelix minversion="1.7.10" maxversion="1.9.0-beta.1"/>
     </dependencies>
     <autoload>
         <psr4 namespace="\Jelix\AdminUI\" dir="lib"/>
