@@ -154,7 +154,7 @@ Don't forget to declare the listener into the event.xml file of your module:
 The listener receives a `\Jelix\AdminUI\UIManager` object in the event. This object
 contains API to setup the different components of the interface. It has
 some methods to retrieve these components like: `navbar()`, `sidebar()` and `controlSidebar()`.
-These methods returns some object which allow you to manipulate the components:
+These methods return some object allowing you to manipulate the components:
 - add some menu items
 - add some popup menu
 - setup the account menu
@@ -240,4 +240,3 @@ $uim->sidebar()->addMenuItem($navigation);
 This is just an overview of possibilities to customize the navbar and the sidebar.
 See the file `test/modules/test/classes/adminui.listener.php` to learn more
 complexe examples.
-

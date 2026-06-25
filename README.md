@@ -53,7 +53,7 @@ htmlLogo="<b>Admin</b>UI"
 ; the logo of your application when the left sidebar is minimized 
 htmlLogoMini="<b>A</b>UI"
 ; the copyright informations, appearing at the bottom bar
-htmlCopyright="<strong>Copyright &copy; 2024 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
+htmlCopyright="<strong>Copyright &copy; 2026 <a href="https://jelix.org">Jelix</a>.</strong> MIT licence."
 ; the template used to display the dashboard. If empty, the dashboard may be empty
 dashboardTemplate="test~dashboard"
 ```
@@ -89,4 +89,3 @@ An application has been made into the test directory. See its README.md to
 launch it. 
 
 It contains many examples. Don't hesitate to read the code.
-

@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1.1
+-----
+
+- New parameter `$showLabel` to the `DropDown` constructor and its child class, to show the label in the navbar item
+- Fix templates: use `fa` icon class instead of `fas` or `far`. Some icons are not visible with `fas` or `far`.
+- Fix configurator: set the current year into the default copyright
+
 1.1.0
 -----
 

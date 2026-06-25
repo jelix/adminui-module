@@ -34,5 +34,3 @@ Available commands:
 * `composer-update` and `composer-install`: to update PHP packages
 * `clean-tmp`: to delete temp files
 * `install`: to launch the Jelix installer
-* `psql`: to enter into the psql cli
-* `mysql`: to enter into the mysql cli 
