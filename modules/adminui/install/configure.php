@@ -86,7 +86,7 @@ class adminuiModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             'appTitle' => 'Admin',
             'htmlLogo' => '<b>Admin</b>UI',
             'htmlLogoMini' => '<b>A</b>UI',
-            'htmlCopyright' => '<strong>Copyright &copy; 2024 My Company.</strong>.',
+            'htmlCopyright' => '<strong>Copyright &copy; '.date('Y').' My Company</strong>.',
             'dashboardTemplate'=>'',
             'dashboardAuthRequired'=>'inherit',
             'disableDashboardMenuItem' => false,
