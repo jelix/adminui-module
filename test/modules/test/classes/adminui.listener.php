@@ -47,7 +47,7 @@ class adminuiListener extends jEventListener
         $item->setContent('<p class="text-sm">Hello world</p>');
         $uim->navbar()->addItem($item);
 
-        $menu = new \Jelix\AdminUI\NavBar\DropDownMenu('liens', 'bookmark', 10);
+        $menu = new \Jelix\AdminUI\NavBar\DropDownMenu('liens', 'bookmark', 10, true);
         $menu->setBadgePill(3, $item::BADGE_PILL_DANGER);
         $menu->addLink(new Link('https://jelix.org', 'Go to Jelix.org', true));
         $menu->addLink(new Link('https://mozilla.org', 'Mozilla', true));

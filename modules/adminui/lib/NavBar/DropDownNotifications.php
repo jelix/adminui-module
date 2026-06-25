@@ -15,14 +15,14 @@ class DropDownNotifications extends DropDownMenu {
 
     protected $cssClass = 'notifications-menu';
 
-    function __construct($urlAllMessages, $label = '', $icon = '', $order = 0) {
+    function __construct($urlAllMessages, $label = '', $icon = '', $order = 0, $showLabel = false) {
         if ($label == '') {
             $label = \jLocale::get('adminui~ui.header.notifications.title');
         }
         if ($icon == '') {
             $icon = self::ICON_NOTIFICATION;
         }
-        parent::__construct($label, $icon, $order);
+        parent::__construct($label, $icon, $order, $showLabel);
 
         $this->setFooter(new Link($urlAllMessages, \jLocale::get('adminui~ui.header.notifications.all')));
     }

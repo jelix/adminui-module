@@ -31,25 +31,27 @@ class DropDown extends Item {
 
     protected $templateSelector = 'adminui~navbar_dropdown';
 
+    protected $showLabel = false;
+
     /**
      * DropDown constructor.
      * @param string $label
      * @param string $icon one of ICON_ constants or other keyword supported by the theme
      */
-    function __construct($label, $icon, $order = 0)
+    function __construct($label, $icon, $order = 0, $showLabel = false)
     {
+        $this->showLabel = $showLabel;
         parent::__construct($label, $order);
         $this->tpl = new \jTpl();
         $this->tpl->assign('icon', $icon);
         $this->tpl->assign('label', $label);
+        $this->tpl->assign('showLabel', $showLabel);
         $this->tpl->assign(array(
             'header' => '',
             'content' => '',
             'footer' => ''
         ));
     }
-
-
 
     function setHeader($header) {
         $this->tpl->assign('header', $header);

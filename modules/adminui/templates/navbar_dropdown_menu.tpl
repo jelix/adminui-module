@@ -8,7 +8,7 @@
 
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" title="{$label|eschtml}">
-        <i class="fa fa-{$icon}"></i>
+        <i class="fa fa-{$icon}"></i> {if $showLabel}<span class="nav-item-label">{$label|eschtml}</span>{/if}
         {foreach $badgePills as $badge}
             <span class="badge navbar-badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
         {/foreach}
