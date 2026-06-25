@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2022 Laurent Jouanneau
+ * @copyright 2022-2026 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -43,16 +43,16 @@ class UIConfig {
                 //body.layout-navbar-fixed
                 'header.fixed' =>  false,
 
-                //.main-header.border-bottom-0
+                //.app-header.border-bottom-0
                 'header.border' =>  true,
 
-                //.main-header.text-sm
+                //.app-header.text-sm
                 'header.smalltext' =>  false,
 
-                //.main-header.navbar-*
+                //.app-header.navbar-*
                 'header.color' =>  'white',
 
-                //.main-header.navbar-dark or .main-header.navbar-light
+                //.app-header.navbar-dark or .app-header.navbar-light
                 'header.darktext' =>  false,
 
                 //.brand-link.text-sm
@@ -79,13 +79,13 @@ class UIConfig {
                 //.nav-sidebar.text-sm
                 'sidebar.nav.smalltext ' =>  false,
 
-                //.main-sidebar.sidebar-dark-<color> or .main-sidebar.sidebar-light-<color>
+                //.app-sidebar.sidebar-dark-<color> or .app-sidebar.sidebar-light-<color>
                     'sidebar.dark' =>  true,
                 'sidebar.current-item.color' =>  'primary',
 
                 //body.layout-footer-fixed
                 'footer.fixed' =>  false,
-                //.main-footer.text-sm
+                //.app-footer.text-sm
                 'footer.smalltext ' =>  false,
 
                 //body.text-sm

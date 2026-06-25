@@ -1,8 +1,8 @@
-<div class="float-right hidden-xs">
+<div class="float-end hidden-xs">
     <a href="https://adminlte.io">AdminLTE</a> Theme
 </div>
 {if $appHtmlCopyright}
-    <div class="float-left hidden-xs">
+    <div class="float-start hidden-xs">
         {$appHtmlCopyright}
     </div>
 {/if}

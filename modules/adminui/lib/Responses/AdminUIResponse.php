@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019-2024 Laurent Jouanneau
+ * @copyright 2019-2026 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -83,6 +83,9 @@ class AdminUIResponse extends AbstractHtmlResponse
             }
             else {
                 $this->showErrorPage();
+            }
+            if ($this->_UIConfig->get('darkmode')) {
+                $this->setBodyAttributes(['data-bs-theme',"dark"]);
             }
             $this->addBodyClass($this->uiManager->bodyCssClass());
         }

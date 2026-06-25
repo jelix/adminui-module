@@ -1,6 +1,6 @@
 {if $isAuthenticated}
 <li class="nav-item  dropdown user user-menu">
-    <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+    <a href="#" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
         {if $photoUrl}<img src="{$photoUrl}" class="user-image" alt="{$username|eschtml}">
         {else}
             <i class="far fa-user"></i>

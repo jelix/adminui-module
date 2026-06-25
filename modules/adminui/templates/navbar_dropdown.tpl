@@ -6,7 +6,7 @@
 'warning'=>'badge-warning',
 'info'=>'badge-info',)}
 <li class="nav-item dropdown">
-    <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false" title="{$label|eschtml}">
+    <a href="#" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" title="{$label|eschtml}">
         <i class="fa fa-{$icon}"></i>
         {foreach $badgePills as $badge}
             <span class="badge navbar-badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>

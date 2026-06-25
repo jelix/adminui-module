@@ -1,7 +1,7 @@
 <?php
 /**
  * @author   Laurent Jouanneau
- * @copyright 2019-2022 Laurent Jouanneau
+ * @copyright 2019-2026 Laurent Jouanneau
  * @link     http://jelix.org
  * @licence MIT
  */
@@ -86,7 +86,6 @@ class UIManager {
     function bodyCssClass()
     {
         return $this->_config->get('bodyCSSClass').
-            ($this->_config->get('darkmode')?' dark-mode':'').
             ($this->_config->get('header.fixed')?' layout-navbar-fixed':'').
             ($this->_config->get('sidebar.collapsed')?' sidebar-collapse':'').
             ($this->_config->get('sidebar.fixed')?' layout-fixed':'').

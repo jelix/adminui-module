@@ -12,10 +12,10 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.2",
         "jelix/jelix": "dev-jelix-1.8.x",
         "jelix/wikirenderer-plugin": "1.7.*",
-        "almasaeed2010/adminlte": "~3.2.0"
+        "almasaeed2010/adminlte": "~4.0.0"
     },
     "require-dev" : {
         

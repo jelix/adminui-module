@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "almasaeed2010/adminlte": "~3.2.0"
+        "php": ">=8.2",
+        "almasaeed2010/adminlte": "~4.0.0"
     },
     "archive": {
         "exclude": ["/test"]
@@ -24,7 +24,7 @@
             ]
         },
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
     },
     "minimum-stability": "stable"

@@ -1,5 +1,5 @@
 {meta_html assets 'adminlte'}
-<div class="wrapper">
+<div class="app-wrapper">
       <!-- Preloader -->
     {if $showPreloader}
   <div class="preloader flex-column justify-content-center align-items-center">
@@ -8,11 +8,11 @@
     {/if}
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand {$navbar->cssClass()}">
+    <nav class="app-header navbar navbar-expand {$navbar->cssClass()}">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             {foreach $navbar->getLeftItems() as $items}
                 {$items}
@@ -20,20 +20,20 @@
         </ul>
 
         <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ms-auto">
             {foreach $navbar->getItems() as $items}
                 {$items}
             {/foreach}
             {if $navbar->showFullScreenMode()}
             <li class="nav-item">
-                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <a class="nav-link" data-lte-toggle="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li>
             {/if}
             {if $controlSidebar->hasPanels()}
             <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                <a class="nav-link"  data-slide="true" href="#" role="button">
                     <i class="fas fa-th-large"></i>
                 </a>
             </li>
@@ -43,11 +43,11 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar {$sidebar->cssClass()} elevation-4">
+    <aside class="app-sidebar {$sidebar->cssClass()} elevation-4">
         <!-- Brand Logo -->
         <a href="{$j_basepath}" class="brand-link {$brandClass}">
             {$appHtmlLogoMini}
-            <span class="brand-text font-weight-light">{$appHtmlLogo}</span>
+            <span class="brand-text fw-light">{$appHtmlLogo}</span>
         </a>
 
         <!-- Sidebar -->
@@ -56,8 +56,8 @@
         </div>
     </aside>
 
-    <div class="content-wrapper">
-        <section class="content-header">
+    <div class="app-main">
+        <section class="app-content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
@@ -81,14 +81,14 @@
             </div>
         </section>
 
-        <section class="content">
+        <section class="app-content">
             <div class="container-fluid">
         {$MAIN}
             </div>
         </section>
     </div>
 
-    <footer class="main-footer text-center {$footer->cssClass()}">
+    <footer class="app-footer text-center {$footer->cssClass()}">
         {$footer}
     </footer>
     {if $controlSidebar->hasPanels()}
@@ -97,7 +97,7 @@
             {foreach $controlSidebar->getPanels() as $k => $panel}
                 <li class="nav-item">
                     <a href="#control-sidebar-{$panel->getId()}-tab" title="{$panel->getLabel()|eschtml}"
-                    class="nav-link {if $k==0}active{/if}" data-toggle="pill" role="tab"
+                    class="nav-link {if $k==0}active{/if}" data-bs-toggle="pill" role="tab"
                        aria-controls="control-sidebar-{$panel->getId()}-tab" {if $k==0}aria-selected="true"{/if}
                     >
                         {if $panel->getIcon()}<i class="fa fa-{$panel->getIcon()}"></i>{else}{$panel->getLabel()|eschtml}{/if}</a></li>

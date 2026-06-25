@@ -94,9 +94,9 @@ class adminlteFormBuilder extends \jelix\forms\Builder\HtmlBuilder
         }
         if ($this->getOption('cancel')) {
             if (isset($this->options['cancelLocale'])) {
-                echo '<button class="btn" data-dismiss="modal" aria-hidden="true">', jLocale::get($this->options['cancelLocale']), '</button>';
+                echo '<button class="btn" data-bs-dismiss="modal" aria-hidden="true">', jLocale::get($this->options['cancelLocale']), '</button>';
             } else {
-                echo '<button class="btn" data-dismiss="modal" aria-hidden="true">'.jLocale::get('jelix~ui.buttons.cancel').'</button>';
+                echo '<button class="btn" data-bs-dismiss="modal" aria-hidden="true">'.jLocale::get('jelix~ui.buttons.cancel').'</button>';
             }
         }
         echo "</div>\n";

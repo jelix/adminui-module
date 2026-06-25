@@ -7,7 +7,7 @@
 'info'=>'badge-info',)}
 
 <li class="nav-item dropdown">
-    <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" title="{$label|eschtml}">
+    <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false" title="{$label|eschtml}">
         <i class="fa fa-{$icon}"></i>
         {foreach $badgePills as $badge}
             <span class="badge navbar-badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
@@ -28,22 +28,22 @@
                 <a href="{$link->getUrl()}" {if $link->toNewWindow()}target="_blank"{/if} class="dropdown-item">
                     <div class="media">
                         {if $link->getSenderImage()}
-                            <img src="{$link->getSenderImage()}" class="img-circle img-size-50 mr-3" alt="{$link->getSenderName()|eschtml}">
+                            <img src="{$link->getSenderImage()}" class="img-circle img-size-50 me-3" alt="{$link->getSenderName()|eschtml}">
                         {/if}
                         <div class="media-body">
                            <h3 class="dropdown-item-title">{$link->getSenderName()|eschtml}</h3>
                             <p class="text-sm">{$link->getSubject()|eschtml}</p>
                             <p class="text-sm text-muted">
-                                <i class="far fa-clock mr-1"></i> {$link->getDate()|jdatetime}
+                                <i class="far fa-clock me-1"></i> {$link->getDate()|jdatetime}
                             </p>
                         </div>
                     </div>
                 </a>
             {elseif get_class($link) == "Jelix\AdminUI\NavBar\NotificationItem"}
                 <a href="{$link->getUrl()}" class="dropdown-item">
-                    <i class="fa fa-{$link->getIcon()} mr-2"></i>
+                    <i class="fa fa-{$link->getIcon()} me-2"></i>
                     {$link->getLabel()}
-                    <span class="float-right text-muted text-sm">{$link->getDate()|jdatetime}</span>
+                    <span class="float-end text-muted text-sm">{$link->getDate()|jdatetime}</span>
                 </a>
             {else}
                 {$link}
