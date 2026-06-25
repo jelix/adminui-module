@@ -8,7 +8,7 @@
 
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" title="{$label|eschtml}">
-        <i class="far fa-{$icon}"></i>
+        <i class="fa fa-{$icon}"></i>
         {foreach $badgePills as $badge}
             <span class="badge navbar-badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
         {/foreach}
@@ -41,7 +41,7 @@
                 </a>
             {elseif get_class($link) == "Jelix\AdminUI\NavBar\NotificationItem"}
                 <a href="{$link->getUrl()}" class="dropdown-item">
-                    <i class="fas fa-{$link->getIcon()} mr-2"></i>
+                    <i class="fa fa-{$link->getIcon()} mr-2"></i>
                     {$link->getLabel()}
                     <span class="float-right text-muted text-sm">{$link->getDate()|jdatetime}</span>
                 </a>

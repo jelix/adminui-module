@@ -10,10 +10,10 @@
     {if $item->getType() == 'submenu' && $item->hasChildren()}
 <li class="nav-item">
     <a href="#" class="nav-link{if $item->isActive()} active{/if}">
-        {if $item->getIcon()}<i class="nav-icon fas fa-{$item->getIcon()}"></i>
-        {else}<i class="nav-icon fas fa-circle"></i>{/if}
+        {if $item->getIcon()}<i class="nav-icon fa fa-{$item->getIcon()}"></i>
+        {else}<i class="nav-icon fa fa-circle"></i>{/if}
         <p>{$item->getLabel()}
-              <i class="right fas fa-angle-left"></i>
+              <i class="right fa fa-angle-left"></i>
                 {foreach $item->getBadgePills() as $badge}
                     <span class="badge right {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
                 {/foreach}
@@ -26,8 +26,8 @@
     {elseif $item->getType() == 'url'}
         <li class="nav-item">
             <a href="{$item->getUrl()}"  class="nav-link{if $item->isActive()} active{/if}">
-                {if $item->getIcon()}<i class="nav-icon fas fa-{$item->getIcon()}"></i>
-                {else}<i class="nav-icon fas fa-circle"></i>{/if}
+                {if $item->getIcon()}<i class="nav-icon fa fa-{$item->getIcon()}"></i>
+                {else}<i class="nav-icon fa fa-circle"></i>{/if}
                 <p>{$item->getLabel()|eschtml}
                     {foreach $item->getBadgePills() as $badge}
                         <span class="right badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>

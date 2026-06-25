@@ -6,7 +6,7 @@
         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
             <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
+                <i class="fa fa-search fa-fw"></i>
             </button>
         </div>
     </div>
@@ -32,8 +32,8 @@
         {elseif $item->getType() == 'url'}
             <li class="nav-item">
                 <a href="{$item->getUrl()}"  class="nav-link{if $item->isActive()} active{/if}">
-                    {if $item->getIcon()}<i class="nav-icon fas fa-{$item->getIcon()}"></i>
-                    {else}<i class="nav-icon fas fa-circle"></i>{/if}
+                    {if $item->getIcon()}<i class="nav-icon fa fa-{$item->getIcon()}"></i>
+                    {else}<i class="nav-icon fa fa-circle"></i>{/if}
                     <p>{$item->getLabel()|eschtml}
                    {foreach $item->getBadgePills() as $badge}
                        <span class="right badge {$badgeclass[$badge['type']]}">{$badge['label']|eschtml}</span>
